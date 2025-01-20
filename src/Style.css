@@ -78,7 +78,7 @@ header .row .col-md-5 img {
 }
 
 header {
-  background: #ff512f;
+  background: #06071a;
   /* fallback for old browsers */
   background: var(--bggradient);
 }
@@ -349,7 +349,7 @@ footer .input-group .input-group-text {
 }
 
 footer .column i {
-  color: #dd2476;
+  color: #000000;
 }
 
 /* It is Adjacent sibling combinator */
