@@ -14,8 +14,62 @@
       background-color: #141414;
       font-family: Arial, sans-serif;
     }
+    /* .btn-alliance {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  background-color: #ff512f; /* Example background color */
+  /* border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-transform: uppercase;
+  position: relative;
+  overflow: hidden;
+}  */
 
-    /* Styling for the Explore Alliances header */
+.btn-img {
+  width: 300px; /* Adjust the size as needed */
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+  border-radius: 10px;
+  transition: transform 0.5s ease, opacity 0.5s ease; /* Smooth transition */
+}
+
+.btn-img:hover {
+  transform: scale(1.1) rotate(5deg); /* Zoom in and rotate slightly */
+  opacity: 0.9; /* Slightly reduce opacity */
+}
+
+/* Optional: Keyframe animation for continuous subtle motion */
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.btn-img {
+  animation: pulse 3s infinite; /* Continuous pulsing effect */
+}
+
+
+.btn-alliance span {
+  position: relative;
+  z-index: 2;
+}
+
+
+
+    Styling for the Explore Alliances header
     h1 {
       font-size: 3rem;
       font-weight: bold;
@@ -110,9 +164,13 @@
     <!-- Alliance Buttons -->
     <div class="alliance-container">
       <!-- Alliance 1 -->
-      <a href="alliance1.html" class="alliance-btn">
-        <span>Alliance 1</span>
+      <a href="src/alliances.html" class="nav-link">
+        <button class="btn btn-alliance">
+          <img src="../assets/vanguard.jpg" alt="Alliance Icon" class="btn-img">
+        </button>
       </a>
+      
+      
 
       <!-- Alliance 2 -->
       <a href="alliance2.html" class="alliance-btn">
