@@ -1,1 +1,148 @@
-<h1>ALLIANCES</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Alliances</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome for Icons (Optional) -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  
+  <style>
+    body {
+      background-color: #141414;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Styling for the Explore Alliances header */
+    h1 {
+      font-size: 3rem;
+      font-weight: bold;
+      color: white;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+      margin-bottom: 50px;
+      background: linear-gradient(135deg, #ff2a68, #fdaf19);
+      padding: 20px;
+      border-radius: 10px;
+      width: 80%;
+      margin: auto;
+      text-align: center;
+    }
+
+    .alliance-btn {
+      width: 300px;
+      height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 24px;
+      font-weight: bold;
+      text-decoration: none;
+      background-size: cover;
+      background-position: center;
+      border-radius: 10px;
+      margin: 15px;
+      position: relative;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      overflow: hidden;
+      background: linear-gradient(135deg, #ff2a68, #fdaf19);
+      animation: gradientAnimation 5s ease infinite;
+    }
+
+    /* Gradient animation */
+    @keyframes gradientAnimation {
+      0% {
+        background: linear-gradient(135deg, #ff2a68, #fdaf19);
+      }
+      50% {
+        background: linear-gradient(135deg, #1e90ff, #ff6347);
+      }
+      100% {
+        background: linear-gradient(135deg, #ff2a68, #fdaf19);
+      }
+    }
+
+    .alliance-btn:hover {
+      transform: scale(1.1);
+      opacity: 0.9;
+    }
+
+    .alliance-btn::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.4);
+      border-radius: 10px;
+    }
+
+    .alliance-btn span {
+      position: relative;
+      z-index: 1;
+    }
+
+    .alliance-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 50px;
+    }
+
+    @media (max-width: 768px) {
+      .alliance-btn {
+        width: 100%;
+        height: 150px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container text-center mt-5">
+    <!-- Explore Our Alliances Header -->
+    <h1>Explore Our Alliances</h1>
+
+    <!-- Alliance Buttons -->
+    <div class="alliance-container">
+      <!-- Alliance 1 -->
+      <a href="alliance1.html" class="alliance-btn">
+        <span>Alliance 1</span>
+      </a>
+
+      <!-- Alliance 2 -->
+      <a href="alliance2.html" class="alliance-btn">
+        <span>Alliance 2</span>
+      </a>
+
+      <!-- Alliance 3 -->
+      <a href="alliance3.html" class="alliance-btn">
+        <span>Alliance 3</span>
+      </a>
+
+      <!-- Alliance 4 -->
+      <a href="alliance4.html" class="alliance-btn">
+        <span>Alliance 4</span>
+      </a>
+
+      <!-- Alliance 5 -->
+      <a href="alliance5.html" class="alliance-btn">
+        <span>Alliance 5</span>
+      </a>
+
+      <!-- Alliance 6 -->
+      <a href="alliance6.html" class="alliance-btn">
+        <span>Alliance 6</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS and dependencies -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
