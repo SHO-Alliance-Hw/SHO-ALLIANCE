@@ -13,23 +13,43 @@
     body {
       background-color: #141414;
       font-family: Arial, sans-serif;
-    }
-    /* .btn-alliance {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 10px 20px;
-  font-size: 16px;
-  font-weight: bold;
-  color: white;
-  background-color: #ff512f; /* Example background color */
-  /* border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  text-transform: uppercase;
-  position: relative;
-  overflow: hidden;
-}  */
+    } 
+    /* Wrapper for the entire section */
+.explore-alliance-wrapper {
+  opacity: 0;
+  animation: fadeIn 2s ease-in forwards 2s; /* Delay of 2 seconds */
+}
+
+/* Keyframe for fading in */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px); /* Slightly move up */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Additional animation for the "Explore Our Alliance" heading */
+.explore-alliance-header {
+  opacity: 0;
+  animation: slideIn 2s ease-in forwards 2.5s; /* Slight delay after the wrapper */
+}
+
+/* Keyframe for sliding in the heading */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-50px); /* Slide in from the left */
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
 
 .btn-img {
   width: 300px; /* Adjust the size as needed */
@@ -40,6 +60,7 @@
   margin-right: 10px;
   border-radius: 10px;
   transition: transform 0.5s ease, opacity 0.5s ease; /* Smooth transition */
+  animation: slideIn 2s ease-in forwards 2.5s; /* Slight delay after the wrapper */
 }
 
 .btn-img:hover {
@@ -68,8 +89,7 @@
 }
 
 
-
-    Styling for the Explore Alliances header
+ /* Styling for the Explore Alliances header */
     h1 {
       font-size: 3rem;
       font-weight: bold;
@@ -159,7 +179,7 @@
 
   <div class="container text-center mt-5">
     <!-- Explore Our Alliances Header -->
-    <h1>Explore Our Alliances</h1>
+    <h1>Explore Our Alliance</h1>
 
     <!-- Alliance Buttons -->
     <div class="alliance-container">
