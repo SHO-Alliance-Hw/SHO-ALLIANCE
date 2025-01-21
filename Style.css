@@ -61,7 +61,7 @@ header .navbar-brand {
 }
 
 header .nav-link:hover {
-  color: black;
+  color: rgb(78, 78, 78);
 }
 
 header .row .col-md-7 {
