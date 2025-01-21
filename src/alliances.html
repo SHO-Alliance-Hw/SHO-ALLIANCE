@@ -4,107 +4,60 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Our Alliances</title>
-  <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Font Awesome for Icons (Optional) -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-  
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+
   <style>
     body {
-      background-color: #141414;
-      font-family: Arial, sans-serif;
-    } 
-    /* Wrapper for the entire section */
-.explore-alliance-wrapper {
-  opacity: 0;
-  animation: fadeIn 2s ease-in forwards 2s; /* Delay of 2 seconds */
-}
+      background-color: #1e1e2f;
+      font-family: 'Poppins', sans-serif;
+      color: white;
+    }
 
-/* Keyframe for fading in */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px); /* Slightly move up */
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Additional animation for the "Explore Our Alliance" heading */
-.explore-alliance-header {
-  opacity: 0;
-  animation: slideIn 2s ease-in forwards 2.5s; /* Slight delay after the wrapper */
-}
-
-/* Keyframe for sliding in the heading */
-@keyframes slideIn {
-  from {
-    opacity: 0;
-    transform: translateX(-50px); /* Slide in from the left */
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-
-.btn-img {
-  width: 300px; /* Adjust the size as needed */
-  height: 300px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-right: 10px;
-  border-radius: 10px;
-  transition: transform 0.5s ease, opacity 0.5s ease; /* Smooth transition */
-  animation: slideIn 2s ease-in forwards 2.5s; /* Slight delay after the wrapper */
-}
-
-.btn-img:hover {
-  transform: scale(1.1) rotate(5deg); /* Zoom in and rotate slightly */
-  opacity: 0.9; /* Slightly reduce opacity */
-}
-
-/* Optional: Keyframe animation for continuous subtle motion */
-@keyframes pulse {
-  0%, 100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.05);
-  }
-}
-
-.btn-img {
-  animation: pulse 3s infinite; /* Continuous pulsing effect */
-}
-
-
-.btn-alliance span {
-  position: relative;
-  z-index: 2;
-}
-
-
- /* Styling for the Explore Alliances header */
-    h1 {
-      font-size: 3rem;
+    h2 {
+      font-size: 1rem;
       font-weight: bold;
       color: white;
-      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
-      margin-bottom: 50px;
-      background: linear-gradient(135deg, #ff2a68, #fdaf19);
-      padding: 30px;
+      background-color: #4b0082;
+      padding: 20px;
       border-radius: 10px;
       width: 90%;
       margin: auto;
       text-align: center;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+      font-family: 'Montserrat', sans-serif;
     }
 
-    .alliance-btn {
+    .navbar .nav-link {
+      color: white;
+      font-weight: 700;
+      letter-spacing: 1px;
+      transition: color 0.3s;
+    }
+
+    .navbar .nav-link:hover {
+      color: #ffcc00;
+      background-color: transparent;
+      text-shadow: 0 0 10px rgba(255, 204, 0, 0.7);
+    }
+
+    .navbar-brand {
+      font-weight: 700;
+      letter-spacing: 2px;
+      font-size: 1.5rem;
+      color: #ffcc00;
+      text-shadow: 0 0 5px rgba(255, 204, 0, 0.7);
+    }
+
+    .alliance-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 50px;
+    }
+
+    .btn-alliance {
       width: 300px;
       height: 250px;
       display: flex;
@@ -119,155 +72,213 @@
       border-radius: 10px;
       margin: 15px;
       position: relative;
+      overflow: hidden;
       transition: transform 0.3s ease, opacity 0.3s ease;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-      overflow: hidden;
-      background: linear-gradient(135deg, #ff2a68, #fdaf19);
-      animation: gradientAnimation 5s ease infinite;
+      animation: pulse 2s infinite ease-in-out;
     }
 
-    /* Gradient animation */
-    @keyframes gradientAnimation {
-      0% {
-        background: linear-gradient(135deg, #ff2a68, #fdaf19);
-      }
-      50% {
-        background: linear-gradient(135deg, #1e90ff, #ff6347);
-      }
-      100% {
-        background: linear-gradient(135deg, #ff2a68, #fdaf19);
-      }
+    .btn-alliance img {
+      width: 100%;
+      height: 100%;
+      border-radius: 10px;
     }
 
-    .alliance-btn:hover {
+    .btn-alliance:hover {
       transform: scale(1.1);
       opacity: 0.9;
     }
 
-    .alliance-btn::after {
-      content: '';
+    .alliance-name {
       position: absolute;
-      top: 0;
+      bottom: 10px;
       left: 0;
       right: 0;
-      bottom: 0;
-      background: rgba(0, 0, 0, 0.4);
-      border-radius: 10px;
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
+      font-size: 18px;
+      font-weight: bold;
+      text-transform: uppercase;
+      text-align: center;
+      padding: 5px;
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
     }
 
-    .alliance-btn span {
-      position: relative;
-      z-index: 1;
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
 
-    .alliance-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      padding: 50px;
+    @keyframes slideInFromLeft {
+      from { transform: translateX(-100%); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
     }
-    .alliance-name {
-  display: block; /* Make the text appear below the image */
-  margin-top: 10px; /* Space between image and text */
-  color: white; /* Text color */
-  font-size: 17px; /* Font size for the text */
-  font-weight: bold; /* Make the text bold */
-  text-transform: uppercase;
-  font-family:cursive;
-   /* Optional: Make the text all uppercase */
-}
 
+    @keyframes slideInFromRight {
+      from { transform: translateX(100%); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+
+    @keyframes zoomIn {
+      from { transform: scale(0); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+
+    .btn-alliance:nth-child(odd) {
+      animation: slideInFromLeft 1.5s ease-out forwards, pulse 2s infinite ease-in-out 1.5s;
+    }
+
+    .btn-alliance:nth-child(even) {
+      animation: slideInFromRight 1.5s ease-out forwards, pulse 2s infinite ease-in-out 1.5s;
+    }
+
+    .btn-alliance:nth-child(3n) {
+      animation: fadeIn 1.5s ease-out forwards, pulse 2s infinite ease-in-out 1.5s;
+    }
+
+    .btn-alliance:nth-child(4n) {
+      animation: zoomIn 1.5s ease-out forwards, pulse 2s infinite ease-in-out 1.5s;
+    }
+
+    /* Media Queries for Mobile Responsiveness */
     @media (max-width: 768px) {
-      .alliance-btn {
+      .navbar-collapse {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+
+      .navbar-nav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         width: 100%;
-        height: 150px;
+      }
+
+      .navbar-toggler {
+        margin-left: auto;
+        margin-right: 15px;
+      }
+
+      .btn-alliance {
+        width: 250px;
+        height: 200px;
+      }
+
+      h2 {
+        font-size: 0.9rem;
+      }
+
+      .navbar .nav-link {
+        font-size: 1rem;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .btn-alliance {
+        width: 200px;
+        height: 180px;
+      }
+
+      h2 {
+        font-size: 0.8rem;
+      }
+
+      .navbar .nav-link {
+        font-size: 0.9rem;
       }
     }
   </style>
 </head>
 <body>
 
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="../index.html">HOME</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="alliances.html">ALLIANCES <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="leaders-coleaders.html">Leaders & Co-Leaders</a>
+        </li>
+        <li class="nav-item">
+          <a href="achivements.html" class="nav-link">Achievements</a>
+        </li>
+        <li class="nav-item">
+          <a href="what-we-are.html" class="nav-link">What We Are</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="internal-tournaments.html">INTERNAL TOURNAMENTS</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
   <div class="container text-center mt-5">
-    <!-- Explore Our Alliances Header -->
-    <h1>Explore Our Alliance In Hit Wicket</h1>
-
-    <!-- Alliance Buttons -->
+    <h2>Explore Our Alliance In Hit Wicket</h2>
     <div class="alliance-container">
-      <!-- Alliance 1 -->
-      <a href="../alliances/vanguard.html" class="nav-link">
-        <button class="btn btn-alliance">
-          <img src="../assets/vanguard.jpg" alt="Alliance Icon" class="btn-img">
-        </button>
+      <a href="../alliances/vanguard.html" class="btn-alliance">
+        <img src="../assets/vanguard.jpg" alt="Vanguard Alliance">
+        <span class="alliance-name">Vanguard</span>
       </a>
-      
-      
-      <a href="../alliances/outriders.html" class="nav-link">
-        <button class="btn btn-alliance">
-          <img src="../assets/out.jpg" alt="Alliance Icon" class="btn-img">
-        </button>
+      <a href="../alliances/outriders.html" class="btn-alliance">
+        <img src="../assets/out.jpg" alt="Outriders Alliance">
+        <span class="alliance-name">Outriders</span>
       </a>
-
-      
-      <a href="../alliances/enforces.html" class="nav-link">
-        <button class="btn btn-alliance">
-          <img src="../assets/enfo.jpg" alt="Alliance Icon" class="btn-img">
-        </button>
+      <a href="../alliances/nforces.html" class="btn-alliance">
+        <img src="../assets/inforces.jpg" alt="Inforces Alliance">
+        <span class="alliance-name">Inforces</span>
       </a>
-
-      <a href="../alliances/paladin.html" class="nav-link">
-        <button class="btn btn-alliance">
-          <img src="../assets/paladins.jpg" alt="Alliance Icon" class="btn-img">
-        </button>
+      <a href="../alliances/paladin.html" class="btn-alliance">
+        <img src="../assets/paladins.jpg" alt="Paladin Alliance">
+        <span class="alliance-name">Paladin</span>
       </a>
-
-      <a href="../alliances/sentinels.html" class="nav-link">
-        <button class="btn btn-alliance">
-          <img src="../assets/sentinels.jpg" alt="Alliance Icon" class="btn-img">
-        </button>
+      <a href="../alliances/sentinels.html" class="btn-alliance">
+        <img src="../assets/sentinels.jpg" alt="Sentinels Alliance">
+        <span class="alliance-name">Sentinels</span>
       </a>
-
-
-      <a href="../alliances/crasuders.html" class="nav-link">
-        <button class="btn btn-alliance">
-          <img src="../assets/crausders.jpg" alt="Alliance Icon" class="btn-img">
-        </button>
+      <a href="../alliances/crasuders.html" class="btn-alliance">
+        <img src="../assets/crausders.jpg" alt="Crusaders Alliance">
+        <span class="alliance-name">Crusaders</span>
       </a>
     </div>
   </div>
+
   <div class="container text-center mt-3">
-    <!-- Explore Our Alliances Header -->
-    <h1>Explore Our Alliance In Other Top Games</h1>
-
-    <!-- Alliance Buttons -->
+    <h2>Explore Our Alliance In Other Top Games</h2>
     <div class="alliance-container">
-      <!-- Alliance 1 -->
-      <a href="../alliances/freefire.html" class="nav-link">
-        <button class="btn btn-alliance">
-          <img src="../assets/freefire.jpg" alt="Alliance Icon" class="btn-img">
-          <span class="alliance-name">Free Fire</span>  <!-- Added name here -->
-        </button>
+      <a href="../alliances/freefire.html" class="btn-alliance">
+        <img src="../assets/freefire.jpg" alt="Freefire Alliance">
+        <span class="alliance-name">Freefire</span>
       </a>
-      
-      
-      
-      <a href="../alliances/bgmi.html" class="nav-link">
-        <button class="btn btn-alliance">
-          <img src="../assets/bgmi.jpg" alt="Alliance Icon" class="btn-img">
-          <span class="alliance-name">BGMI</span>
-        </button>
+    </div>
+    <div class="alliance-container">
+      <a href="../alliances/bgmi.html" class="btn-alliance">
+        <img src="../assets/bgmi.jpg" alt="Freefire Alliance">
+        <span class="alliance-name">BGMI</span>
       </a>
-
-      
-      <a href="../alliances/football.html" class="nav-link">
-        <button class="btn btn-alliance">
-          <img src="../assets/football.jpg" alt="Alliance Icon" class="btn-img">
-          <span class="alliance-name">football</span>
-        </button>
+    </div>
+    <div class="alliance-container">
+      <a href="../alliances/football.html" class="btn-alliance">
+        <img src="../assets/football.jpg" alt="Freefire Alliance">
+        <span class="alliance-name">Foot Ball</span>
       </a>
     </div>
   </div>
 
-  <!-- Bootstrap JS and dependencies -->
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
 </body>
