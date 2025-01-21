@@ -348,21 +348,3 @@ footer .input-group .input-group-text {
   border: none;
 }
 
-footer .column i {
-  color: #000000;
-}
-
-/* It is Adjacent sibling combinator */
-
-footer .column i + i {
-  padding: 0 0.5em;
-}
-
-.sticky {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background: rgba(0, 0, 0, 0.815);
-  z-index: 9999;
-  transition: all 1.5s ease;
-}
