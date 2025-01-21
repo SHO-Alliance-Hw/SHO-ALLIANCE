@@ -13,6 +13,37 @@
   <link rel="stylesheet" href="src/Style.css" />
   <link rel="stylesheet" href="src/mobile-style.css">
   <style>
+    .card {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Adds subtle shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
+  border-radius: 10px; /* Rounds the corners of the card */
+  margin: 15px; /* Adds space around each card */
+}
+
+.card:hover {
+  transform: scale(1.05); /* Slightly increases size on hover */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Deepens the shadow on hover */
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.cards {
+  animation: fadeInUp 1s ease-out; /* Applies fade-in animation to the container */
+}
+
+.card-body {
+  animation: fadeInUp 1.5s ease-out; /* Adds animation to each card body */
+}
+
     body {
       font-family: 'Montserrat', sans-serif;
     }
@@ -170,7 +201,7 @@
             <div class="card">
               <div class="card-body">
                 <div class="title">
-                  <h5 class="card-title">competitive Gameplay</h5>
+                  <h5 class="card-title">Competitive Gameplay</h5>
                 </div>
                 <p class="card-text">
                   Competitive gameplay in our alliance is built on the foundation of skill, strategy, and unwavering determination. We engage in high-stakes matches, constantly refining our techniques and adapting to challenges. Every player brings their A-game, contributing to the collective success of the team. Our competitive spirit fosters growth, pushing each individual to be their best while fostering a sense of camaraderie. Together, we aim to dominate the battlefield and cement our legacy as one of the top alliances..
