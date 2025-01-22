@@ -22,6 +22,43 @@
 
 
     }
+      /* Individual Card Colors */
+  #vanguard {
+    background-color: #141414; /* Vibrant Orange */
+  }
+
+  #enforces {
+    background-color: #17831a; /* Green */
+  }
+
+  #outriders {
+    background-color: #196caf; /* Blue */
+  }
+
+  #paladin {
+    background-color: #821c94; /* Purple */
+  }
+
+  #crusaders {
+    background-color: #08726d; /* Yellow */
+  }
+
+  #sentinels {
+    background-color: #e91e63; /* Pink */
+  }
+
+  /* Ensure text contrast on colorful backgrounds */
+  .card-title, .card-body p, .btn {
+    color: white !important;
+  }
+
+  .btn {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+
+  .btn:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+  }
 
     /* Navbar Styling */
     .navbar {
@@ -52,8 +89,9 @@
     h1 {
       text-align: center;
       margin: 20px 0;
-      color: #ffcc00;
-      text-shadow: 0 0 10px rgba(255, 204, 0, 0.7);
+      color: #5bfafa;
+      text-shadow: 0 0 10px rgba(255, 0, 157, 0.7);
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif ;
     }
 
     /* Card Styling */
@@ -75,9 +113,10 @@
     }
 
     .card-title {
-      font-size: 1.2rem;
+      font-size: 1.5rem;
       font-weight: bold;
-      color: #ffcc00;
+      color: #5bfafa;
+      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     }
 
     .card-body {
@@ -85,9 +124,16 @@
     }
 
     .card-body p {
-      font-size: 0.9rem;
+      font-size: 1.0rem;
       color: #ccc;
     }
+    .highlight-name {
+      font-size: 1.3rem;
+  color: #ff0000; /* Highlight color */
+  font-weight: bold;
+  text-shadow: 1px 1px 5px rgba(255, 0, 0, 0.8);
+}
+  
 
     .btn {
       background-color: #ffcc00;
@@ -205,10 +251,10 @@
       <div class="col">
         <div class="card" id="vanguard">
           <div class="card-body">
-            <h5 class="card-title">Vanguard Alliance</h5>
+            <h4 class="card-title">VANGUARD</h4>
             <p><strong>Leader:</strong> DEVIL KHAN</p>
             <p><strong>Co-Leader 1:</strong> AKASH THE PREPTUAL</p>
-            <p><strong>Co-Leader 2:</strong> KARAN VERMA</p>
+            <p><strong>Co-Leader 2:</strong> <span class="highlight-name">KARAN VERMA</span><span>(The Legend of SHO)</span></p>
             <p><strong>Min Requirements:</strong> This Alliance Has No Spaces</p>
             <a href="../alliances/vanguard.html"><button  class="btn btn-sm">Explore</button></a>
           </div>
@@ -217,13 +263,14 @@
       <div class="col">
         <div class="card" id="enforces">
           <div class="card-body">
-            <h5 class="card-title">Enforces Alliance</h5>
+            <h4 class="card-title">ENFORCERS</h4>
             <p><strong>Leader:</strong> MR KHAN</p>
             <p><strong>Co-Leader 1:</strong> SUBHAM</p>
             <p><strong>Co-Leader 2:</strong> ANUJ TULSANI</p>
-            <p><strong>Min Requirements:</strong> 1.Active user</p>
+            <strong>Min Requirements As Follows:</strong>
+            <p> 1. Active User</p>
             <p> 2. Donations Per Day 25</p>
-            <p> 3. Level Needed 85 +</p>
+            <p> 3. Level Needed 90 +</p>
             <a href="../alliances/enforces.html"><button  class="btn btn-sm">Explore</button></a>
           </div>
         </div>
@@ -231,10 +278,11 @@
       <div class="col">
         <div class="card" id="outriders">
           <div class="card-body">
-            <h5 class="card-title">Outriders Alliance</h5>
+            <h4 class="card-title">OUTRIDERS</h4>
             <p><strong>Leader:</strong> YASH CHAKRABORTY</p>
             <p><strong>Co-Leader:</strong> WALEED SHAMSI</p>
-            <p><strong>Min Requirements:</strong> 1.Active user</p>
+            <strong>Min Requirements As Follows:</strong>
+            <p> 1. Active User</p>
             <p> 2. Donations Per Day 25</p>
             <p> 3. Level Needed 80 +</p>
             <a href="../alliances/outriders.html"><button  class="btn btn-sm">Explore</button></a>
@@ -244,39 +292,42 @@
       <div class="col">
         <div class="card" id="paladin">
           <div class="card-body">
-            <h5 class="card-title">Paladin Alliance</h5>
+            <h4 class="card-title">PALADINS</h4>
             <p><strong>Leader:</strong> ABHIRAM BHAT</p>
             <p><strong>Co-Leader:</strong> SUMANTH VARMA</p>
-            <p><strong>Min Requirements:</strong> 1.Active user</p>
+            <strong>Min Requirements As Follows:</strong>
+            <p> 1. Active User</p>
             <p> 2. Donations Per Day 25</p>
-            <p> 3. Level Needed 75 +</p>
+            <p> 3. Level Needed 80 +</p>
             <a href="../alliances/paladins.html"><button  class="btn btn-sm">Explore</button></a>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card" id="sentinels">
-          <div class="card-body">
-            <h5 class="card-title">Sentinels Alliance</h5>
-            <p><strong>Leader:</strong> AKASH</p>
-            <p><strong>Co-Leader:</strong> BB ALLIANCE HUSBAND ALIAS  SHO HUNTER</p>
-            <p><strong>Min Requirements:</strong> 1.Active user</p>
-            <p> 2. Donations Per Day 25</p>
-            <p> 3. Level Needed 75 +</p>
-            <a href="../alliances/sentinels.html"><button  class="btn btn-sm">Explore</button></a>
           </div>
         </div>
       </div>
       <div class="col">
         <div class="card" id="crusaders">
           <div class="card-body">
-            <h5 class="card-title">Crusaders Alliance</h5>
-            <p><strong>Leader:</strong> AST ALLIANCE NIGHTMARE ALIAS SHO ALPHA</p>
-            <p><strong>Co-Leader:</strong> IF YOU FIND FOR COLEADER THEN YOU ARE A DONKEY</p>
-            <p><strong>Min Requirements:</strong> 1.Active user</p>
+            <h4 class="card-title">CRUSADERS</h4>
+            <p><strong>Leader:</strong> RAVI KRISHNAN</p>
+            <p><strong>Co-Leader:</strong> MR PRINCE</p>
+            <strong>Min Requirements As Follows:</strong>
+            <p> 1. Active User</p>
             <p> 2. Donations Per Day 25</p>
-            <p> 3. Level Needed 85 +</p>
+            <p> 3. Level Needed 70 +</p>
             <a href="../alliances/crasuders.html"><button  class="btn btn-sm">Explore</button></a>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card" id="sentinels">
+          <div class="card-body">
+            <h4 class="card-title">SENTINELS</h4>
+            <p><strong>Leader:</strong> AKASH</p>
+            <p><strong>Co-Leader:</strong> BB ALLIANCE HUSBAND ALIAS  SHO HUNTER</p>
+            <strong>Min Requirements As Follows:</strong>
+            <p> 1. Active User</p>
+            <p> 2. Donations Per Day 25</p>
+            <p> 3. For Newbies</p>
+            <a href="../alliances/sentinels.html"><button  class="btn btn-sm">Explore</button></a>
           </div>
         </div>
       </div>
