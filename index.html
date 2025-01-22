@@ -46,64 +46,13 @@
   animation: logo-animation 3s infinite ease-in-out;
 }
 
-/* Symbol Styling */
-.logo-symbol {
-  position: absolute;
-  font-size: 50px;
-  color: #f39c12;
-  animation: symbol-animation 2s infinite ease-in-out;
-}
 
-/* Animation for the logo */
-@keyframes logo-animation {
-  0%, 100% {
-    transform: scale(1);
-    opacity: 1;
-  }
-  50% {
-    transform: scale(1.1);
-    opacity: 0.8;
-  }
-}
 
-/* Animation for the symbols */
-@keyframes symbol-animation {
-  0%, 100% {
-    transform: translateY(-20px) rotate(0deg);
-    opacity: 0.5;
-  }
-  50% {
-    transform: translateY(20px) rotate(360deg);
-    opacity: 1;
-  }
-}
 
-/* Example of adding symbols around the logo */
-.logo-symbol.left {
-  top: 50%;
-  left: 10%;
-  transform: translateY(-50%);
-}
 
-.logo-symbol.right {
-  top: 50%;
-  right: 10%;
-  transform: translateY(-50%);
-}
 
-.logo-symbol.top {
-  top: 10%;
-  left: 50%;
-  transform: translateX(-50%);
-}
 
-.logo-symbol.bottom {
-  bottom: 10%;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-    .card {
+  .card {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Adds subtle shadow */
   transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
   border-radius: 10px; /* Rounds the corners of the card */
@@ -172,6 +121,122 @@
 }
 
   </style>
+<style>
+/* Hero Section Fullscreen */
+.vh-100 {
+  height: 100vh;
+  overflow-y: auto; /* Enables scrolling for smaller screens */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+/* Logo Container */
+.logo-container {
+  position: relative;
+  max-width: 300px; /* Limit logo width */
+  margin: auto;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Logo Image Styling */
+.logo-image {
+  width: 100%;
+  max-width: 200px;
+  animation: logo-animation 3s infinite ease-in-out;
+  z-index: 1; /* Keep logo above symbols */
+}
+
+/* Symbol Styling */
+.logo-symbol {
+  position: absolute;
+  font-size: 50px;
+  color: #f39c12;
+  animation: symbol-animation 2s infinite ease-in-out;
+}
+/* Example of adding symbols around the logo */
+.logo-symbol.left {
+  top: 50%;
+  left: 10%;
+  transform: translateY(-50%);
+}
+
+.logo-symbol.right {
+  top: 50%;
+  right: 10%;
+  transform: translateY(-50%);
+}
+
+.logo-symbol.top {
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.logo-symbol.bottom {
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+}/* Animation for the logo */
+@keyframes logo-animation {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 2;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.5;
+  }
+}
+
+/* Animation for the symbols */
+@keyframes symbol-animation {
+  0%, 100% {
+    transform: translateY(-20px) rotate(0deg);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translateY(20px) rotate(360deg);
+    opacity: 1;
+  }
+}
+
+/* Text Styling */
+h6 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+/* h1 Styling */
+h2 {
+  font-family: 'Lobster', cursive; /* Stylish and elegant font */
+  font-size: 50px;
+  margin-bottom: 20px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: linear-gradient(45deg, #24df4c, #170994);
+  background: -webkit-linear-gradient(45deg, #2a58d4, #f1213d);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: text-zoom 2s ease-in-out infinite;
+}
+
+p {
+  font-size: 16px;
+  margin-bottom: 30px;
+}
+
+/* Button Styling */
+.primary-btn {
+  font-size: 18px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+</style>
+
+    
   
 </head>
 
@@ -212,31 +277,38 @@
       </nav>
     </div>
   
-    <!-- Hero Section -->
-    <div class="container text-center">
-      <div class="row">
-        <div class="col-md-7 col-sm-12 text-white">
-          <h6>STRATEGIC HITWICKET ORACLES</h6>
-          <h1>SHO</h1>
-          <p>
-            
-                    <!-- Logo Section -->
-        <div class="col-md-5 col-sm-12 h-25">
-          <div class="logo-container">
-            <img src="assets/sho-logo.jpg" alt="SHO" />
-            <div class="logo-symbol left">&#9733;</div>
-            <div class="logo-symbol right">&#9733;</div>
-            <div class="logo-symbol top">&#9733;</div>
-            <div class="logo-symbol bottom">&#9733;</div>
-          </div>
-        </div>
-            The SHO Alliance is a dynamic community designed to unite gamers from all walks of life, offering a platform for collaboration, competition, and the shared enthusiasm for gaming. By bringing together individuals with diverse skills and interests, the alliance fosters a sense of camaraderie and innovation within the gaming world. At its core, the main alliance serves as the backbone, providing essential resources, guidance, and a supportive structure for its sub-alliances to flourish. Through this collaborative framework, the SHO Alliance empowers its members to thrive, push boundaries, and elevate the gaming experience for all involved.
-          </p>
-          <!-- Join Us Button -->
-          <a href="https://chat.whatsapp.com/LhcHMHO6jee5g0dKF2aQwi" target="_blank">
-            <button class="btn btn-light px-5 py-2 primary-btn">Join with Us</button>
-          </a>
-        </div>
+<!-- Hero Section -->
+<div class="container-fluid vh-100 d-flex flex-column justify-content-start align-items-center">
+  <div class="row w-100 align-items-center text-center mt-3">
+    <!-- Logo Section -->
+    <div class="col-md-12">
+      <div class="logo-container">
+        <img src="assets/sho-logo.jpg" alt="SHO Logo" class="logo-image" />
+        <div class="logo-symbol left">&#9733;</div>
+        <div class="logo-symbol right">&#9733;</div>
+        <div class="logo-symbol top">&#9733;</div>
+        <div class="logo-symbol bottom">&#9733;</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Text Section -->
+  <div class="row w-100 text-center mt-4">
+    <div class="col-md-12 text-white">
+      <h6>STRATEGIC HEROES ORACLES</h6>
+      <h2>SHO</h2>
+      <p>
+        The SHO Alliance is a dynamic community designed to unite gamers from all walks of life, offering a platform for collaboration, competition, and the shared enthusiasm for gaming. By bringing together individuals with diverse skills and interests, the alliance fosters a sense of camaraderie and innovation within the gaming world. At its core, the main alliance serves as the backbone, providing essential resources, guidance, and a supportive structure for its sub-alliances to flourish. Through this collaborative framework, the SHO Alliance empowers its members to thrive, push boundaries, and elevate the gaming experience for all involved.
+      </p>
+      <!-- Join Us Button -->
+      <a href="https://chat.whatsapp.com/LhcHMHO6jee5g0dKF2aQwi" target="_blank">
+        <button class="btn btn-light px-5 py-2 primary-btn">Join with Us</button>
+      </a>
+    </div>
+  </div>
+</div>
+
+
         
 
         
@@ -255,7 +327,7 @@
           </div>
           <div class="col-md-6 col-12">
             <div class="panel text-left">
-              <h1>Mr. Sammed Jain</h1>
+              <h2>Mr. Sammed Jain</h2>
               <p class="pt-4">
                 One of our alliance members ||SHO||ALPHA recently won the prestigious YC Tournament, showcasing exceptional skill and strategy. This victory against top global competitors highlights their dedication and mastery in gaming. Awarded the MVP title, they led their team to success with innovative tactics. This achievement has significantly boosted our alliance's reputation in the gaming community. We are proud of their accomplishment and excited for future opportunities this victory brings!
               </p>
