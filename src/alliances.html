@@ -9,6 +9,86 @@
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
 
   <style>
+    /* Prevent horizontal scrolling */
+body, html {
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+/* Ensure the container is responsive */
+.container {
+  width: 100%;
+  padding-left: 15px;
+  padding-right: 15px;
+  box-sizing: border-box;
+}
+
+/* Ensure the navbar and content fit within the screen */
+.navbar, .navbar-collapse, .navbar-nav {
+  width: 100%;
+  font-family:cursive;
+}
+
+/* Prevent overflow on mobile and tablet screens */
+@media (max-width: 768px) {
+  .navbar-collapse {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .navbar-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  .btn-alliance {
+    width: 100%;
+    max-width: 250px; /* Adjust the width of the alliance buttons on mobile */
+    height: auto;
+    margin: 10px;
+  }
+
+  .navbar-toggler {
+    margin-left: auto;
+    margin-right: 15px;
+  }
+}
+
+@media (max-width: 576px) {
+  .btn-alliance {
+    width: 100%;
+    max-width: 200px; /* Adjust the width of the alliance buttons on smaller screens */
+    height: auto;
+  }
+
+  h2 {
+    font-size: 0.8rem;
+  }
+
+  .navbar .nav-link {
+    font-size: 0.9rem;
+  }
+}
+
+/* For tablet and larger devices */
+@media (min-width: 768px) {
+  .navbar-nav {
+    justify-content: flex-start;
+  }
+
+  .btn-alliance {
+    width: 300px;
+    height: 250px;
+  }
+}
+
+
     body {
       background-color: #1e1e2f;
       font-family: 'Poppins', sans-serif;
@@ -231,16 +311,14 @@
     <h2>Explore Our Alliance In Hit Wicket</h2>
     <div class="alliance-container">
       <a href="../alliances/vanguard.html" class="btn-alliance">
-        <img src="../assets/vanguard.jpg" alt="Vanguard Alliance">
-        <span class="alliance-name">Vanguard</span>
+        <img src="../assets/sho_1.png" alt="Vanguard Alliance">
+        
       </a>
       <a href="../alliances/outriders.html" class="btn-alliance">
-        <img src="../assets/out.jpg" alt="Outriders Alliance">
-        <span class="alliance-name">Outriders</span>
+        <img src="../assets/sho_2.png" alt="Outriders Alliance">
       </a>
       <a href="../alliances/nforces.html" class="btn-alliance">
-        <img src="../assets/inforces.jpg" alt="Inforces Alliance">
-        <span class="alliance-name">Inforces</span>
+        <img src="../assets/sho_3.png" alt="Inforces Alliance">
       </a>
       <a href="../alliances/paladin.html" class="btn-alliance">
         <img src="../assets/paladins.jpg" alt="Paladin Alliance">
@@ -264,19 +342,17 @@
         <img src="../assets/freefire.jpg" alt="Freefire Alliance">
         <span class="alliance-name">Freefire</span>
       </a>
-    </div>
-    <div class="alliance-container">
       <a href="../alliances/bgmi.html" class="btn-alliance">
         <img src="../assets/bgmi.jpg" alt="Freefire Alliance">
         <span class="alliance-name">BGMI</span>
       </a>
-    </div>
-    <div class="alliance-container">
+
+
       <a href="../alliances/football.html" class="btn-alliance">
         <img src="../assets/football.jpg" alt="Freefire Alliance">
         <span class="alliance-name">Foot Ball</span>
       </a>
-    </div>
+
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
