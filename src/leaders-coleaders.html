@@ -1,1 +1,288 @@
-<h2>leader co-leader</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alliance Leaders</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      background-color: #1e1e2f;
+      /* font-family: 'Poppins', sans-serif; */
+      color: white;
+      margin: 0;
+      padding: 0;
+       
+  background-color: #1e1e2f;
+  font-family: 'Roboto', 'Open Sans', sans-serif;
+  color: white;
+
+
+    }
+
+    /* Navbar Styling */
+    .navbar {
+      background-color: #4b0082;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .navbar .nav-link {
+      color: white;
+      font-weight: 600;
+      margin: 0 10px;
+      transition: color 0.3s ease, transform 0.3s ease;
+    }
+
+    .navbar .nav-link:hover {
+      color: #ffcc00;
+      transform: scale(1.1);
+    }
+
+    .navbar-brand {
+      font-weight: bold;
+      font-size: 1.5rem;
+      color: #ffcc00;
+      text-shadow: 0 0 10px rgba(255, 204, 0, 0.7);
+    }
+
+    /* Page Header */
+    h1 {
+      text-align: center;
+      margin: 20px 0;
+      color: #ffcc00;
+      text-shadow: 0 0 10px rgba(255, 204, 0, 0.7);
+    }
+
+    /* Card Styling */
+    .card {
+      background-color: #2a2a3e;
+      border: none;
+      border-radius: 15px;
+      color: white;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+      overflow: hidden;
+      position: relative;
+      transition: transform 0.5s ease, box-shadow 0.5s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
+    }
+
+    .card-title {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #ffcc00;
+    }
+
+    .card-body {
+      padding: 20px;
+    }
+
+    .card-body p {
+      font-size: 0.9rem;
+      color: #ccc;
+    }
+
+    .btn {
+      background-color: #ffcc00;
+      color: black;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #e6b800;
+      transform: scale(1.05);
+    }
+
+    /* Spinner Styling */
+    .spinner {
+      margin: 20px auto;
+      width: 50px;
+      height: 50px;
+      border: 5px solid rgba(255, 255, 255, 0.2);
+      border-top: 5px solid #ffcc00;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    /* Animations */
+    .card {
+      opacity: 0;
+      animation: fadeIn 1.5s ease forwards, slideUp 1.5s ease forwards;
+    }
+
+    .card:nth-child(odd) {
+      animation-delay: 0.2s;
+    }
+
+    .card:nth-child(even) {
+      animation-delay: 0.4s;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes slideUp {
+      from { transform: translateY(50px); }
+      to { transform: translateY(0); }
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .navbar .nav-link {
+        font-size: 0.9rem;
+      }
+
+      .navbar .nav-item {
+        margin: 5px 0;
+      }
+
+      .card {
+        margin-bottom: 20px;
+      }
+
+      .btn {
+        font-size: 0.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="../index.html">HOME</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="alliances.html">ALLIANCES</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="leaders-coleaders.html">Leaders & Co-Leaders</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="achievements.html">Achievements</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="what-we-are.html">What We Are</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="internal-tournaments.html">INTERNAL TOURNAMENTS</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <h1>Meet Our Alliance Leaders</h1>
+
+  <!-- Alliance Cards -->
+  <div class="container mt-5">
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+      <div class="col">
+        <div class="card" id="vanguard">
+          <div class="card-body">
+            <h5 class="card-title">Vanguard Alliance</h5>
+            <p><strong>Leader:</strong> DEVIL KHAN</p>
+            <p><strong>Co-Leader 1:</strong> AKASH THE PREPTUAL</p>
+            <p><strong>Co-Leader 2:</strong> KARAN VERMA</p>
+            <p><strong>Min Requirements:</strong> This Alliance Has No Spaces</p>
+            <a href="../alliances/vanguard.html"><button  class="btn btn-sm">Explore</button></a>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card" id="enforces">
+          <div class="card-body">
+            <h5 class="card-title">Enforces Alliance</h5>
+            <p><strong>Leader:</strong> MR KHAN</p>
+            <p><strong>Co-Leader 1:</strong> SUBHAM</p>
+            <p><strong>Co-Leader 2:</strong> ANUJ TULSANI</p>
+            <p><strong>Min Requirements:</strong> 1.Active user</p>
+            <p> 2. Donations Per Day 25</p>
+            <p> 3. Level Needed 85 +</p>
+            <a href="../alliances/enforces.html"><button  class="btn btn-sm">Explore</button></a>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card" id="outriders">
+          <div class="card-body">
+            <h5 class="card-title">Outriders Alliance</h5>
+            <p><strong>Leader:</strong> YASH CHAKRABORTY</p>
+            <p><strong>Co-Leader:</strong> WALEED SHAMSI</p>
+            <p><strong>Min Requirements:</strong> 1.Active user</p>
+            <p> 2. Donations Per Day 25</p>
+            <p> 3. Level Needed 80 +</p>
+            <a href="../alliances/outriders.html"><button  class="btn btn-sm">Explore</button></a>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card" id="paladin">
+          <div class="card-body">
+            <h5 class="card-title">Paladin Alliance</h5>
+            <p><strong>Leader:</strong> ABHIRAM BHAT</p>
+            <p><strong>Co-Leader:</strong> SUMANTH VARMA</p>
+            <p><strong>Min Requirements:</strong> 1.Active user</p>
+            <p> 2. Donations Per Day 25</p>
+            <p> 3. Level Needed 75 +</p>
+            <a href="../alliances/paladins.html"><button  class="btn btn-sm">Explore</button></a>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card" id="sentinels">
+          <div class="card-body">
+            <h5 class="card-title">Sentinels Alliance</h5>
+            <p><strong>Leader:</strong> AKASH</p>
+            <p><strong>Co-Leader:</strong> BB ALLIANCE HUSBAND ALIAS  SHO HUNTER</p>
+            <p><strong>Min Requirements:</strong> 1.Active user</p>
+            <p> 2. Donations Per Day 25</p>
+            <p> 3. Level Needed 75 +</p>
+            <a href="../alliances/sentinels.html"><button  class="btn btn-sm">Explore</button></a>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card" id="crusaders">
+          <div class="card-body">
+            <h5 class="card-title">Crusaders Alliance</h5>
+            <p><strong>Leader:</strong> AST ALLIANCE NIGHTMARE ALIAS SHO ALPHA</p>
+            <p><strong>Co-Leader:</strong> IF YOU FIND FOR COLEADER THEN YOU ARE A DONKEY</p>
+            <p><strong>Min Requirements:</strong> 1.Active user</p>
+            <p> 2. Donations Per Day 25</p>
+            <p> 3. Level Needed 85 +</p>
+            <a href="../alliances/crasuders.html"><button  class="btn btn-sm">Explore</button></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
