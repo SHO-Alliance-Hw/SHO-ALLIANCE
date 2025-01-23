@@ -1,333 +1,631 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Alliance Leaders</title>
+  <title>Document</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
     body {
-      background-color: #1e1e2f;
-      font-family: 'Poppins', sans-serif;
-      color: white;
       margin: 0;
-      padding: 0;
-    }
-          /* Individual Card Colors */
-  #vanguard {
-    background-color: #141414; /* Vibrant Orange */
-  }
-
-  #enforces {
-    background-color: #17831a; /* Green */
-  }
-
-  #outriders {
-    background-color: #196caf; /* Blue */
-  }
-
-  #paladin {
-    background-color: #821c94; /* Purple */
-  }
-
-  #crusaders {
-    background-color: #ff4500; /* Yellow */
-  }
-
-  #sentinels {
-    background-color: #800000; /* Pink */
-  }
-
-  /* Ensure text contrast on colorful backgrounds */
-  .card-title, .card-body p, .btn {
-    color: white !important;
-  }
-
-  .btn {
-    background-color: rgba(255, 255, 255, 0.2);
-  }
-
-  .btn:hover {
-    background-color: rgba(255, 255, 255, 0.5);
-  }
-
-    /* Navbar Styling */
-    .navbar {
-      background-color: #4b0082;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      background-color: #000;
+      color: #eee;
+      font-family: Poppins;
+      font-size: 12px;
     }
 
-    .navbar .nav-link {
-      color: white;
-      font-weight: 600;
-      margin: 0 10px;
-      transition: color 0.3s ease, transform 0.3s ease;
+    a {
+      text-decoration: none;
     }
-
-    .navbar .nav-link:hover {
-      color: #ffcc00;
-      transform: scale(1.1);
-    }
-
-    .navbar-brand {
-      font-weight: bold;
-      font-size: 1.5rem;
-      color: #ffcc00;
-      text-shadow: 0 0 10px rgba(255, 204, 0, 0.7);
-    }
-
-    /* Page Header */
-    h1 {
-      text-align: center;
-      margin: 20px 0;
-      color: #5bfafa;
-      text-shadow: 0 0 10px rgba(255, 0, 157, 0.7);
-      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    }
-    /* Cards Styling */
-    .card {
-      color: rgb(20, 20, 20);
-      text-align: center;
-      border: none;
-      border-radius: 20px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    header {
+      width: 1140px;
+      max-width: 80%;
+      margin: auto;
+      height: 50px;
       display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      min-height: 250px; /* Consistent height */
+      align-items: center;
+      position: relative;
+      z-index: 100;
     }
 
-    .card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
+    header a {
+      color: #eee;
+      margin-right: 40px;
     }
 
-    .card-title {
-      font-size: 1.5rem;
+    /* carousel */
+    .carousel {
+      height: 100vh;
+      margin-top: -50px;
+      width: 100vw;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .carousel .list .item {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      inset: 0 0 0 0;
+    }
+
+    .carousel .list .item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .carousel .list .item .content {
+      position: absolute;
+      top: 20%;
+      width: 1140px;
+      max-width: 80%;
+      left: 50%;
+      transform: translateX(-50%);
+      padding-right: 30%;
+      box-sizing: border-box;
+      color: #fff;
+      text-shadow: 0 5px 10px #0004;
+    }
+
+    .carousel .list .item .author {
       font-weight: bold;
+      letter-spacing: 10px;
     }
 
-    .card-body p {
-      font-size: 1rem;
+    .carousel .list .item .title{
+      font-size: 5em;
+      font-weight: bold;
+      line-height: 1.3em;
+    }
+    .carousel .list .item .topic {
+      font-size: 4em;
+      font-weight: bold;
+      line-height: 1.2em;
+    }
+    .carousel .list .item .cotopic {
+      font-size: 3em;
+      font-weight: bold;
+      line-height: 1.1em;
+    }
+
+    .carousel .list .item .topic {
+      color: #f1683a;
+    }
+
+    .carousel .list .item .buttons {
+      display: grid;
+      grid-template-columns: repeat(2, 130px);
+      grid-template-rows: 40px;
+      gap: 5px;
+      margin-top: 20px;
+    }
+
+    .carousel .list .item .buttons button {
+      border: none;
+      background-color: #eee;
+      letter-spacing: 3px;
+      font-family: Poppins;
+      font-weight: 500;
+    }
+
+    .carousel .list .item .buttons button:nth-child(2) {
+      background-color: transparent;
+      border: 1px solid #fff;
       color: #eee;
     }
 
-    .btn {
-      background-color: #ffcc00;
-      color: black;
-      font-weight: bold;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      transition: transform 0.3s ease, background-color 0.3s ease;
-    }
-
-    .btn:hover {
-      background-color: #e6b800;
-      transform: scale(1.1);
-    }
-
-    /* Ensure uniform card layout */
-    .card-footer {
-      background-color: transparent;
-      border-top: none;
-    }
-
-    /* Responsive Layout */
-    .row {
+    /* thumbail */
+    .thumbnail {
+      position: absolute;
+      bottom: 50px;
+      left: 50%;
+      width: max-content;
+      z-index: 100;
       display: flex;
       gap: 20px;
-      justify-content: center;
     }
 
-    /* Animations */
-    .card {
-      opacity: 0;
-      animation: fadeIn 1.5s ease forwards, slideUp 1.5s ease forwards;
+    .thumbnail .item {
+      width: 150px;
+      height: 220px;
+      flex-shrink: 0;
+      position: relative;
     }
 
-    .card:nth-child(odd) {
-      animation-delay: 0.2s;
+    .thumbnail .item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 20px;
     }
 
-    .card:nth-child(even) {
-      animation-delay: 0.4s;
+    .thumbnail .item .content {
+      color: #fff;
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
+      right: 10px;
     }
 
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
+    .thumbnail .item .content .title {
+      font-weight: 500;
     }
 
-    @keyframes slideUp {
-      from { transform: translateY(50px); }
-      to { transform: translateY(0); }
+    .thumbnail .item .content .description {
+      font-weight: 300;
     }
 
-    /* WhatsApp Icon */
-    .whatsapp-icon {
-      display: inline-flex;
-      justify-content: center;
+    /* arrows */
+    .arrows {
+      position: absolute;
+      top: 80%;
+      right: 52%;
+      z-index: 100;
+      width: 300px;
+      max-width: 30%;
+      display: flex;
+      gap: 10px;
       align-items: center;
-      width: 30px;
-      height: 30px;
-      background-color: #25d366;
-      border-radius: 50%;
-      color: white;
-      font-size: 16px;
-      margin-left: 5px;
-      text-decoration: none;
-      transition: transform 0.3s ease, background-color 0.3s ease;
     }
 
-    .whatsapp-icon:hover {
-      background-color: #1ebe57;
-      transform: scale(1.1);
+    .arrows button {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: #eee4;
+      border: none;
+      color: #fff;
+      font-family: monospace;
+      font-weight: bold;
+      transition: .5s;
+    }
+
+    .arrows button:hover {
+      background-color: #fff;
+      color: #000;
+    }
+
+    /* animation */
+    .carousel .list .item:nth-child(1) {
+      z-index: 1;
+    }
+
+    /* animation text in first item */
+
+    .carousel .list .item:nth-child(1) .content .author,
+    .carousel .list .item:nth-child(1) .content .title,
+    .carousel .list .item:nth-child(1) .content .topic,
+    .carousel .list .item:nth-child(1) .content .des,
+    .carousel .list .item:nth-child(1) .content .buttons {
+      transform: translateY(50px);
+      filter: blur(20px);
+      opacity: 0;
+      animation: showContent .5s 1s linear 1 forwards;
+    }
+
+    @keyframes showContent {
+      to {
+        transform: translateY(0px);
+        filter: blur(0px);
+        opacity: 1;
+      }
+    }
+
+    .carousel .list .item:nth-child(1) .content .title {
+      animation-delay: 1.2s !important;
+    }
+
+    .carousel .list .item:nth-child(1) .content .topic {
+      animation-delay: 1.4s !important;
+    }
+
+    .carousel .list .item:nth-child(1) .content .des {
+      animation-delay: 1.6s !important;
+    }
+
+    .carousel .list .item:nth-child(1) .content .buttons {
+      animation-delay: 1.8s !important;
+    }
+
+    /* create animation when next click */
+    .carousel.next .list .item:nth-child(1) img {
+      width: 150px;
+      height: 220px;
+      position: absolute;
+      bottom: 50px;
+      left: 50%;
+      border-radius: 30px;
+      animation: showImage .5s linear 1 forwards;
+    }
+
+    @keyframes showImage {
+      to {
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 0;
+      }
+    }
+
+    .carousel.next .thumbnail .item:nth-last-child(1) {
+      overflow: hidden;
+      animation: showThumbnail .5s linear 1 forwards;
+    }
+
+    .carousel.prev .list .item img {
+      z-index: 100;
+    }
+
+    @keyframes showThumbnail {
+      from {
+        width: 0;
+        opacity: 0;
+      }
+    }
+
+    .carousel.next .thumbnail {
+      animation: effectNext .5s linear 1 forwards;
+    }
+
+    @keyframes effectNext {
+      from {
+        transform: translateX(150px);
+      }
+    }
+
+    /* running time */
+
+    .carousel .time {
+      position: absolute;
+      z-index: 1000;
+      width: 0%;
+      height: 3px;
+      background-color: #f1683a;
+      left: 0;
+      top: 0;
+    }
+
+    .carousel.next .time,
+    .carousel.prev .time {
+      animation: runningTime 3s linear 1 forwards;
+    }
+
+    @keyframes runningTime {
+      from {
+        width: 100%
+      }
+
+      to {
+        width: 0
+      }
+    }
+
+
+    /* prev click */
+
+    .carousel.prev .list .item:nth-child(2) {
+      z-index: 2;
+    }
+
+    .carousel.prev .list .item:nth-child(2) img {
+      animation: outFrame 0.5s linear 1 forwards;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+    }
+
+    @keyframes outFrame {
+      to {
+        width: 150px;
+        height: 220px;
+        bottom: 50px;
+        left: 50%;
+        border-radius: 20px;
+      }
+    }
+
+    .carousel.prev .thumbnail .item:nth-child(1) {
+      overflow: hidden;
+      opacity: 0;
+      animation: showThumbnail .5s linear 1 forwards;
+    }
+
+    .carousel.next .arrows button,
+    .carousel.prev .arrows button {
+      pointer-events: none;
+    }
+
+    .carousel.prev .list .item:nth-child(2) .content .author,
+    .carousel.prev .list .item:nth-child(2) .content .title,
+    .carousel.prev .list .item:nth-child(2) .content .topic,
+    .carousel.prev .list .item:nth-child(2) .content .des,
+    .carousel.prev .list .item:nth-child(2) .content .buttons {
+      animation: contentOut 1.5s linear 1 forwards !important;
+    }
+
+    @keyframes contentOut {
+      to {
+        transform: translateY(-150px);
+        filter: blur(20px);
+        opacity: 0;
+      }
+    }
+
+    @media screen and (max-width: 678px) {
+      .carousel .list .item .content {
+        padding-right: 0;
+      }
+
+      .carousel .list .item .content .title {
+        font-size: 30px;
+      }
     }
   </style>
 </head>
+
 <body>
+  <header>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="alliances.html">Alliances</a>
+      <a href="achivements.html">Achievements</a>
+      <a href="internal-tournaments.html">Internal Tournaments</a>
+    </nav>
+  </header>
 
-  <!-- Navigation Bar -->
-  <nav class="navbar navbar-expand-lg navbar-dark">
-    <div class="container">
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+  <!-- carousel -->
+  <div class="carousel">
+    <!-- list item -->
+    <div class="list">
+      <div class="item">
+        <img src="../assets/cricket_3.jpg">
+        <div class="content">
+          <div class="title">Vanguard</div>
+          <div class="topic">
+            Leader: Devil Khan
+            <a href="https://api.whatsapp.com/send?phone=917275583084&text=HEY%20DEVIL%20KHAN%20CAN%20I%20GET%20PLACE%20IN%20YOUR%20ALLIANCE%3F" target="_blank" class="whatsapp-icon">
+              <i class="fab fa-whatsapp"></i>
+            </a>
+          </div> 
+          <br>         
+          <div class="cotopic">Coleader:Akash the Prepetual</div>
+          <br>
+          <div class="cotopic">Coleader:Karan Varma</div>
+          <div class="buttons">
+            <button><a href="../alliances/vanguard.html">SEE MORE</a></button>
+          </div>
+        </div>
+      </div>
+      <div class="item">
+        <img src="../assets/cricket_1.jpg">
+        <div class="content">
+          <div class="title">ENFORCERS</div>
+          <div class="topic">
+            Leader: MR Khan
+            <a href="https://api.whatsapp.com/send?phone=919078280428&text=HEY%20LEADER%20CAN%20i%20get%20place%20in%20your%20Alliance%20" target="_blank" class="whatsapp-icon">
+              <i class="fab fa-whatsapp"></i>
+            </a>
+          </div>
+          <br>          
+          <div class="cotopic">Coleader:Shubam Mana</div>
+          <br>
+          <div class="cotopic">Coleader:Anuj Tulsani</div>
+          <div class="buttons">
+            <button><a href="../alliances/enforces.html">SEE MORE</a></button>
+          </div>
+        </div>
+      </div>
+      <div class="item">
+        <img src="../assets/cricket_2.webp">
+        <div class="content">
+          <div class="title">OUTRIDERS</div>
+          <div class="topic">
+            Leader: Yash King
+            <a href="https://api.whatsapp.com/send?phone=916295345264&&text=HEY%20LEADER%20CAN%i%get%place%in%your%Alliance%" target="_blank" class="whatsapp-icon">
+              <i class="fab fa-whatsapp"></i>
+            </a>
+          </div>
+          <br>          
+          <div class="cotopic">Coleader: Waleed Shamshi</div>
+          <div class="buttons">
+            <button><a href="../alliances/outriders.html">SEE MORE</a></button>
+          </div>
+        </div>
+      </div>
+      <div class="item">
+        <img src="../assets/cricket_4.webp">
+        <div class="content">
+          <div class="title">PALADINS</div>
+          <div class="topic">
+            Leader: Abhiram Bhat
+            <a href="https://api.whatsapp.com/send?phone=919480331998&&text=HEY%20LEADER%20CAN%i%get%place%in%your%Alliance%" target="_blank" class="whatsapp-icon">
+              <i class="fab fa-whatsapp"></i>
+            </a>
+          </div>
+          <br>          
+          <div class="cotopic">Coleader: Sumanth Varma</div>
+          <div class="buttons">
+            <button><a href="../alliances/paladins.html">SEE MORE</a></button>
+          </div>
+        </div>
+      </div>
+      <div class="item">
+        <img src="../assets/cricket_5.jpg">
+        <div class="content">
+          <div class="title">CRASUDERS</div>
+          <div class="topic">
+            Leader: Ravi Krishnan
+
+            <a href="https://api.whatsapp.com/send?phone=918987072358&&text=HEY%20LEADER%20CAN%i%get%place%in%your%Alliance%" target="_blank" class="whatsapp-icon">
+              <i class="fab fa-whatsapp"></i>
+            </a>
+          </div>
+          <br>          
+          <div class="cotopic">Coleader: Mr Prince</div>
+          <div class="buttons">
+            <button><a href="../alliances/crasuders.html">SEE MORE</a></button>
+          </div>
+        </div>
+      </div>
+      <div class="item">
+        <img src="../assets/cricket_6.jpg">
+        <div class="content">
+          <div class="title">SENTINELS</div>
+          <div class="topic">
+            Leader: Akash
+            <a href="https://api.whatsapp.com/send?phone=919565237674&&text=HEY%20LEADER%20CAN%i%get%place%in%your%Alliance%" target="_blank" class="whatsapp-icon">
+              <i class="fab fa-whatsapp"></i>
+            </a>
+          </div>
+          <br>          
+          <div class="cotopic">Coleader: Sunilkumar</div>
+          <div class="buttons">
+            <button><a href="../alliances/sentinels.html">SEE MORE</a></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- list thumnail -->
+    <div class="thumbnail">
+      <div class="item">
+        <img src="../assets/cricket_3.jpg">
+        <div class="content">
+          <div class="title">
+            Vanguard
+          </div>
+          <div class="description">
+            Lead By Devil 
+          </div>
+        </div>
+      </div>
+      <div class="item">
+        <img src="../assets/cricket_1.jpg">
+        <div class="content">
+          <div class="title">
+            ENFORCERS
+          </div>
+          <div class="description">
+            CO-Lead By Anuj(King Of Mirzapur)  
+          </div>
+        </div>
+      </div>
+      <div class="item">
+        <img src="../assets/cricket_2.webp">
+        <div class="content">
+          <div class="title">
+            OUTRIDERS
+          </div>
+          <div class="description">
+            Lead By Bengal Tiger
+          </div>
+        </div>
+      </div>
+      <div class="item">
+        <img src="../assets/cricket_4.webp">
+        <div class="content">
+          <div class="title">
+            PALADINS
+          </div>
+          <div class="description">
+            Lead By Karnataka King
+          </div>
+        </div>
+      </div>
+      <div class="item">
+        <img src="../assets/cricket_5.jpg">
+        <div class="content">
+          <div class="title">
+            CRASUDERS
+          </div>
+          <div class="description">
+            Lead By G.O.A.T
+          </div>
+        </div>
+      </div>
+      <div class="item">
+        <img src="../assets/cricket_6.jpg">
+        <div class="content">
+          <div class="title">
+            SENTINELS
+          </div>
+          <div class="description">
+            Lead By One And Only Cool Person Mr.Akash
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- next prev -->
+
+    <div class="arrows">
+      <button id="prev">
+        <</button> <button id="next">>
       </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="../index.html">HOME</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="alliances.html">ALLIANCES</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="leaders-coleaders.html">Leaders & Co-Leaders</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="achivements.html">Achievements</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="what-we-are.html">What We Are</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="internal-tournaments.html">INTERNAL TOURNAMENTS</a>
-          </li>
-        </ul>
-      </div>
     </div>
-  </nav>
-
-  <!-- Page Header -->
-  <h1>Meet Our Alliance Leaders</h1>
-
-  <!-- Alliance Cards -->
-  <div class="container mt-5">
-    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-      <div class="col">
-        <div class="card" id="vanguard">
-          <div class="card-body">
-            <h4 class="card-title">VANGUARD</h4>
-            <p>
-              <strong>Leader:</strong> 
-              <span class="leader-name">DEVIL KHAN</span>
-              <a href="https://api.whatsapp.com/send?phone=917275583084&text=HEY%20DEVIL%20KHAN%CAN%i%get%place%in%your%Alliance%" target="_blank" class="whatsapp-icon">
-                <i class="fab fa-whatsapp"></i>
-              </a>
-            </p>
-            <p><strong>Co-Leader 1:</strong> AKASH THE PREPTUAL</p>
-            <p><strong>Co-Leader 2:</strong> <span class="highlight-name">KARAN VERMA</span><span>(The Legend of SHO)</span></p>
-            <a href="../alliances/vanguard.html"><button  class="btn btn-sm">Explore</button></a>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card" id="enforces">
-          <div class="card-body">
-            <h4 class="card-title">ENFORCERS</h4>
-            <p>
-              <strong>Leader:</strong> 
-              <span class="leader-name">MR KHAN</span>
-              <a href="https://api.whatsapp.com/send?phone=919078280428&text=HEY%20LEADER%20CAN%i%get%place%in%your%Alliance%" target="_blank" class="whatsapp-icon">
-                <i class="fab fa-whatsapp"></i>
-              </a>
-            </p>
-            <p><strong>Co-Leader 1:</strong> SUBHAM</p>
-            <p><strong>Co-Leader 2:</strong> ANUJ TULSANI</p>
-            <a href="../alliances/enforces.html"><button  class="btn btn-sm">Explore</button></a>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card" id="outriders">
-          <div class="card-body">
-            <h4 class="card-title">OUTRIDERS</h4>
-            <p>
-              <strong>Leader:</strong> 
-              <span class="leader-name">YASH KING</span>
-              <a href="https://api.whatsapp.com/send?phone=916295345264&&text=HEY%20LEADER%20CAN%i%get%place%in%your%Alliance%" target="_blank" class="whatsapp-icon">
-                <i class="fab fa-whatsapp"></i>
-              </a>
-            </p>
-            <p><strong>Co-Leader:</strong> WALEED SHAMSI</p>
-            <a href="../alliances/outriders.html"><button  class="btn btn-sm">Explore</button></a>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card" id="paladin">
-          <div class="card-body">
-            <h4 class="card-title">PALADINS</h4>
-            <p>
-              <strong>Leader:</strong> 
-              <span class="leader-name">ABHIRAM BHAT</span>
-              <a href="https://api.whatsapp.com/send?phone=919480331998&&text=HEY%20LEADER%20CAN%i%get%place%in%your%Alliance%" target="_blank" class="whatsapp-icon">
-                <i class="fab fa-whatsapp"></i>
-              </a>
-            </p>
-            <p><strong>Co-Leader:</strong> SUMANTH VARMA</p>
-            <a href="../alliances/paladins.html"><button  class="btn btn-sm">Explore</button></a>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card" id="crusaders">
-          <div class="card-body">
-            <h4 class="card-title">CRUSADERS</h4>
-            <p>
-              <strong>Leader:</strong> 
-              <span class="leader-name">RAVI KRISHNAN</span>
-              <a href="https://api.whatsapp.com/send?phone=918987072358&&text=HEY%20LEADER%20CAN%i%get%place%in%your%Alliance%" target="_blank" class="whatsapp-icon">
-                <i class="fab fa-whatsapp"></i>
-              </a>
-            </p>
-            <p><strong>Co-Leader:</strong> MR PRINCE</p>
-            <a href="../alliances/crasuders.html"><button  class="btn btn-sm">Explore</button></a>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card" id="sentinels">
-          <div class="card-body">
-            <h4 class="card-title">SENTINELS</h4>
-            <p>
-              <strong>Leader:</strong> 
-              <span class="leader-name">Akash</span>
-              <a href="https://api.whatsapp.com/send?phone=919565237674&&text=HEY%20LEADER%20CAN%i%get%place%in%your%Alliance%" target="_blank" class="whatsapp-icon">
-                <i class="fab fa-whatsapp"></i>
-              </a>
-            </p>
-            <p><strong>Co-Leader:</strong> BB ALLIANCE HUSBAND ALIAS  SHO HUNTER</p>
-            <a href="../alliances/sentinels.html"><button  class="btn btn-sm">Explore</button></a>
-          </div>
-        </div>
-      </div>
-    </div>
+    <!-- time running -->
+    <div class="time"></div>
   </div>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script src="app.js"></script>
+  <script>
+    //step 1: get DOM
+    let nextDom = document.getElementById('next');
+    let prevDom = document.getElementById('prev');
+
+    let carouselDom = document.querySelector('.carousel');
+    let SliderDom = carouselDom.querySelector('.carousel .list');
+    let thumbnailBorderDom = document.querySelector('.carousel .thumbnail');
+    let thumbnailItemsDom = thumbnailBorderDom.querySelectorAll('.item');
+    let timeDom = document.querySelector('.carousel .time');
+
+    thumbnailBorderDom.appendChild(thumbnailItemsDom[0]);
+    let timeRunning = 2000;
+
+    nextDom.onclick = function () {
+      showSlider('next');
+    }
+
+    prevDom.onclick = function () {
+      showSlider('prev');
+    }
+    let runTimeOut;
+    let runNextAuto = setTimeout(() => {
+      next.click();
+    }, timeAutoNext)
+
+    function showSlider(type) {
+      let SliderItemsDom = SliderDom.querySelectorAll('.carousel .list .item');
+      let thumbnailItemsDom = document.querySelectorAll('.carousel .thumbnail .item');
+
+      if (type === 'next') {
+        SliderDom.appendChild(SliderItemsDom[0]);
+        thumbnailBorderDom.appendChild(thumbnailItemsDom[0]);
+        carouselDom.classList.add('next');
+      } else {
+        SliderDom.prepend(SliderItemsDom[SliderItemsDom.length - 1]);
+        thumbnailBorderDom.prepend(thumbnailItemsDom[thumbnailItemsDom.length - 1]);
+        carouselDom.classList.add('prev');
+      }
+      clearTimeout(runTimeOut);
+      runTimeOut = setTimeout(() => {
+        carouselDom.classList.remove('next');
+        carouselDom.classList.remove('prev');
+      }, timeRunning);
+
+      clearTimeout(runNextAuto);
+      runNextAuto = setTimeout(() => {
+        next.click();
+      }, timeAutoNext)
+    }
+  </script>
 </body>
+
 </html>
