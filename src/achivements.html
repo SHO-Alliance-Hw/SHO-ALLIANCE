@@ -1,3 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+        body {
+            font-family: Poppins, sans-serif;
+            margin: 0;
+            background: transparent;
+            color: #eee;
+        }
+        /* Header styles */
+        header {
+            width: 100%;
+            max-width: 1250px;
+            margin: 0 auto;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            background: transparent; /* Set to transparent */
+        }
 
-<h1>yc</h1>
-<h2>ac</h2>
+        .logo {
+            font-weight: bold;
+            font-size: 24px;
+            color: #fff;
+        }
+        .menu {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+            padding: 0;
+            margin: 0;
+        }
+        .menu li {
+            font-size: 18px;
+        }
+        .menu a {
+            color: #fff; /* White text */
+            text-decoration: none;
+            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7); /* Light shadow for visibility */
+        }
+
+        .navbar-toggler {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 30px;
+            color: #eee;
+            cursor: pointer;
+        }
+/* Adjust slider height for web screens */
+@media (min-width: 769px) {
+    .slider {
+        min-height: 100vh; /* Ensure the slider takes the full viewport height */
+        overflow: hidden; /* Hide any overflow from the container */
+        display: flex;
+        align-items: center; /* Center the content vertically */
+    }
+
+    .slider .list .item {
+        position: relative;
+        width: 100%; /* Full width */
+        height: 100vh; /* Full viewport height */
+    }
+
+    .slider .list .item img {
+        width: 100%; /* Ensure the image takes up full width */
+        height: 100%; /* Ensure the image takes up full height */
+        object-fit: cover; /* Ensure the image covers the container */
+    }
+}
+
+/* Keep the mobile view unchanged */
+@media (max-width: 768px) {
+    .slider {
+        height: 100vh; /* Full height for mobile screens */
+    }
+
+    .slider .list .item img {
+        object-fit: cover; /* Mobile screens still have cover */
+    }
+}
+
+
+
+        /* Mobile Navigation */
+        @media (max-width: 768px) {
+            .menu {
+                display: none;
+                width: 100%;
+                flex-direction: column;
+                gap: 10px;
+                margin-top: 10px;
+                text-align: center;
+                position: absolute;
+                top: 50px;
+                right: 0;
+                background: rgba(0, 0, 0, 0.8); /* Add background for the dropdown menu */
+            }
+            .menu.active {
+                display: flex;
+            }
+            .navbar-toggler {
+                display: block;
+            }
+            .menu li {
+                font-size: 20px;
+            }
+        }
+
+        /* Slider styles */
+        .slider {
+            height: 100vh;
+            margin-top: 0; /* Removed the previous margin to make the slider cover the full screen */
+            position: relative;
+        }
+        .slider .list .item {
+            position: absolute;
+            inset: 0 0 0 0;
+            overflow: hidden;
+            opacity: 0;
+            transition: .5s;
+        }
+        .slider .list .item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .slider .list .item::after {
+            content: '';
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            background-image: linear-gradient(to top, #000 40%, transparent);
+        }
+        .slider .list .item .content {
+            position: absolute;
+            left: 10%;
+            top: 20%;
+            width: 500px;
+            max-width: 80%;
+            z-index: 1;
+        }
+        .slider .list .item .content p:nth-child(1) {
+            text-transform: uppercase;
+            letter-spacing: 10px;
+        }
+        .slider .list .item .content h2 {
+            font-size: 100px;
+            margin: 0;
+        }
+        .slider .list .item.active {
+            opacity: 1;
+            z-index: 10;
+        }
+        @keyframes showContent {
+            to {
+                transform: translateY(0);
+                filter: blur(0);
+                opacity: 1;
+            }
+        }
+        .slider .list .item.active p:nth-child(1),
+        .slider .list .item.active h2,
+        .slider .list .item.active p:nth-child(3) {
+            transform: translateY(30px);
+            filter: blur(20px);
+            opacity: 0;
+            animation: showContent .9s .9s ease-in-out 1 forwards;
+        }
+        .slider .list .item.active h2 {
+            animation-delay: 1.2s;
+        }
+        .slider .list .item.active p:nth-child(3) {
+            animation-duration: 1.7s;
+        }
+        .arrows {
+            position: absolute;
+            top: 30%;
+            right: 50px;
+            z-index: 100;
+        }
+        .arrows button {
+            background-color: #eee5;
+            border: none;
+            font-family: monospace;
+            width: 40px;
+            height: 40px;
+            border-radius: 5px;
+            font-size: x-large;
+            color: #eee;
+            transition: .5s;
+        }
+        .arrows button:hover {
+            background-color: #eee;
+            color: black;
+        }
+        .thumbnail {
+            position: absolute;
+            bottom: 50px;
+            z-index: 11;
+            display: flex;
+            gap: 10px;
+            width: 100%;
+            height: 250px;
+            padding: 0 50px;
+            box-sizing: border-box;
+            overflow: auto;
+            justify-content: center;
+        }
+        .thumbnail::-webkit-scrollbar {
+            width: 0;
+        }
+        .thumbnail .item {
+            width: 150px;
+            height: 220px;
+            filter: brightness(.5);
+            transition: .5s;
+            flex-shrink: 0;
+        }
+        .thumbnail .item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        .thumbnail .item.active {
+            filter: brightness(.5);
+        }
+        .thumbnail .item .content {
+            position: absolute;
+            inset: auto 10px 10px 10px;
+        }
+        @media screen and (max-width: 678px) {
+            .thumbnail {
+                justify-content: start;
+            }
+            .slider .list .item .content h2 {
+                font-size: 60px;
+            }
+            .arrows {
+                top: 10%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Header -->
+<header>
+    <div class="logo">SHO</div>
+    <button class="navbar-toggler">☰</button>
+    <ul class="menu">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="alliances.html">Alliances</a></li>
+        <li><a href="leaders-coleaders.html">Leaders & Co-Leaders</a></li>
+        <li><a href="internal-tournaments.html">Internal Tournaments</a></li>
+    </ul>
+</header>
+
+<!-- Slider -->
+<div class="slider">
+    <!-- List Items -->
+    <div class="list">
+        <div class="item active">
+            <img src="../assets/sho-logo.jpg">
+            <div class="content">
+                <p>YC Championship Winner</p>
+                <h1 style="text-decoration: solid;">Sammed Jain (Sho Alpha)</h1>
+                <p>--We are thrilled to announce that we have emerged victorious in the YC Championship 18!</p>
+                <p>--After intense competition, our team showed exceptional skills and teamwork.</p>
+                <p>--Sammed Jain, also known as Sho Alpha, led the charge with outstanding performance.</p>
+                <p>--This victory marks a significant achievement for our alliance and players.</p>
+                <p>--Congratulations to Sho Alpha and everyone who contributed to this win!</p>
+            </div>
+        </div>
+
+        <div class="item">
+            <img src="../assets/sho_1.png">
+                <div class="content">
+                    <p>Alliance Milestone</p>
+                    <h1>5 Max Alliances Completed</h1>
+                    <p>We are proud to announce that we have successfully completed our 5 max alliances!</p>
+                    <p>This accomplishment is a testament to the hard work and dedication of our team.</p>
+                    <p>With great collaboration, we've achieved this milestone and are ready for more challenges.</p>
+                    <p>We are happy to share this victory with our loyal members and supporters.</p>
+                    <p>Our alliance continues to grow stronger with each step we take together!</p>
+                </div>
+            </div>
+            
+            <div class="item">
+            <img src="../assets/sho_3.png">
+            <div class="content">
+                <p>Alliance Achievement</p>
+                <h1>YC 128 Milestone</h1>
+                <p>We are happy to share that our alliance members have reached YC 128 multiple times!</p>
+                <p>This achievement reflects the hard work and dedication of our community.</p>
+                <p>It's a testament to our team's skill and strategy, pushing boundaries every time.</p>
+                <p>Reaching YC 128 multiple times is no small feat, and we are proud of it.</p>
+                <p>We are excited for the future and the many more milestones we will achieve together!</p>
+            </div>
+        </div>
+        <div class="item">
+            <img src="../assets/sho_4.png">
+            <div class="content">
+                <p>Internal Tournament Success</p>
+                <h1>Internal Tournament Achievements</h1>
+                <p>We successfully conducted our internal tournaments and are proud of the outcomes!</p>
+                <p>Winners were rewarded with exciting prizes as a token of appreciation for their efforts.</p>
+                <p>This event has helped us strengthen our alliance and build a stronger community.</p>
+                <p>Our team's enthusiasm and participation made this event a huge success. We will come back with even more thrilling tournaments soon—stay tuned!</p>
+            </div>
+        </div>
+        <div class="item">
+            <img src="../assets/sho_5.png">
+            <div class="content">
+                <p>Thank You from Akash & Devil Khan</p>
+                <h1>Gratitude to Our Alliance Members</h1>
+                <p>We are deeply grateful for your hard work, dedication, and passion. Together, we've achieved great things, and we look forward to more victories as we continue to grow. Thank you for being part of our journey!</p>
+                <p><strong>Akash & Devil Khan</strong></p>
+                </div>
+            
+        </div>
+    </div>
+
+    <!-- Button Arrows -->
+    <div class="arrows">
+        <button id="prev"><</button>
+        <button id="next">></button>
+    </div>
+
+    <!-- Thumbnail -->
+    <div class="thumbnail">
+        <div class="item active">
+            <div class="content"></div>
+        </div>
+        <div class="item">
+            <div class="content"></div>
+        </div>
+        <div class="item">
+            <div class="content"></div>
+        </div>
+        <div class="item">
+            <div class="content"></div>
+        </div>
+        <div class="item">
+            <div class="content"></div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Mobile menu toggle
+    const navbarToggler = document.querySelector('.navbar-toggler');
+    const menu = document.querySelector('.menu');
+    
+    navbarToggler.addEventListener('click', () => {
+        menu.classList.toggle('active');
+    });
+
+    let items = document.querySelectorAll('.slider .list .item');
+    let next = document.getElementById('next');
+    let prev = document.getElementById('prev');
+    let thumbnails = document.querySelectorAll('.thumbnail .item');
+
+    // Config parameters
+    let countItem = items.length;
+    let itemActive = 0;
+
+    // Event next click
+    next.onclick = function() {
+        itemActive = itemActive + 1;
+        if (itemActive >= countItem) {
+            itemActive = 0;
+        }
+        showSlider();
+    };
+
+    // Event prev click
+    prev.onclick = function() {
+        itemActive = itemActive - 1;
+        if (itemActive < 0) {
+            itemActive = countItem - 1;
+        }
+        showSlider();
+    };
+
+    // Auto run slider
+    let refreshInterval = setInterval(() => {
+        next.click();
+    }, 15000);
+
+    function showSlider() {
+        let itemActiveOld = document.querySelector('.slider .list .item.active');
+        let thumbnailActiveOld = document.querySelector('.thumbnail .item.active');
+        itemActiveOld.classList.remove('active');
+        thumbnailActiveOld.classList.remove('active');
+
+        // Active new item
+        items[itemActive].classList.add('active');
+        thumbnails[itemActive].classList.add('active');
+        setPositionThumbnail();
+
+        // Clear auto time run slider
+        clearInterval(refreshInterval);
+        refreshInterval = setInterval(() => {
+            next.click();
+        }, 5000);
+    }
+
+    function setPositionThumbnail() {
+        let thumbnailActive = document.querySelector('.thumbnail .item.active');
+        let rect = thumbnailActive.getBoundingClientRect();
+        if (rect.left < 0 || rect.right > window.innerWidth) {
+            thumbnailActive.scrollIntoView({ behavior: 'smooth', inline: 'nearest' });
+        }
+    }
+
+    // Click thumbnail
+    thumbnails.forEach((thumbnail, index) => {
+        thumbnail.addEventListener('click', () => {
+            itemActive = index;
+            showSlider();
+        });
+    });
+</script>
+
+</body>
+</html>
