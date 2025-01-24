@@ -4,921 +4,310 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>Document</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="leader.css">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Open+Sans:wght@400;700&display=swap"
-    rel="stylesheet">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-
-    body {
-      margin: 0;
-      background-color: #000;
-      color: #eee;
-      font-family: 'Poppins', sans-serif;
+    .advanced-btn {
+      background-color: #0f0f0f;
+      /* Green background */
+      color: white;
+      /* White text color */
+      padding: 13px 25px;
+      /* Padding around text */
       font-size: 12px;
-      line-height: 1.5;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    header {
-      width: 90%;
-      max-width: 1140px;
-      margin: auto;
-      height: 50px;
-      display: flex;
-      align-items: center;
-      position: relative;
-      z-index: 100;
-    }
-
-    header a {
-      color: #eee;
-      margin-right: 20px;
-    }
-
-    .carousel {
-      height: 100vh;
-      width: 100%;
-      overflow: hidden;
-      position: relative;
-    }
-
-    .carousel .list .item {
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      inset: 0;
-    }
-
-    .carousel .list .item img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .carousel .list .item .content {
-      position: absolute;
-      top: 20%;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 90%;
-      max-width: 1140px;
-      padding-right: 30%;
-      box-sizing: border-box;
-      color: #fff;
-      text-shadow: 0 5px 10px #0004;
-    }
-
-    .carousel .list .item .author {
-      font-weight: bold;
-      letter-spacing: 5px;
-    }
-
-    .carousel .list .item .title {
-      font-size: 3em;
-      font-weight: bold;
-      line-height: 1.2;
-    }
-
-    .carousel .list .item .topic {
-      font-size: 2.5em;
-      font-weight: bold;
-      color: #f1683a;
-    }
-
-    .carousel .list .item .cotopic {
-      font-size: 2em;
-      font-weight: bold;
-    }
-
-    .carousel .list .item .buttons {
-      display: flex;
-      gap: 10px;
-      margin-top: 20px;
-    }
-
-    .carousel .list .item .buttons button {
+      /* Font size */
       border: none;
-      background-color: #eee;
-      padding: 10px 20px;
-      font-family: 'Poppins', sans-serif;
-      font-weight: 500;
+      /* Remove border */
+      border-radius: 50px;
+      /* Rounded corners */
       cursor: pointer;
-    }
-
-    .carousel .list .item .buttons button:nth-child(2) {
-      background-color: transparent;
-      border: 1px solid #fff;
-      color: #eee;
-    }
-
-    .thumbnail {
-      position: absolute;
-      bottom: 50px;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      gap: 10px;
-      z-index: 100;
-    }
-
-    .thumbnail .item {
-      width: 120px;
-      height: 160px;
-      flex-shrink: 0;
+      /* Pointer cursor on hover */
       position: relative;
-      border-radius: 10px;
       overflow: hidden;
-    }
-
-    .thumbnail .item img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .thumbnail .item .content {
-      position: absolute;
-      bottom: 10px;
-      left: 10px;
-      right: 10px;
-      color: #fff;
-    }
-
-    .arrows {
-      position: absolute;
-      top: 80%;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      gap: 10px;
-      z-index: 100;
-    }
-
-    .arrows button {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      background-color: rgba(238, 238, 238, 0.5);
-      border: none;
-      color: #fff;
-      font-family: monospace;
-      font-weight: bold;
-      cursor: pointer;
-      transition: background-color 0.3s;
-    }
-
-    .arrows button:hover {
-      background-color: #fff;
-      color: #000;
-    }
-
-    .carousel .time {
-      position: absolute;
-      top: 0;
-      left: 0;
-      height: 3px;
-      background-color: #f1683a;
-      animation: runningTime 3s linear infinite;
-    }
-
-    @keyframes runningTime {
-      from {
-        width: 0%;
-      }
-
-      to {
-        width: 100%;
-      }
-    }
-
-    /* Responsive Design */
-    @media screen and (max-width: 768px) {
-      .carousel .list .item .content {
-        padding-right: 0;
-      }
-
-      .carousel .list .item .title {
-        font-size: 2em;
-      }
-
-      .carousel .list .item .topic {
-        font-size: 1.8em;
-      }
-
-      .thumbnail .item {
-        width: 100px;
-        height: 140px;
-      }
-
-      .arrows button {
-        width: 35px;
-        height: 35px;
-      }
-    }
-
-    @media screen and (max-width: 480px) {
-      .carousel .list .item .content {
-        top: 15%;
-      }
-
-      .carousel .list .item .title {
-        font-size: 1.8em;
-      }
-
-      .carousel .list .item .topic {
-        font-size: 1.5em;
-      }
-
-      .thumbnail .item {
-        width: 80px;
-        height: 120px;
-      }
-
-      .arrows button {
-        width: 30px;
-        height: 30px;
-      }
-    }
-  </style>
-  <style>
-    /* Reset styles to prevent overflow */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      background-color: #000;
-      color: #eee;
-      font-family: 'Poppins', sans-serif;
-      font-size: 12px;
-      line-height: 1.5;
-      overflow-x: hidden;
-      /* Prevent horizontal scrolling */
-    }
-
-    header {
-      width: 100%;
-      max-width: 1140px;
-      margin: auto;
-      height: 50px;
-      display: flex;
-      align-items: center;
-      position: relative;
-      z-index: 100;
-      padding: 0 15px;
-      /* Add padding for spacing */
-      box-sizing: border-box;
-      /* Ensure width respects padding */
-    }
-
-    .carousel {
-      height: 100vh;
-      /* margin-top: -50px; */
-      width: 100%;
-      /* Use 100% instead of 100vw */
-      overflow: hidden;
-      position: relative;
-    }
-
-    .carousel .list .item {
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      inset: 0;
-    }
-
-    .carousel .list .item img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    /* Add this to handle padding/margin issues */
-    html {
-      overflow-x: hidden;
-    }
-
-    /* Responsive design adjustments */
-    @media screen and (max-width: 768px) {
-      header {
-        padding: 0 10px;
-      }
-
-      .carousel .list .item .content {
-        padding-right: 0;
-      }
-    }
-  </style>
-  <style>
-    /* General Reset */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      background-color: #000;
-      color: #eee;
-      font-family: 'Poppins', sans-serif;
-      font-size: 12px;
-    }
-
-    a {
-      text-decoration: none;
-    }
-
-    /* Header Styles */
-    header {
-      width: 100%;
-      max-width: 1140px;
-      margin: auto;
-      height: 60px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 20px;
-      /* background-color: #333; */
-      position: relative;
-      z-index: 1000;
-    }
-
-    header a {
-      color: #eee;
-      font-size: 14px;
-      margin-right: 20px;
-    }
-
-    nav {
-      display: flex;
-      gap: 15px;
-    }
-
-    /* Hamburger Menu */
-    .hamburger {
-      display: none;
-      flex-direction: column;
-      gap: 5px;
-      cursor: pointer;
-    }
-
-    .hamburger span {
-      width: 25px;
-      height: 3px;
-      background-color: #eee;
-    }
-
-    /* Mobile Menu */
-    .menu {
-      display: flex;
-    }
-
-    .menu.mobile {
-      display: none;
-      flex-direction: column;
-      /* background-color: #333; */
-      position: absolute;
-      top: 60px;
-      right: 0;
-      width: 200px;
-      padding: 10px;
-    }
-
-    .menu.mobile a {
-      padding: 10px;
-      border-bottom: 1px solid #444;
-    }
-
-    /* Responsive Styles */
-    @media screen and (max-width: 768px) {
-      nav {
-        display: none;
-      }
-
-      .hamburger {
-        display: flex;
-      }
-
-      .menu.mobile.active {
-        display: flex;
-      }
-    }
-
-    /* Carousel Styles */
-    .carousel {
-      height: 100vh;
-      margin-top: -60px;
-      width: 100vw;
-      overflow: hidden;
-      position: relative;
-    }
-
-    .carousel .list .item {
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      inset: 0 0 0 0;
-    }
-
-    .carousel .list .item img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .carousel .list .item .content {
-      position: absolute;
-      top: 20%;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 80%;
-      padding-right: 30%;
-      box-sizing: border-box;
-      color: #fff;
-      text-shadow: 0 5px 10px #0004;
-    }
-
-    .carousel .list .item .author {
-      font-weight: bold;
-      letter-spacing: 10px;
-    }
-
-    .carousel .list .item .title {
-      font-size: 5em;
-      font-weight: bold;
-      line-height: 1.3em;
-    }
-
-    .carousel .list .item .topic {
-      font-size: 4em;
-      font-weight: bold;
-      color: #f1683a;
-      line-height: 1.2em;
-    }
-
-    .carousel .list .item .buttons {
-      display: grid;
-      grid-template-columns: repeat(2, 130px);
-      gap: 5px;
-      margin-top: 20px;
-    }
-
-    .carousel .list .item .buttons button {
-      border: none;
-      background-color: #eee;
-      letter-spacing: 3px;
-      font-family: 'Poppins', sans-serif;
-      font-weight: 500;
-    }
-
-    .carousel .list .item .buttons button:nth-child(2) {
-      background-color: transparent;
-      border: 1px solid #fff;
-      color: #eee;
-    }
-
-    /* Responsive Carousel Adjustments */
-    @media screen and (max-width: 768px) {
-      .carousel .list .item .content {
-        padding-right: 0;
-      }
-
-      .carousel .list .item .content .title {
-        font-size: 30px;
-      }
-
-      .carousel .list .item .content .topic {
-        font-size: 20px;
-      }
-
-      .carousel .list .item .buttons {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
-  <style>
-    /* General Reset */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      background-color: #000;
-      color: #eee;
-      font-family: 'Poppins', sans-serif;
-    }
-
-    /* Header Styles */
-    header {
-      width: 100%;
-      max-width: 1140px;
-      margin: auto;
-      height: 60px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 20px;
-      position: relative;
-      z-index: 1000;
-    }
-
-    header a {
-      color: #eee;
-      font-size: 20px;
-      text-transform: uppercase;
-      text-decoration: none;
-      margin-right: 20px;
-      font-weight: 300;
-      margin-top: 30px;
-      /* Adjusted to make font better */
-    }
-
-    /* Menu Styles */
-    .menu {
-      display: flex;
-      gap: 20px;
-    }
-
-    .menu a {
-      color: #eee;
-      text-decoration: none;
-      font-size: 15px;
-      padding: 10px 20px;
-      margin-top: 30px;
-    }
-
-    /* Remove hover effects on desktop */
-    .menu a:hover {
-      /* background-color: black; */
-      /* No hover effect on desktop */
-    }
-
-    /* Hamburger Menu */
-    .navbar-toggler {
-      display: none;
-      background: transparent;
-      border: none;
-      cursor: pointer;
-    }
-
-    .navbar-toggler i {
-      font-size: 30px;
-      color: #eee;
-    }
-
-    /* Mobile Menu - Initially Hidden */
-    .menu {
-      display: flex;
-    }
-
-    .menu.mobile {
-      display: none;
-      flex-direction: column;
-      background-color: #333;
-      position: absolute;
-      top: 60px;
-      left: 0;
-      right: 0;
-      padding: 10px;
-      z-index: 1000;
-    }
-
-    .menu.active {
-      display: flex;
-    }
-
-    .menu a {
-      font-size: 18px;
-      padding: 15px;
-      width: 100%;
+      transition: all 0.4s ease;
+      /* Smooth transition for all properties */
       text-align: center;
+      display: inline-block;
+      z-index: 0;
+      /* Ensure button is above other elements */
     }
 
-    /* Mobile Styles */
-    @media screen and (max-width: 768px) {
+    /* Hover effects */
+    .advanced-btn:hover {
+      background-color: #45a049;
+      /* Darker green on hover */
+      transform: scale(1.05);
+      /* Slightly enlarge button */
+    }
 
-      /* Header adjustments for mobile */
-      header a {
+    /* Focus effect for accessibility */
+    .advanced-btn:focus {
+      outline: none;
+      /* Remove default outline */
+      box-shadow: 0 0 0 3px rgba(72, 181, 97, 0.5);
+      /* Add custom focus outline */
+    }
+
+    /* Active button effect */
+    .advanced-btn:active {
+      background-color: #3e8e41;
+      /* Darker green when clicked */
+      transform: scale(1.02);
+      /* Slightly shrink button on click */
+    }
+
+    /* Flexbox to align leader name and WhatsApp icon */
+    .leader-container {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      /* Space between text and icon */
+      font-size: 24px;
+      /* Adjust size as needed */
+    }
+
+    /* Add animation to the WhatsApp icon */
+    .whatsapp-icon {
+      color: #25D366;
+      /* WhatsApp green color */
+      font-size: 24px;
+      /* Adjust size to match the text */
+      text-decoration: none;
+      transition: transform 0.3s ease, color 0.3s ease;
+      animation: pulse 1.5s infinite ease-in-out;
+      /* Add pulsing animation */
+    }
+
+    .whatsapp-icon:hover {
+      color: #128C7E;
+      /* Darker WhatsApp green on hover */
+      transform: scale(1.2) rotate(15deg);
+      /* Slight rotation and scaling */
+    }
+
+    /* Define the pulse animation */
+    @keyframes pulse {
+
+      0%,
+      100% {
+        transform: scale(1);
+        /* Original size */
+      }
+
+      50% {
+        transform: scale(1.1);
+        /* Slightly larger size */
+      }
+    }
+
+    /* For smaller screens */
+    @media screen and (max-width: 678px) {
+      .whatsapp-icon {
         font-size: 18px;
-        /* Smaller font size for mobile */
+        animation: bounce 1.5s infinite;
+        /* Change to bounce animation on mobile */
+      }
+    }
+
+    /* Define a bounce animation */
+    @keyframes bounce {
+
+      0%,
+      100% {
+        transform: translateY(0);
+        /* Original position */
       }
 
-      /* Hamburger button should be visible on mobile */
-      .navbar-toggler {
-        display: block;
-      }
-
-      /* Menu styles for mobile */
-      .menu {
-        display: none;
-        /* Hide menu on mobile by default */
-        flex-direction: column;
-        background-color: #acacac4d;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        width: 100%;
-        padding: 10px;
-        z-index: 1000;
-      }
-
-      /* Show menu when active */
-      .menu.active {
-        display: flex;
-      }
-
-      .menu a {
-        font-size: 18px;
-        padding: 15px;
-        width: 100%;
-        text-align: center;
+      50% {
+        transform: translateY(-10px);
+        /* Slight upward movement */
       }
     }
   </style>
-
-
 </head>
 
 <body>
+  <!-- header -->
   <header>
-    <a href="#">SHO</a>
-    <button class="navbar-toggler" type="button" aria-expanded="false" aria-label="Toggle navigation">
-      <i class="fas fa-align-right text-light"></i> <!-- Hamburger Icon -->
-    </button>
-    <nav class="menu">
-      <a href="../index.html">Home</a>
-      <a href="alliances.html">Alliances</a>
-      <a href="achivements.html">Achievements</a>
-      <a href="internal-tournaments.html">Internal Tournaments</a>
-    </nav>
+    <div class="logo">SHO</div>
+    <ul class="menu">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="achivements.html">Achivements</a></li>
+      <li><a href="internal-tournaments.html">Tournaments</a></li>
+    </ul>
   </header>
 
+  <!-- slider -->
 
-
-
-  <!-- carousel -->
-  <div class="carousel">
-    <!-- list item -->
+  <div class="slider">
+    <!-- list Items -->
     <div class="list">
-      <div class="item">
-        <img src="../assets/cricket_3.jpg">
+      <div class="item active">
+        <img src="../assets/leader_1.jpg">
         <div class="content">
-          <div class="title">Vanguard</div>
-          <div class="topic">
-            Leader: Devil Khan
+          <p>Vanguard</p>
+          <h2 class="leader-container">
+            <span>Leader: Devil Khan</span>
             <a href="https://api.whatsapp.com/send?phone=917275583084&text=HEY%20DEVIL%20KHAN%20CAN%20I%20GET%20PLACE%20IN%20YOUR%20ALLIANCE%3F"
               target="_blank" class="whatsapp-icon">
               <i class="fab fa-whatsapp"></i>
             </a>
-          </div>
-          <br>
-          <div class="cotopic">Coleader:Akash the Prepetual</div>
-          <br>
-          <div class="cotopic">Coleader:Karan Varma</div>
-          <div class="buttons">
-            <button><a href="../alliances/vanguard.html">SEE MORE</a></button>
-          </div>
+          </h2>
+          <h5>Coleader: Akash The Prepetual</h5>
+          <h5>Coleader: Karan Varma</h5>
+          <p>
+            Vanguard is a competitive gaming alliance known for its strategic gameplay and skilled roster. It brings
+            together top players from diverse backgrounds to dominate in various gaming tournaments and events.
+          </p>
+          <a href="../alliances/vanguard.html" class="advanced-btn">Know More</a>
         </div>
+
       </div>
       <div class="item">
-        <img src="../assets/cricket_1.jpg">
+        <img src="../assets/leader_2.jpg">
         <div class="content">
-          <div class="title">ENFORCERS</div>
-          <div class="topic">
-            Leader: MR Khan
+          <p>Enforcers</p>
+          <h2 class="leader-container">
+            <span>Leader: MR Khan</span>
             <a href="https://api.whatsapp.com/send?phone=919078280428&text=HEY%20LEADER%20CAN%20i%20get%20place%20in%20your%20Alliance%20"
               target="_blank" class="whatsapp-icon">
               <i class="fab fa-whatsapp"></i>
             </a>
-          </div>
-          <br>
-          <div class="cotopic">Coleader:Shubam Mana</div>
-          <br>
-          <div class="cotopic">Coleader:Anuj Tulsani</div>
-          <div class="buttons">
-            <button><a href="../alliances/enforces.html">SEE MORE</a></button>
-          </div>
+          </h2>
+          <h5>Coleader: Subham Mana</h5>
+          <h5>Coleader: AnUJ Tulsani</h5>
+          <p>
+            The Enforcers Alliance is a formidable gaming team known for its strategic gameplay and unwavering teamwork.
+            They excel in competitive esports, consistently challenging top alliances in high-stakes tournaments.
+          </p>
+          <a href="../alliances/enforces.html.html" class="advanced-btn">Know More</a>
         </div>
       </div>
       <div class="item">
-        <img src="../assets/cricket_5 (2).jpg">
+        <img src="../assets/leader_3.jpg">
         <div class="content">
-          <div class="title">OUTRIDERS</div>
-          <div class="topic">
-            Leader: Yash King
+          <p>outriders</p>
+          <h2 class="leader-container">
+            <span>Leader: Yash King</span>
             <a href="https://api.whatsapp.com/send?phone=916295345264&&text=HEY%20LEADER%20CAN%i%get%place%in%your%Alliance%"
               target="_blank" class="whatsapp-icon">
               <i class="fab fa-whatsapp"></i>
             </a>
-          </div>
-          <br>
-          <div class="cotopic">Coleader: Waleed Shamshi</div>
-          <div class="buttons">
-            <button><a href="../alliances/outriders.html">SEE MORE</a></button>
-          </div>
+          </h2>
+          <h5>Coleader: Waleed Shamshi</h5>
+          <p>
+            The Outriders Alliance is a dynamic gaming team recognized for their adaptability and bold strategies. They
+            thrive in unpredictable scenarios, making them a fierce contender in the competitive gaming scene.
+          </p>
+          <a href="../alliances/outriders.html.html" class="advanced-btn">Know More</a>
         </div>
       </div>
       <div class="item">
-        <img src="../assets/cricket_4.webp">
+        <img src="../assets/leaadre_4.jpg">
         <div class="content">
-          <div class="title">PALADINS</div>
-          <div class="topic">
-            Leader: Abhiram Bhat
+          <p>Paladins</p>
+          <h2 class="leader-container">
+            <span>Leader: Abhiram Bhat</span>
             <a href="https://api.whatsapp.com/send?phone=919480331998&&text=HEY%20LEADER%20CAN%i%get%place%in%your%Alliance%"
               target="_blank" class="whatsapp-icon">
               <i class="fab fa-whatsapp"></i>
             </a>
-          </div>
-          <br>
-          <div class="cotopic">Coleader: Sumanth Varma</div>
-          <div class="buttons">
-            <button><a href="../alliances/paladins.html">SEE MORE</a></button>
-          </div>
+          </h2>
+          <h5>Coleader: Sumanth Varma</h5>
+          <p>
+            The Paladins Alliance is a rapidly growing team fueled by passion and determination. Known for nurturing
+            emerging talent, they are steadily rising as a formidable force in the gaming community.
+          </p>
+          <a href="../alliances/paladins.html.html" class="advanced-btn">Know More</a>
         </div>
       </div>
       <div class="item">
-        <img src="../assets/cricket_2.webp">
+        <img src="../assets/leader_5.jpg">
         <div class="content">
-          <div class="title">CRASUDERS</div>
-          <div class="topic">
-            Leader: Ravi Krishnan
-
+          <p>Crasuders</p>
+          <h2 class="leader-container">
+            <span>Leader: Ravi Krishnan</span>
             <a href="https://api.whatsapp.com/send?phone=918987072358&&text=HEY%20LEADER%20CAN%i%get%place%in%your%Alliance%"
               target="_blank" class="whatsapp-icon">
               <i class="fab fa-whatsapp"></i>
             </a>
-          </div>
-          <br>
-          <div class="cotopic">Coleader: Mr Prince</div>
-          <div class="buttons">
-            <button><a href="../alliances/crasuders.html">SEE MORE</a></button>
-          </div>
+          </h2>
+          <h5>Coleader: MR Prince</h5>
+          <p>
+            The Crusaders Alliance is a resilient and ambitious team making steady strides in the gaming world. With a
+            focus on discipline and perseverance, they are building a reputation as fierce competitors.
+          </p>
+          <a href="../alliances/crasuders.html.html" class="advanced-btn">Know More</a>
         </div>
       </div>
       <div class="item">
-        <img src="../assets/cricket_6.jpg">
+        <img src="../assets/leader_6.jpg">
         <div class="content">
-          <div class="title">SENTINELS</div>
-          <div class="topic">
-            Leader: Akash
+          <p>sentinels</p>
+          <h2 class="leader-container">
+            <span>Leader: Akash</span>
             <a href="https://api.whatsapp.com/send?phone=919565237674&&text=HEY%20LEADER%20CAN%i%get%place%in%your%Alliance%"
               target="_blank" class="whatsapp-icon">
               <i class="fab fa-whatsapp"></i>
             </a>
-          </div>
-          <br>
-          <div class="cotopic">Coleader: Sunilkumar</div>
-          <div class="buttons">
-            <button><a href="../alliances/sentinels.html">SEE MORE</a></button>
-          </div>
+          </h2>
+          <h5>Coleader: Sunil</h5>
+          <p>
+            The Sentinels Alliance is a smaller but determined team, focused on honing their skills and rising through
+            the ranks. They are steadily building their presence with persistence and dedication.
+          </p>
+          <a href="../alliances/vanguard.html" class="advanced-btn">Know More</a>
         </div>
       </div>
     </div>
-    <!-- list thumnail -->
-    <div class="thumbnail">
-      <div class="item">
-        <img src="../assets/cricket_3.jpg">
-        <div class="content">
-          <div class="title">
-            Vanguard
-          </div>
-          <div class="description">
-            Lead By Devil
-          </div>
-        </div>
-      </div>
-      <div class="item">
-        <img src="../assets/cricket_1.jpg">
-        <div class="content">
-          <div class="title">
-            ENFORCERS
-          </div>
-          <div class="description">
-            CO-Lead By Anuj(King Of Mirzapur)
-          </div>
-        </div>
-      </div>
-      <div class="item">
-        <img src="../assets/cricket_5 (2).jpg">
-        <div class="content">
-          <div class="title">
-            OUTRIDERS
-          </div>
-          <div class="description">
-            Lead By Bengal Tiger
-          </div>
-        </div>
-      </div>
-      <div class="item">
-        <img src="../assets/cricket_4.webp">
-        <div class="content">
-          <div class="title">
-            PALADINS
-          </div>
-          <div class="description">
-            Lead By Karnataka King
-          </div>
-        </div>
-      </div>
-      <div class="item">
-        <img src="../assets/cricket_2.webp">
-        <div class="content">
-          <div class="title">
-            CRASUDERS
-          </div>
-          <div class="description">
-            Lead By G.O.A.T
-          </div>
-        </div>
-      </div>
-      <div class="item">
-        <img src="../assets/cricket_6.jpg">
-        <div class="content">
-          <div class="title">
-            SENTINELS
-          </div>
-          <div class="description">
-            Lead By One And Only Cool Person Mr.Akash
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- next prev -->
-
+    <!-- button arrows -->
     <div class="arrows">
       <button id="prev">
         <</button> <button id="next">>
       </button>
     </div>
-    <!-- time running -->
-    <div class="time"></div>
+    <!-- thumbnail -->
+    <div class="thumbnail">
+      <div class="item active">
+
+        <div class="content">
+          <div>VANGUARD</div>
+        </div>
+
+      </div>
+      <div class="item">
+
+        <div class="content">
+          ENFORCERS
+        </div>
+      </div>
+      <div class="item">
+
+        <div class="content">
+          OUTRIDERS
+        </div>
+      </div>
+      <div class="item">
+        <div class="content">
+          PALADINS
+        </div>
+      </div>
+      <div class="item">
+        <div class="content">
+          CRASUDERS
+        </div>
+      </div>
+      <div class="item">
+        <div class="content">
+          SENTINELS
+        </div>
+      </div>
+    </div>
   </div>
-  <script>
-    document.querySelector('.navbar-toggler').addEventListener('click', function () {
-      const menu = document.querySelector('.menu');
-      menu.classList.toggle('active');
-    });
-    //step 1: get DOM
-    let nextDom = document.getElementById('next');
-    let prevDom = document.getElementById('prev');
-
-    let carouselDom = document.querySelector('.carousel');
-    let SliderDom = carouselDom.querySelector('.carousel .list');
-    let thumbnailBorderDom = document.querySelector('.carousel .thumbnail');
-    let thumbnailItemsDom = thumbnailBorderDom.querySelectorAll('.item');
-    let timeDom = document.querySelector('.carousel .time');
-
-    thumbnailBorderDom.appendChild(thumbnailItemsDom[0]);
-    let timeRunning = 2000;
-
-    nextDom.onclick = function () {
-      showSlider('next');
-    }
-
-    prevDom.onclick = function () {
-      showSlider('prev');
-    }
-    let runTimeOut;
 
 
-    function showSlider(type) {
-      let SliderItemsDom = SliderDom.querySelectorAll('.carousel .list .item');
-      let thumbnailItemsDom = document.querySelectorAll('.carousel .thumbnail .item');
-
-      if (type === 'next') {
-        SliderDom.appendChild(SliderItemsDom[0]);
-        thumbnailBorderDom.appendChild(thumbnailItemsDom[0]);
-        carouselDom.classList.add('next');
-      } else {
-        SliderDom.prepend(SliderItemsDom[SliderItemsDom.length - 1]);
-        thumbnailBorderDom.prepend(thumbnailItemsDom[thumbnailItemsDom.length - 1]);
-        carouselDom.classList.add('prev');
-      }
-      clearTimeout(runTimeOut);
-      runTimeOut = setTimeout(() => {
-        carouselDom.classList.remove('next');
-        carouselDom.classList.remove('prev');
-      }, timeRunning);
-
-    }
-  </script>
+  <script src="leader.js"></script>
 </body>
 
 </html>
