@@ -239,7 +239,7 @@
           SHO
         </a>
         <div style="text-align: center; margin-top: 20px;">
-  <input type="text" id="searchInput" onkeyup="searchContent()" placeholder="Search here..." style="padding: 10px; width: 300px;">
+  <input type="text" id="searchInput" onkeyup="searchContent()" placeholder="Search here..." style="padding: 10px; width: 200px;">
         </div>
         
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
@@ -312,6 +312,17 @@
   <h2>Have Questions?</h2>
   <p>Check out our FAQ page for all the answers you need!</p>
   <a href="Faq.html" style="padding: 10px 20px; background-color: #007bff; color: #fff; text-decoration: none; border-radius: 5px;">Visit FAQ</a>
+            <section id="announcements" style="padding: 20px; background-color: #f9f9f9; border-top: 2px solid #ccc;">
+  <h2 style="text-align: center;">Announcements & Updates</h2>
+  <ul id="updates-list" style="list-style: none; padding: 0; max-width: 800px; margin: 0 auto;">
+    <li style="padding: 10px 0; border-bottom: 1px solid #ddd;">
+      <strong>Update 1:</strong> New alliance activities start next week!
+    </li>
+    <li style="padding: 10px 0; border-bottom: 1px solid #ddd;">
+      <strong>Announcement:</strong> Don't forget to register for SHO Infinity War!
+    </li>
+  </ul>
+            </section>
           </section>
         </div>
       </div>
@@ -550,6 +561,21 @@
     }
   }
 </script>
+  <script>
+  const updates = [
+    { title: "Update 2", content: "Annual SHO Meetup scheduled for next month!" },
+    { title: "Reminder", content: "Submit your tournament entries by Friday." },
+  ];
+
+  const updatesList = document.getElementById("updates-list");
+  updates.forEach(update => {
+    const li = document.createElement("li");
+    li.style.padding = "10px 0";
+    li.style.borderBottom = "1px solid #ddd";
+    li.innerHTML = `<strong>${update.title}:</strong> ${update.content}`;
+    updatesList.appendChild(li);
+  });
+  </script>
 </body>
 
 </html>
