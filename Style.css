@@ -103,6 +103,23 @@ header .container .col-md-7 p {
   border-radius: 30px;
   font-weight: bold;
 }
+@keyframes scroll {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+.ticker {
+  display: flex;
+  animation: scroll 15s linear infinite;
+}
+
+.ticker-item {
+  flex: 0 0 100%;
+  text-align: center;
+  font-size: 16px;
+  color: #333;
+  padding: 10px;
+}
 
 /********** section 1 **************/
 
