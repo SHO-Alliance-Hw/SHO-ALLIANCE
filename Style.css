@@ -27,7 +27,19 @@ section {
   vertical-align: middle;
   /* Aligns image with text */
 }
+a:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+}
 
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+a:hover {
+  animation: bounce 0.5s infinite;
+    }
 header a {
   font-family: var(--Sniglet-font);
   font-size: 0.9em;
