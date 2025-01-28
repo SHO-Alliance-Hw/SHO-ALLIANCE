@@ -278,6 +278,9 @@
             <li class="nav-item">
               <a class="nav-link" href="chat.html">LIVE CHAT</a>
             </li>
+               <li>
+            <button id="theme-toggle">🌙</button>
+               </li>
           </ul>
         </div>
       </nav>
@@ -353,9 +356,7 @@
     </div>
   </div>
     </section>
-    <div id="theme-toggle">
-    <button id="toggle-button">Switch Theme</button>
-    </div>
+    
     <section class="section-1">
       <div class="container text-center">
         <div class="row">
@@ -622,6 +623,12 @@ if (currentTheme === 'dark') {
     document.body.classList.add('dark-mode');
     toggleButton.textContent = 'Switch to Light Mode';
 }
+    const themeToggleButton = document.getElementById("theme-toggle");
+const body = document.body;
+
+themeToggleButton.addEventListener("click", () => {
+    body.classList.toggle("dark-theme");
+});
 
 // Add event listener to the button
 toggleButton.addEventListener('click', () => {
@@ -635,7 +642,8 @@ toggleButton.addEventListener('click', () => {
         toggleButton.textContent = 'Switch to Dark Mode';
         localStorage.setItem('theme', 'light'); // Save the theme preference
     }
-}); </script>
+}); 
+  </script>
 <!--End of Tawk.to Script-->
 </body>
 
