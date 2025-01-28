@@ -13,19 +13,27 @@ players.forEach(player => {
     });
 });
 
-// Add dragover and drop events to slots
+// Add dragover and drop events to slots (where players will be dropped)
 slots.forEach(slot => {
-    slot.addEventListener('dragover', e => {
-        e.preventDefault(); // Allows dropping
+    slot.addEventListener('dragover', (e) => {
+        e.preventDefault(); // Necessary to allow the drop
+        slot.classList.add('over'); // Optionally highlight the slot when over
     });
 
-    slot.addEventListener('drop', e => {
+    slot.addEventListener('dragleave', () => {
+        slot.classList.remove('over'); // Remove highlight when drag leaves
+    });
+
+    slot.addEventListener('drop', () => {
         const draggingPlayer = document.querySelector('.dragging');
-        if (!slot.hasChildNodes()) {
+        
+        if (!slot.hasChildNodes() && draggingPlayer) {
+            // If the slot is empty, add the dragged player here
             slot.textContent = draggingPlayer.textContent;
-            slot.classList.remove('empty-slot');
-            draggingPlayer.remove(); // Remove from pool
+            slot.classList.remove('empty-slot'); // Remove the 'empty-slot' class
+            draggingPlayer.remove(); // Remove the player from the pool
         }
+        slot.classList.remove('over'); // Remove the highlight
     });
 });
 
