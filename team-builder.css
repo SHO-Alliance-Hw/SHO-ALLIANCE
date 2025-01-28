@@ -68,3 +68,7 @@ button {
 button:hover {
     background-color: #74b9ff;
 }
+li.over {
+    background-color: #b2bec3; /* Light gray color to highlight the slot */
+    border-color: #636e72; /* Darker border when hovering over */
+}
