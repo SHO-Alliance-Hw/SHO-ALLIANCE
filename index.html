@@ -241,6 +241,10 @@
         <div style="text-align: center; margin-top: 20px;">
   <input type="text" id="searchInput" onkeyup="searchContent()" placeholder="Search🔎" style="padding: 8px; width: 100px;">
         </div>
+        <!-- Dark Mode Toggle -->
+<div id="theme-toggle">
+    <button id="toggle-button">Switch Theme</button>
+</div>
         
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
           aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -301,6 +305,7 @@
         <div class="col-md-12 text-white">
           <h6>STRATEGIC HEROES ORACLES</h6>
           <h2>SHO</h2>
+          
           <p>
             The SHO Alliance is a dynamic community designed to unite gamers from all walks of life, offering a platform
             for collaboration, competition, and the shared enthusiasm for gaming. By bringing together individuals with
@@ -603,6 +608,31 @@ s1.setAttribute('crossorigin','*');
 s0.parentNode.insertBefore(s1,s0);
 })();
 </script>
+  <script>// Select the toggle button
+const toggleButton = document.getElementById('toggle-button');
+
+// Check if a theme is saved in localStorage
+const currentTheme = localStorage.getItem('theme');
+
+// Apply the saved theme
+if (currentTheme === 'dark') {
+    document.body.classList.add('dark-mode');
+    toggleButton.textContent = 'Switch to Light Mode';
+}
+
+// Add event listener to the button
+toggleButton.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+
+    // Update the button text based on the current theme
+    if (document.body.classList.contains('dark-mode')) {
+        toggleButton.textContent = 'Switch to Light Mode';
+        localStorage.setItem('theme', 'dark'); // Save the theme preference
+    } else {
+        toggleButton.textContent = 'Switch to Dark Mode';
+        localStorage.setItem('theme', 'light'); // Save the theme preference
+    }
+}); </script>
 <!--End of Tawk.to Script-->
 </body>
 
