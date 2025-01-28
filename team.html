@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Team Builder</title>
+    <link rel="stylesheet" href="team-builder.css">
+</head>
+<body>
+    <div class="team-builder-container">
+        <h1>Interactive Team Builder</h1>
+        <div class="builder">
+            <!-- Player Pool -->
+            <div class="player-pool">
+                <h2>Available Players</h2>
+                <ul id="player-pool">
+                    <li draggable="true">Player 1</li>
+                    <li draggable="true">Player 2</li>
+                    <li draggable="true">Player 3</li>
+                    <li draggable="true">Player 4</li>
+                    <li draggable="true">Player 5</li>
+                </ul>
+            </div>
+
+            <!-- Team Formation -->
+            <div class="team-area">
+                <h2>Your Team</h2>
+                <ul id="team-area">
+                    <li class="empty-slot">Drop Here</li>
+                    <li class="empty-slot">Drop Here</li>
+                    <li class="empty-slot">Drop Here</li>
+                    <li class="empty-slot">Drop Here</li>
+                    <li class="empty-slot">Drop Here</li>
+                </ul>
+            </div>
+        </div>
+        <button id="save-team">Save Team</button>
+    </div>
+
+    <script src="team-builder.js"></script>
+</body>
+                      </html>
