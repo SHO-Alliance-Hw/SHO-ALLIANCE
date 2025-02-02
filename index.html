@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <title>SHO</title>
+  
 
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
@@ -13,6 +14,8 @@
   <link rel="stylesheet" href="./Style.css" />
   <link rel="stylesheet" href="./mobile-style.css">
   <style>
+
+    
   /* Container for the logo */
     .logo-container {
       position: relative;
@@ -224,6 +227,7 @@
       text-transform: uppercase;
     }
   </style>
+  <link rel="stylesheet" href="chat.css">
 
 </head>
 
@@ -235,6 +239,12 @@
           <img src="./assets/icon (1).jpg" alt="SHO Logo" class="icon-image">
           SHO
         </a>
+        <div style="text-align: center; margin-top: 20px;">
+  <input type="text" id="searchInput" onkeyup="searchContent()" placeholder="Search🔎" style="padding: 8px; width: 100px;">
+        </div>
+        <!-- Dark Mode Toggle -->
+
+        
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
           aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <i class="fas fa-align-right text-light"></i>
@@ -260,9 +270,25 @@
             <li class="nav-item">
               <a class="nav-link" href="src/internal-tournaments.html">INTERNAL TOURNAMENTS</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="quiz.html">HITWICKET GAME</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="forms.html">SHO FORMS</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="chat.html">LIVE CHAT</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="team.html">Team Builder</a>
+            </li>
+               <li>
+            <button id="theme-toggle">🌙</button>
+               </li>
           </ul>
         </div>
       </nav>
+      
     </div>
 
     <!-- Hero Section -->
@@ -285,12 +311,13 @@
         <div class="col-md-12 text-white">
           <h6>STRATEGIC HEROES ORACLES</h6>
           <h2>SHO</h2>
+          
           <p>
             The SHO Alliance is a dynamic community designed to unite gamers from all walks of life, offering a platform
             for collaboration, competition, and the shared enthusiasm for gaming. By bringing together individuals with
             diverse skills and interests, the alliance fosters a sense of camaraderie and innovation within the gaming
-            world. At its core, the main alliance serves as the backbone, providing essential resources, guidance, and a
-            supportive structure for its sub-alliances to flourish. Through this collaborative framework, the SHO
+            world. 
+ Through this collaborative framework, the SHO
             Alliance empowers its members to thrive, push boundaries, and elevate the gaming experience for all
             involved.
           </p>
@@ -298,6 +325,15 @@
           <a href="https://chat.whatsapp.com/LhcHMHO6jee5g0dKF2aQwi" target="_blank">
             <button class="btn btn-light px-5 py-2 primary-btn">Join with Us</button>
           </a>
+          <a href="https://www.youtube.com/@Strategic-Heroes-Oracles" target="_blank">
+            <button class="btn btn-light px-5 py-2 primary-btn">Check our Youtube Content</button>
+          </a>
+          <section id="faq-section" style="text-align: center; margin: 50px;">
+  <h3>Have Questions?</h3>
+  <p>Check out our FAQ page for all the answers you need!</p>
+  <a href="Faq.html" style="padding: 10px 20px; background-color: #007bff; color: #fff; text-decoration: none; border-radius: 5px;">Visit FAQ</a>
+            
+          </section>
         </div>
       </div>
     </div>
@@ -309,8 +345,22 @@
     </div>
     </div>
   </header>
+  
 
   <main>
+    
+
+    <section id="announcements" style="padding: 20px; background-color: #f9f9f9; border-top: 2px solid #ccc;">
+  <h3 style="text-align: center;">Announcements & Updates</h3>
+  <div class="ticker-container" style="overflow: hidden; max-width: 800px; margin: 0 auto; border: 1px solid #ddd; background-color: #fff; padding: 10px;">
+    <div class="ticker" style="display: flex; animation: scroll 10s linear infinite;">
+      <div class="ticker-item" style="flex: 0 0 100%; text-align: center; padding: 10px;">Update 1: New alliance activities start next week!</div>
+      <div class="ticker-item" style="flex: 0 0 100%; text-align: center; padding: 10px;">Announcement: Don’t forget to register for SHO Infinity War!</div>
+      <div class="ticker-item" style="flex: 0 0 100%; text-align: center; padding: 10px;">Update 3: SHO Championship leaderboard updated!</div>
+    </div>
+  </div>
+    </section>
+    
     <section class="section-1">
       <div class="container text-center">
         <div class="row">
@@ -340,6 +390,10 @@
         </div>
       </div>
     </section>
+
+  
+
+
     <section class="section-2 container-fluid p-0">
       <div class="cover">
         <div class="overlay"></div>
@@ -355,11 +409,11 @@
       <div class="container-fluid text-center">
         <div class="numbers d-flex flex-md-row flex-wrap justify-content-center">
           <div class="rect">
-            <h1>6</h1>
+            <h1>9</h1>
             <p>Total Alliances</p>
           </div>
           <div class="rect">
-            <h1>180</h1>
+            <h1>180+</h1>
             <p>Total Players</p>
           </div>
         </div>
@@ -464,7 +518,7 @@
               <p class="card-text">
                 **Akash: The Visionary from Kota**
 
-                Akash, co-founder of our alliance, hails from Kota, a city known for its excellence and determination.
+                Akash, co-founder of our alliance, hails from varanasi, a city known for its excellence and determination.
                 With a keen eye for innovation and a deep passion for gaming, Akash has been instrumental in shaping the
                 alliance's success. His strategic foresight and dedication to fostering a strong gaming community have
                 made him a respected figure in the industry. Drawing inspiration from Kota's rich heritage of discipline
@@ -526,7 +580,76 @@
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
   </script>
   <!-- <script src="./main.js"></script> -->
+<script>
+  function searchContent() {
+    let input = document.getElementById("searchInput").value.toLowerCase();
+    let items = document.getElementsByClassName("searchable");
+    for (let item of items) {
+      item.style.display = item.innerHTML.toLowerCase().includes(input) ? "" : "none";
+    }
+  }
+</script>
+  <script>
+  const updates = [
+    { title: "Update 2", content: "Annual SHO Meetup scheduled for next month!" },
+    { title: "Reminder", content: "Submit your tournament entries by Friday." },
+  ];
 
+  const updatesList = document.getElementById("updates-list");
+  updates.forEach(update => {
+    const li = document.createElement("li");
+    li.style.padding = "10px 0";
+    li.style.borderBottom = "1px solid #ddd";
+    li.innerHTML = `<strong>${update.title}:</strong> ${update.content}`;
+    updatesList.appendChild(li);
+  });
+  </script>
+  <!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/67979e823a8427326075659d/1iik46cg5';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+  <script>// Select the toggle button
+const toggleButton = document.getElementById('toggle-button');
+
+// Check if a theme is saved in localStorage
+const currentTheme = localStorage.getItem('theme');
+
+// Apply the saved theme
+if (currentTheme === 'dark') {
+    document.body.classList.add('dark-mode');
+    toggleButton.textContent = 'Switch to Light Mode';
+}
+    const themeToggleButton = document.getElementById("theme-toggle");
+const body = document.body;
+
+themeToggleButton.addEventListener("click", () => {
+    body.classList.toggle("dark-theme");
+});
+
+// Add event listener to the button
+toggleButton.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+
+    // Update the button text based on the current theme
+    if (document.body.classList.contains('dark-mode')) {
+        toggleButton.textContent = 'Switch to Light Mode';
+        localStorage.setItem('theme', 'dark'); // Save the theme preference
+    } else {
+        toggleButton.textContent = 'Switch to Dark Mode';
+        localStorage.setItem('theme', 'light'); // Save the theme preference
+    }
+}); 
+  </script>
+  <script src="chat.js"></script>
+<!--End of Tawk.to Script-->
 </body>
 
 </html>
