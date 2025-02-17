@@ -227,7 +227,7 @@
       text-transform: uppercase;
     }
   </style>
-  <link rel="stylesheet" href="chat.css">
+  <!-- <link rel="stylesheet" href="chat.css"> -->
 
 </head>
 
@@ -239,9 +239,6 @@
           <img src="./assets/icon (1).jpg" alt="SHO Logo" class="icon-image">
           SHO
         </a>
-        <div style="text-align: center; margin-top: 20px;">
-  <input type="text" id="searchInput" onkeyup="searchContent()" placeholder="Search🔎" style="padding: 8px; width: 100px;">
-        </div>
         <!-- Dark Mode Toggle -->
 
         
@@ -265,26 +262,14 @@
               <a href="src/achivements.html" class="nav-link">Achievements</a>
             </li>
             <li class="nav-item">
-              <a href="src/what-we-are.html" class="nav-link">What We Are</a>
-            </li>
-            <li class="nav-item">
               <a class="nav-link" href="src/internal-tournaments.html">INTERNAL TOURNAMENTS</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="quiz.html">HITWICKET GAME</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="forms.html">SHO FORMS</a>
-            </li>
-            <li class="nav-item">
               <a class="nav-link" href="chat.html">LIVE CHAT</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="team.html">Team Builder</a>
-            </li>
-               <li>
-            <button id="theme-toggle">🌙</button>
-               </li>
           </ul>
         </div>
       </nav>
@@ -317,7 +302,7 @@
             for collaboration, competition, and the shared enthusiasm for gaming. By bringing together individuals with
             diverse skills and interests, the alliance fosters a sense of camaraderie and innovation within the gaming
             world. 
- Through this collaborative framework, the SHO
+            Through this collaborative framework, the SHO
             Alliance empowers its members to thrive, push boundaries, and elevate the gaming experience for all
             involved.
           </p>
@@ -325,42 +310,18 @@
           <a href="https://chat.whatsapp.com/LhcHMHO6jee5g0dKF2aQwi" target="_blank">
             <button class="btn btn-light px-5 py-2 primary-btn">Join with Us</button>
           </a>
-          <a href="https://www.youtube.com/@Strategic-Heroes-Oracles" target="_blank">
+          <!-- <a href="https://www.youtube.com/@Strategic-Heroes-Oracles" target="_blank">
             <button class="btn btn-light px-5 py-2 primary-btn">Check our Youtube Content</button>
-          </a>
-          <section id="faq-section" style="text-align: center; margin: 50px;">
-  <h3>Have Questions?</h3>
-  <p>Check out our FAQ page for all the answers you need!</p>
-  <a href="Faq.html" style="padding: 10px 20px; background-color: #007bff; color: #fff; text-decoration: none; border-radius: 5px;">Visit FAQ</a>
-            
-          </section>
+          </a> -->
         </div>
       </div>
     </div>
-
-
-
-
-
     </div>
     </div>
   </header>
   
 
   <main>
-    
-
-    <section id="announcements" style="padding: 20px; background-color: #f9f9f9; border-top: 2px solid #ccc;">
-  <h3 style="text-align: center;">Announcements & Updates</h3>
-  <div class="ticker-container" style="overflow: hidden; max-width: 800px; margin: 0 auto; border: 1px solid #ddd; background-color: #fff; padding: 10px;">
-    <div class="ticker" style="display: flex; animation: scroll 10s linear infinite;">
-      <div class="ticker-item" style="flex: 0 0 100%; text-align: center; padding: 10px;">Update 1: New alliance activities start next week!</div>
-      <div class="ticker-item" style="flex: 0 0 100%; text-align: center; padding: 10px;">Announcement: Don’t forget to register for SHO Infinity War!</div>
-      <div class="ticker-item" style="flex: 0 0 100%; text-align: center; padding: 10px;">Update 3: SHO Championship leaderboard updated!</div>
-    </div>
-  </div>
-    </section>
-    
     <section class="section-1">
       <div class="container text-center">
         <div class="row">
@@ -413,7 +374,7 @@
             <p>Total Alliances</p>
           </div>
           <div class="rect">
-            <h1>180+</h1>
+            <h1>180</h1>
             <p>Total Players</p>
           </div>
         </div>
@@ -571,85 +532,13 @@
     </div>
     </div>
   </footer>
-
+ 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
-  </script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
-  </script>
-  <!-- <script src="./main.js"></script> -->
-<script>
-  function searchContent() {
-    let input = document.getElementById("searchInput").value.toLowerCase();
-    let items = document.getElementsByClassName("searchable");
-    for (let item of items) {
-      item.style.display = item.innerHTML.toLowerCase().includes(input) ? "" : "none";
-    }
-  }
-</script>
-  <script>
-  const updates = [
-    { title: "Update 2", content: "Annual SHO Meetup scheduled for next month!" },
-    { title: "Reminder", content: "Submit your tournament entries by Friday." },
-  ];
-
-  const updatesList = document.getElementById("updates-list");
-  updates.forEach(update => {
-    const li = document.createElement("li");
-    li.style.padding = "10px 0";
-    li.style.borderBottom = "1px solid #ddd";
-    li.innerHTML = `<strong>${update.title}:</strong> ${update.content}`;
-    updatesList.appendChild(li);
-  });
-  </script>
-  <!--Start of Tawk.to Script-->
-<script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/67979e823a8427326075659d/1iik46cg5';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
-</script>
-  <script>// Select the toggle button
-const toggleButton = document.getElementById('toggle-button');
-
-// Check if a theme is saved in localStorage
-const currentTheme = localStorage.getItem('theme');
-
-// Apply the saved theme
-if (currentTheme === 'dark') {
-    document.body.classList.add('dark-mode');
-    toggleButton.textContent = 'Switch to Light Mode';
-}
-    const themeToggleButton = document.getElementById("theme-toggle");
-const body = document.body;
-
-themeToggleButton.addEventListener("click", () => {
-    body.classList.toggle("dark-theme");
-});
-
-// Add event listener to the button
-toggleButton.addEventListener('click', () => {
-    document.body.classList.toggle('dark-mode');
-
-    // Update the button text based on the current theme
-    if (document.body.classList.contains('dark-mode')) {
-        toggleButton.textContent = 'Switch to Light Mode';
-        localStorage.setItem('theme', 'dark'); // Save the theme preference
-    } else {
-        toggleButton.textContent = 'Switch to Dark Mode';
-        localStorage.setItem('theme', 'light'); // Save the theme preference
-    }
-}); 
-  </script>
-  <script src="chat.js"></script>
-<!--End of Tawk.to Script-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  <script src="./main.js"></script>
 </body>
 
 </html>
