@@ -1,464 +1,525 @@
- <!DOCTYPE html>
- <html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 
- <head>
-   <meta charset="UTF-8" />
-   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-   <title>Vanguard Players List</title>
-   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
-   <link href="https://fonts.googleapis.com/css2?family=Sniglet&display=swap" rel="stylesheet">
-   <style>
-     body {
-       background-color: #141414;
-       font-family: 'Sniglet', cursive;
-       color: #e5e5e5;
-     }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Vanguard Players List</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Sniglet&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
+  <style>
+    /* General Body Styling */
+    body {
+      background-color: #141414;
+      font-family: 'Sniglet', cursive;
+      color: #e5e5e5;
+      margin: 0;
+      padding: 0;
+    }
 
-     .header-container {
-       margin-top: 20px;
-       text-align: center;
-       color: #ffdd57;
-       font-family: 'Roboto Slab', serif;
-       font-size: 2.5rem;
-       animation: textGlow 1.5s infinite alternate;
-       text-shadow: 0 0 10px #ffdd57, 0 0 20px #ffdd57, 0 0 30px #ffdd57, 0 0 40px #ffdd57, 0 0 50px #ffdd57;
-     }
+    /* Navbar Styling */
+    .navbar-custom {
+      background: linear-gradient(45deg, #0d0d2b, #1a1a40);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    }
 
-     @keyframes textGlow {
-       from {
-         text-shadow: 0 0 10px #ffdd57, 0 0 20px #ffdd57, 0 0 30px #ffdd57, 0 0 40px #ffdd57;
-       }
+    .navbar-custom .navbar-brand {
+      font-family: 'Roboto Slab', serif;
+      font-size: 1.8rem;
+      color: #ffdd57;
+    }
 
-       to {
-         text-shadow: 0 0 20px #ffdd57, 0 0 30px #ffdd57, 0 0 40px #ffdd57, 0 0 50px #ffdd57;
-       }
-     }
+    .navbar-custom .nav-link {
+      color: #e5e5e5;
+      font-weight: 600;
+      padding: 10px 20px;
+      transition: color 0.3s ease;
+    }
 
-     .description-container {
-       margin-top: 20px;
-       text-align: center;
-       color: #ffffff;
-       font-family: 'Roboto Slab', serif;
-       animation: slideIn 1.5s ease-out;
-     }
+    .navbar-custom .nav-link:hover {
+      color: #ffdd57;
+    }
 
-     .description-container p {
-       font-size: 1.2rem;
-       line-height: 1.8;
-       max-width: 800px;
-       margin: 0 auto 10px auto;
-       padding: 10px 20px;
-       background: linear-gradient(135deg, #ff512f, #dd2476);
-       border-radius: 10px;
-       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
-       animation: fadeIn 2s ease-out;
-       color: white;
-     }
+    /* Header Container */
+    .header-container {
+      margin-top: 20px;
+      text-align: center;
+      color: #ffdd57;
+      font-family: 'Roboto Slab', serif;
+      font-size: 2.5rem;
+      animation: textGlow 1.5s infinite alternate;
+      text-shadow: 0 0 10px #ffdd57, 0 0 20px #ffdd57, 0 0 30px #ffdd57, 0 0 40px #ffdd57, 0 0 50px #ffdd57;
+    }
 
-     @keyframes slideIn {
-       from {
-         transform: translateY(-50px);
-         opacity: 0;
-       }
+    @keyframes textGlow {
+      from {
+        text-shadow: 0 0 10px #ffdd57, 0 0 20px #ffdd57, 0 0 30px #ffdd57, 0 0 40px #ffdd57;
+      }
 
-       to {
-         transform: translateY(0);
-         opacity: 1;
-       }
-     }
+      to {
+        text-shadow: 0 0 20px #ffdd57, 0 0 30px #ffdd57, 0 0 40px #ffdd57, 0 0 50px #ffdd57;
+      }
+    }
 
-     body {
-       background-color: #141414;
-       font-family: 'Sniglet', cursive;
-       color: #e5e5e5;
-     }
+    /* Description Container */
+    .description-container {
+      margin-top: 20px;
+      text-align: center;
+      color: #ffffff;
+      font-family: 'Roboto Slab', serif;
+      animation: slideIn 1.5s ease-out;
+    }
 
-     .table-container {
-       margin-top: 50px;
-       background: linear-gradient(135deg, #6a11cb, #2575fc);
-       border-radius: 15px;
-       padding: 30px;
-       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
-       animation: fadeIn 2s ease-out;
-     }
+    .description-container p {
+      font-size: 1.2rem;
+      line-height: 1.8;
+      max-width: 800px;
+      margin: 0 auto 10px auto;
+      padding: 10px 20px;
+      background: linear-gradient(135deg, #5089ca, #610e45);
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+      animation: fadeIn 2s ease-out;
+      color: white;
+    }
 
-     h2 {
-       text-align: center;
-       font-size: 3rem;
-       color: white;
-       margin-bottom: 30px;
-       text-transform: uppercase;
-       text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
-     }
+    @keyframes slideIn {
+      from {
+        transform: translateY(-50px);
+        opacity: 0;
+      }
 
-     .table-wrapper {
-       max-height: 400px;
-       overflow-y: scroll;
-       border-radius: 10px;
-       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
-     }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
 
-     table {
-       width: 100%;
-       border-collapse: collapse;
-       border-radius: 10px;
-       overflow: hidden;
-     }
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
 
-     th,
-     td {
-       padding: 15px;
-       text-align: center;
-       font-size: 1rem;
-     }
+      100% {
+        opacity: 1;
+      }
+    }
 
-     th {
-       background-color: #ff512f;
-       color: white;
-       font-weight: bold;
-       text-transform: uppercase;
-       font-family: 'Arial', sans-serif;
-       animation: headerAnimation 2s ease-in-out;
-     }
+    /* Table Container */
+    .table-container {
+      margin-top: 50px;
+      background: linear-gradient(135deg, #6a11cb, #2575fc);
+      border-radius: 15px;
+      padding: 30px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+      animation: fadeIn 2s ease-out;
+    }
 
-     td {
-       background-color: #212121;
-       color: white;
-     }
+    h2 {
+      text-align: center;
+      font-size: 3rem;
+      color: white;
+      margin-bottom: 30px;
+      text-transform: uppercase;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+    }
 
-     tr:nth-child(even) td {
-       background-color: #333333;
-     }
+    .table-wrapper {
+      max-height: 400px;
+      overflow-y: scroll;
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+    }
 
-     tr:hover {
-       background-color: #444444;
-       transform: scale(1.05);
-       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-     }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      border-radius: 10px;
+      overflow: hidden;
+    }
 
-     .level-high {
-       color: #e5e5e5;
-       background-color: #1e90ff;
-       font-weight: bold;
-       padding: 5px;
-       border-radius: 5px;
-     }
+    th,
+    td {
+      padding: 15px;
+      text-align: center;
+      font-size: 1rem;
+    }
 
-     .level-medium {
-       color: white;
-       background-color: #ff6347;
-       font-weight: bold;
-       padding: 5px;
-       border-radius: 5px;
-     }
+    th {
+      background-color: #ff512f;
+      color: white;
+      font-weight: bold;
+      text-transform: uppercase;
+      font-family: 'Arial', sans-serif;
+      animation: headerAnimation 2s ease-in-out;
+    }
 
-     .level-low {
-       color: black;
-       background-color: #ffdf00;
-       font-weight: bold;
-       padding: 5px;
-       border-radius: 5px;
-     }
+    td {
+      background-color: #212121;
+      color: white;
+    }
 
-     table {
-       counter-reset: rowNumber;
-     }
+    tr:nth-child(even) td {
+      background-color: #333333;
+    }
 
-     tbody tr {
-       counter-increment: rowNumber;
-     }
+    tr:hover {
+      background-color: #444444;
+      transform: scale(1.05);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    }
 
-     tbody tr td:first-child::before {
-       content: counter(rowNumber);
-       font-weight: bold;
-       color: #ff512f;
-       margin-right: 10px;
-     }
+    .level-high {
+      color: #e5e5e5;
+      background-color: #1e90ff;
+      font-weight: bold;
+      padding: 5px;
+      border-radius: 5px;
+    }
 
-     @keyframes fadeIn {
-       0% {
-         opacity: 0;
-       }
+    .level-medium {
+      color: white;
+      background-color: #ff6347;
+      font-weight: bold;
+      padding: 5px;
+      border-radius: 5px;
+    }
 
-       100% {
-         opacity: 1;
-       }
-     }
+    .level-low {
+      color: black;
+      background-color: #ffdf00;
+      font-weight: bold;
+      padding: 5px;
+      border-radius: 5px;
+    }
 
-     @keyframes headerAnimation {
-       0% {
-         transform: scale(0.9);
-         opacity: 0;
-       }
+    table {
+      counter-reset: rowNumber;
+    }
 
-       50% {
-         transform: scale(1.1);
-       }
+    tbody tr {
+      counter-increment: rowNumber;
+    }
 
-       100% {
-         transform: scale(1);
-         opacity: 1;
-       }
-     }
+    tbody tr td:first-child::before {
+      content: counter(rowNumber);
+      font-weight: bold;
+      color: #ff512f;
+      margin-right: 10px;
+    }
 
-     @media (max-width: 768px) {
+    @keyframes headerAnimation {
+      0% {
+        transform: scale(0.9);
+        opacity: 0;
+      }
 
-       th,
-       td {
-         padding: 10px;
-         font-size: 0.9rem;
-       }
+      50% {
+        transform: scale(1.1);
+      }
 
-       h2 {
-         font-size: 2rem;
-       }
-     }
-   </style>
- </head>
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
 
- <body>
+    @media (max-width: 768px) {
 
-   <div class="container">
-     <div class="header-container">
-       Welcome to SHO Vanguards
-     </div>
-     <div class="description-container">
-       <p>The Vanguard Alliance stands as a titan in the SHO universe,</p>
-       <p>with 30 of the most skilled and dedicated members.</p>
-       <p>Renowned for their strategic prowess and unrivaled teamwork,</p>
-       <p>they dominate the battlefield and inspire awe across the community.</p>
-     </div>
-     <div class="table-container">
-       <h2>Vanguard Players List</h2>
-       <div class="table-wrapper">
-         <table>
-           <thead>
-             <tr>
-               <th>#</th>
-               <th>Player Name</th>
-               <th>Player Level</th>
-               <th>Player Rank</th>
-               <th>Team</th>
-             </tr>
-           </thead>
-           <tbody>
-             <tr>
-               <td></td>
-               <td>Devil Khan(Leader)</td>
-               <td class="level-high">96</td>
-               <td>TITAN</td>
-               <td>||SHO||DEVIL||KHAN</td>
-             </tr>
-             <tr>
-               <td></td>
-               <td>Akash</td>
-               <td class="level-high">100</td>
-               <td>MASTERFUL</td>
-               <td>||SHO||PREPETUL</td>
-             </tr>
-             <tr>
-               <td></td>
-               <td>Sammed Jain(YC WINNER)</td>
-               <td class="level-high">100</td>
-               <td>TITAN</td>
-               <td>||SHO|| ALPHA</td>
-             </tr>
-             <tr>
-               <td></td>
-               <td>sunny</td>
-               <td class="level-high">100</td>
-               <td>TITAN</td>
-               <td>||SHO||DESTRUCTION</td>
-             </tr>
-             <tr>
-               <td></td>
-               <td>ali</td>
-               <td class="level-medium">100</td>
-               <td>SUPREME</td>
-               <td>||SHO||ALI</td>
-             </tr>
-             <tr>
-               <td></td>
-               <td>Souja</td>
-               <td class="level-high">100</td>
-               <td>MASTERFUL</td>
-               <td>||SHO||SOUJA X1</td>
-             </tr>
-             <tr>
-               <td></td>
-               <td>aussies</td>
-               <td class="level-high">100</td>
-               <td>LEGENDARY</td>
-               <td>||SHO||AUSSIES FM</td>
-             </tr>
-             <tr>
-               <td></td>
-               <td>krishna</td>
-               <td class="level-medium">99</td>
-               <td>TITAN</td>
-               <td>||SHO||KR$NA</td>
-             </tr>
-             <tr>
-               <td></td>
-               <td>rajesh</td>
-               <td class="level-low">99</td>
-               <td>SUPREME</td>
-               <td>||SHO||RAJESH RIDERS</td>
-             </tr>
-             <tr>
-               <td></td>
-               <td>single mom</td>
-               <td class="level-high">98</td>
-               <td>MASTERFUL</td>
-               <td>SINLE MOMS</td>
-             </tr>
-             <tr>
-               <td></td>
-               <td>zeeshan</td>
-               <td class="level-medium">100</td>
-               <td>TITAN</td>
-               <td>||SHO||PTI</td>
-             </tr>
-             <tr>
-               <td></td>
-               <td>HYD</td>
-               <td class="level-medium">100</td>
-               <td>SUPREME</td>
-               <td>||SHO||HYD</td>
-             </tr>
-             <tr>
-               <td></td>
-               <td>AVI</td>
-               <td class="level-medium">97</td>
-               <td>LEGENDARY</td>
-               <td>||SHO||AVI BLASTERS</td>
-             </tr>
-             <tr>
-               <td></td>
-               <td>BLODDY</td>
-               <td class="level-medium">100</td>
-               <td>TITAN</td>
-               <td>||SHO||BLOO$Y BE@ST</td>
-             </tr>
-             <tr>
-               <td></td>
-               <td>LANCHI</td>
-               <td class="level-medium">94</td>
-               <td>SUPREME</td>
-               <td>||SHO||LANCASHIRE UTD</td>
-             </tr>
-             <tr>
-               <td></td>
-               <td>CHERNOBYL</td>
-               <td class="level-medium">94</td>
-               <td>SUPREME</td>
-               <td>||SHO||CHERNOBYL</td>
-             </tr>
-             <tr>
-               <td></td>
-               <td>VIJAY KUMAR</td>
-               <td class="level-low">100</td>
-               <td>TITAN</td>
-               <td>||SHO||VIJAY</td>
-             </tr>
-             <tr>
-               <td></td>
-               <td>BARCE</td>
-               <td class="level-low">89</td>
-               <td>LEGENDARY</td>
-               <td>||SHO||BARCELONA</td>
-             </tr>
-             <tr>
-               <td></td>
-               <td>PK</td>
-               <td class="level-medium">89</td>
-               <td>TITAN</td>
-               <td>||SHO||PK HAWSKS</td>
-             </tr>
-             <tr>
-               <td></td>
-               <td>Maverick</td>
-               <td class="level-medium">89</td>
-               <td>MASTERFUL</td>
-               <td>||SHO||MavericK's</td>
-             </tr>
-             <tr>
-               <td></td>
-               <td>Desi</td>
-               <td class="level-medium">83</td>
-               <td>LEGENDARY</td>
-               <td>||SHO||Desi Xi</td>
-             </tr>
-             <tr>
-               <td></td>
-               <td>Saleem</td>
-               <td class="level-medium">83</td>
-               <td>SUPREME</td>
-               <td>||SHO||Salem Kings</td>
-             </tr>
-             <tr>
-               <td></td>
-               <td>scrodinger</td>
-               <td class="level-medium">82</td>
-               <td>TITAN</td>
-               <td>||SHO||'SCHRoDINGER'</td>
-             </tr>
-             <tr>
-               <td></td>
-               <td>Team 7696</td>
-               <td class="level-medium">75</td>
-               <td>Supreme</td>
-               <td>||SHO||Team 7696</td>
-             </tr>
-             <tr>
-               <td></td>
-               <td>ANDREWS</td>
-               <td class="level-medium">75</td>
-               <td>LEGENDARY</td>
-               <td>||SHO||ANDREWS</td>
-             </tr>
-             <tr>
-               <td></td>
-               <td>BEAST</td>
-               <td class="level-medium">72</td>
-               <td>MASTERFUL</td>
-               <td>||SHO||BEAST</td>
-             </tr>
-             <tr>
-               <td></td>
-               <td>GIJARAT</td>
-               <td class="level-medium">70</td>
-               <td>LEGENDARY</td>
-               <td>||SHO||GUJARAT TITANS</td>
-             </tr>
-             <tr>
-               <td></td>
-               <td>GUARDIAN</td>
-               <td class="level-medium">69</td>
-               <td>MASTERFUL</td>
-               <td>||SHO||GUARDIAN ANGEL</td>
-             </tr>
-             <tr>
-               <td></td>
-               <td>INNOCENT</td>
-               <td class="level-medium">41</td>
-               <td>LEGENDARY</td>
-               <td>||SHO||INNOCENT</td>
-             </tr>
-             <tr>
-               <td></td>
-               <td>Sunil Kumar</td>
-               <td class="level-high">100</td>
-               <td>TITAN</td>
-               <td>||SHO||HUNTER</td>
-             </tr>
+      th,
+      td {
+        padding: 10px;
+        font-size: 0.9rem;
+      }
 
-             Add more rows as needed for 30 players
-           </tbody>
-         </table>
-       </div>
-     </div>
- </body>
+      h2 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
 
- </html>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-custom">
+    <div class="container">
+      <a class="navbar-brand" href="#">SHO Vanguard</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon" style="filter: invert(1);"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="../index.html">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../src/alliances.html">Alliances</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../src/leaders-coleaders.html">Leaders & Co-leaders</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../src/achivements.html">Achievements</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../src/internal-tournaments.html">Internal Tournaments</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../src/hitwicket.html">Hitwicket Game</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav> 
+
+  <!-- Main Container -->
+  <div class="container">
+    <div class="header-container">
+      Welcome to SHO Vanguards
+    </div>
+    <div class="description-container">
+      <p>The Vanguard Alliance stands as a titan in the SHO universe,</p>
+      <p>with 30 of the most skilled and dedicated members.</p>
+      <p>Renowned for their strategic prowess and unrivaled teamwork,</p>
+      <p>they dominate the battlefield and inspire awe across the community.</p>
+    </div>
+    <div class="table-container">
+      <h2>Vanguard Players List</h2>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Player Name</th>
+              <th>Player Level</th>
+              <th>Player Rank</th>
+              <th>Team</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td></td>
+              <td>Devil Khan(Leader)</td>
+              <td class="level-high">96</td>
+              <td>TITAN</td>
+              <td>||SHO||DEVIL||KHAN</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>Akash</td>
+              <td class="level-high">100</td>
+              <td>MASTERFUL</td>
+              <td>||SHO||PREPETUL</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>Sammed Jain(YC WINNER)</td>
+              <td class="level-high">100</td>
+              <td>TITAN</td>
+              <td>||SHO|| ALPHA</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>sunny</td>
+              <td class="level-high">100</td>
+              <td>TITAN</td>
+              <td>||SHO||DESTRUCTION</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>ali</td>
+              <td class="level-medium">100</td>
+              <td>SUPREME</td>
+              <td>||SHO||ALI</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>Souja</td>
+              <td class="level-high">100</td>
+              <td>MASTERFUL</td>
+              <td>||SHO||SOUJA X1</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>aussies</td>
+              <td class="level-high">100</td>
+              <td>LEGENDARY</td>
+              <td>||SHO||AUSSIES FM</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>krishna</td>
+              <td class="level-medium">99</td>
+              <td>TITAN</td>
+              <td>||SHO||KR$NA</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>rajesh</td>
+              <td class="level-low">99</td>
+              <td>SUPREME</td>
+              <td>||SHO||RAJESH RIDERS</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>single mom</td>
+              <td class="level-high">98</td>
+              <td>MASTERFUL</td>
+              <td>SINLE MOMS</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>zeeshan</td>
+              <td class="level-medium">100</td>
+              <td>TITAN</td>
+              <td>||SHO||PTI</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>HYD</td>
+              <td class="level-medium">100</td>
+              <td>SUPREME</td>
+              <td>||SHO||HYD</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>AVI</td>
+              <td class="level-medium">97</td>
+              <td>LEGENDARY</td>
+              <td>||SHO||AVI BLASTERS</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>BLODDY</td>
+              <td class="level-medium">100</td>
+              <td>TITAN</td>
+              <td>||SHO||BLOO$Y BE@ST</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>LANCHI</td>
+              <td class="level-medium">94</td>
+              <td>SUPREME</td>
+              <td>||SHO||LANCASHIRE UTD</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>CHERNOBYL</td>
+              <td class="level-medium">94</td>
+              <td>SUPREME</td>
+              <td>||SHO||CHERNOBYL</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>VIJAY KUMAR</td>
+              <td class="level-low">100</td>
+              <td>TITAN</td>
+              <td>||SHO||VIJAY</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>BARCE</td>
+              <td class="level-low">89</td>
+              <td>LEGENDARY</td>
+              <td>||SHO||BARCELONA</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>PK</td>
+              <td class="level-medium">89</td>
+              <td>TITAN</td>
+              <td>||SHO||PK HAWSKS</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>Maverick</td>
+              <td class="level-medium">89</td>
+              <td>MASTERFUL</td>
+              <td>||SHO||MavericK's</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>Desi</td>
+              <td class="level-medium">83</td>
+              <td>LEGENDARY</td>
+              <td>||SHO||Desi Xi</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>Saleem</td>
+              <td class="level-medium">83</td>
+              <td>SUPREME</td>
+              <td>||SHO||Salem Kings</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>scrodinger</td>
+              <td class="level-medium">82</td>
+              <td>TITAN</td>
+              <td>||SHO||'SCHRoDINGER'</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>Team 7696</td>
+              <td class="level-medium">75</td>
+              <td>Supreme</td>
+              <td>||SHO||Team 7696</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>ANDREWS</td>
+              <td class="level-medium">75</td>
+              <td>LEGENDARY</td>
+              <td>||SHO||ANDREWS</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>BEAST</td>
+              <td class="level-medium">72</td>
+              <td>MASTERFUL</td>
+              <td>||SHO||BEAST</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>GIJARAT</td>
+              <td class="level-medium">70</td>
+              <td>LEGENDARY</td>
+              <td>||SHO||GUJARAT TITANS</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>GUARDIAN</td>
+              <td class="level-medium">69</td>
+              <td>MASTERFUL</td>
+              <td>||SHO||GUARDIAN ANGEL</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>INNOCENT</td>
+              <td class="level-medium">41</td>
+              <td>LEGENDARY</td>
+              <td>||SHO||INNOCENT</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>Sunil Kumar</td>
+              <td class="level-high">100</td>
+              <td>TITAN</td>
+              <td>||SHO||HUNTER</td>
+            </tr>
+            <!-- Add more rows as needed for 30 players -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+
+</html>

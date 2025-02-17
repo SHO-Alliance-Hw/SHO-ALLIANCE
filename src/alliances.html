@@ -1,90 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Our Alliances</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
   <style>
     body {
-      background: linear-gradient(to right, #141e30, #243b55);
+      background: radial-gradient(circle, rgba(0, 0, 0, 1) 0%, rgba(29, 29, 40, 1) 100%);
       font-family: 'Poppins', sans-serif;
       color: white;
       overflow-x: hidden;
     }
 
     h2 {
-      font-size: 1.8rem;
-      font-weight: bold;
-      color: white;
-      background-color: rgba(75, 0, 130, 0.8);
-      padding: 20px;
-      border-radius: 15px;
-      width: 90%;
-      margin: 30px auto;
+      font-size: 2rem;
+      font-weight: 700;
+      color: #ffcc00;
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 15px 30px;
+      border-radius: 10px;
       text-align: center;
-      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
-      animation: fadeInDown 1s ease-in-out;
+      text-transform: uppercase;
+      margin: 30px auto;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
     }
 
     .navbar {
-      background-color: #2c2c3e;
+      background: linear-gradient(45deg, #1a1a2e, #16213e);
     }
 
     .navbar .nav-link {
       color: white;
-      font-weight: 700;
-      transition: color 0.3s;
+      font-weight: 600;
+      padding: 10px 20px;
+      transition: color 0.3s ease;
     }
 
     .navbar .nav-link:hover {
       color: #ffcc00;
-    }
-
-    .btn-alliance {
-      width: 100%;
-      max-width: 300px;
-      margin: 15px;
-      position: relative;
-      overflow: hidden;
-      border-radius: 15px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-      transition: transform 0.4s ease, box-shadow 0.4s ease;
-      cursor: pointer;
-      animation: zoomIn 1s ease-in-out;
-    }
-
-    .btn-alliance img {
-      width: 100%;
-      height: auto;
-      border-radius: 15px;
-      filter: brightness(80%);
-      transition: filter 0.4s ease;
-    }
-
-    .btn-alliance:hover img {
-      filter: brightness(100%);
-    }
-
-    .btn-alliance:hover {
-      transform: scale(1.1);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
-    }
-
-    .alliance-name {
-      position: absolute;
-      bottom: 10px;
-      left: 50%;
-      transform: translateX(-50%);
-      background-color: rgba(0, 0, 0, 0.6);
-      color: white;
-      font-size: 18px;
-      font-weight: bold;
-      text-transform: uppercase;
-      padding: 5px 10px;
-      border-radius: 10px;
-      animation: fadeInUp 1s ease-in-out;
     }
 
     .alliance-container {
@@ -92,32 +48,54 @@
       flex-wrap: wrap;
       justify-content: center;
       padding: 20px;
-      animation: fadeIn 1.5s ease-in-out;
+      gap: 20px;
     }
 
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
+    .btn-alliance {
+      width: 100%;
+      max-width: 350px;
+      position: relative;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
+      cursor: pointer;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
     }
 
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
+    .btn-alliance img {
+      width: 100%;
+      height: 100%;
+      border-radius: 15px;
+      object-fit: cover;
+      transition: transform 0.3s ease;
     }
 
-    @keyframes fadeInDown {
-      from { opacity: 0; transform: translateY(-20px); }
-      to { opacity: 1; transform: translateY(0); }
+    .btn-alliance:hover img {
+      transform: scale(1.05);
     }
 
-    @keyframes zoomIn {
-      from { transform: scale(0.8); opacity: 0; }
-      to { transform: scale(1); opacity: 1; }
+    .btn-alliance:hover {
+      transform: scale(1.1);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.7);
+    }
+
+    .alliance-name {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: rgba(0, 0, 0, 0.7);
+      color: #ffcc00;
+      font-size: 20px;
+      font-weight: bold;
+      text-transform: uppercase;
+      padding: 10px 15px;
+      border-radius: 8px;
     }
 
     @media (max-width: 768px) {
       .btn-alliance {
-        max-width: 250px;
+        max-width: 300px;
       }
 
       h2 {
@@ -131,7 +109,7 @@
 
     @media (max-width: 576px) {
       .btn-alliance {
-        max-width: 200px;
+        max-width: 250px;
       }
 
       h2 {
@@ -144,32 +122,30 @@
     }
   </style>
 </head>
-<body>
 
+<body>
   <nav class="navbar navbar-expand-lg navbar-dark">
     <div class="container-fluid">
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
-            <a class="nav-link" href="../index.html">HOME</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="alliances.html">ALLIANCES</a>
+            <a class="nav-link" href="../index.html">Home</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="leaders-coleaders.html">Leaders & Co-Leaders</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="achivements.html">Achievements</a>
+            <a class="nav-link" href="achievements.html">Achievements</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="what-we-are.html">What We Are</a>
+            <a class="nav-link" href="internal-tournaments.html">Internal Tournaments</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="internal-tournaments.html">INTERNAL TOURNAMENTS</a>
+            <a class="nav-link" href="hitwicket.html">Hitwicket Game</a>
           </li>
         </ul>
       </div>
@@ -180,28 +156,28 @@
     <h2>Explore Our Alliance In Hit Wicket</h2>
     <div class="alliance-container">
       <a href="../alliances/vanguard.html" class="btn-alliance">
-        <img src="../assets/sho_1.png" alt="Vanguard Alliance">
-        <span class="alliance-name">Vanguard</span>
+        <img src="../assets/sho_1.webp" alt="Vanguard Alliance">
+        <!-- <span class="alliance-name">Vanguard</span> -->
       </a>
       <a href="../alliances/outriders.html" class="btn-alliance">
         <img src="../assets/sho_2.png" alt="Outriders Alliance">
-        <span class="alliance-name">Outriders</span>
+        <!-- <span class="alliance-name">Outriders</span> -->
       </a>
       <a href="../alliances/enforces.html" class="btn-alliance">
-        <img src="../assets/sho_3.png" alt="Inforces Alliance">
-        <span class="alliance-name">Enforces</span>
+        <img src="../assets/sho_3.png" alt="Enforces Alliance">
+        <!-- <span class="alliance-name">Enforces</span> -->
       </a>
       <a href="../alliances/paladin.html" class="btn-alliance">
-        <img src="../assets/sho_5.png" alt="Paladin Alliance">
-        <span class="alliance-name">Paladin</span>
+        <img src="../assets/sho_5.webp" alt="Paladin Alliance">
+        <!-- <span class="alliance-name">Paladin</span> -->
       </a>
       <a href="../alliances/sentinels.html" class="btn-alliance">
         <img src="../assets/sho_6.png" alt="Sentinels Alliance">
-        <span class="alliance-name">Sentinels</span>
+        <!-- <span class="alliance-name">Sentinels</span> -->
       </a>
       <a href="../alliances/crusaders.html" class="btn-alliance">
         <img src="../assets/sho_4.png" alt="Crusaders Alliance">
-        <span class="alliance-name">Crusaders</span>
+        <!-- <span class="alliance-name">Crusaders</span> -->
       </a>
     </div>
 
@@ -209,15 +185,15 @@
     <div class="alliance-container">
       <a href="../alliances/freefire.html" class="btn-alliance">
         <img src="../assets/freefire.jpg" alt="Freefire Alliance">
-        <span class="alliance-name">Freefire</span>
+        <!-- <span class="alliance-name">Freefire</span> -->
       </a>
       <a href="../alliances/bgmi.html" class="btn-alliance">
         <img src="../assets/bgmi.jpg" alt="BGMI Alliance">
-        <span class="alliance-name">BGMI</span>
+        <!-- <span class="alliance-name">BGMI</span> -->
       </a>
       <a href="../alliances/football.html" class="btn-alliance">
         <img src="../assets/football.jpg" alt="Football Alliance">
-        <span class="alliance-name">Football</span>
+        <!-- <span class="alliance-name">Football</span> -->
       </a>
     </div>
   </div>
@@ -225,4 +201,5 @@
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
 </body>
+
 </html>
