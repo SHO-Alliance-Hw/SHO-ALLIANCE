@@ -52,3 +52,10 @@
     margin-left: -4vmin;
   }
 }
+/* Mobile Adjustment for Very Small Screens (e.g., iPhone SE) */
+@media only screen and (max-width: 375px) {
+  .big-img {
+    max-height: 300px; /* Reduce height for smaller screens */
+    padding: 5px;      /* Add a little padding if needed */
+  }
+}
