@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SHO HitWicket Guide</title>
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&family=Sniglet&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* Overall Theme */
+      body {
+        background: #1a1a2e; /* deep navy/charcoal background */
+        font-family: 'Sniglet', cursive;
+        color: #cfd8dc; /* light grey */
+        margin: 0;
+        padding: 0;
+      }
+
+      h1,
+      h2,
+      h3 {
+        font-family: 'Roboto Slab', serif;
+      }
+
+      /* Navbar */
+      .navbar-custom {
+        background: #16213e; /* darker navy */
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+      }
+      .navbar-custom .navbar-brand {
+        font-size: 1.8rem;
+        color: #80cbc4; /* teal accent */
+      }
+      .navbar-custom .nav-link {
+        color: #cfd8dc;
+        font-weight: 600;
+        padding: 10px 20px;
+        transition: color 0.3s ease;
+      }
+      .navbar-custom .nav-link:hover {
+        color: #80cbc4;
+      }
+
+      /* Section Headers */
+      .section-header {
+        background: #283593; /* professional blue */
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+        text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+        margin-bottom: 30px;
+        color: #ffffff;
+      }
+
+      /* Section Content */
+      .section-content {
+        background: #263238; /* dark slate */
+        padding: 30px;
+        border-radius: 10px;
+        margin-bottom: 50px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+      }
+
+      /* Smooth scrolling */
+      html {
+        scroll-behavior: smooth;
+      }
+
+      /* Table Styling (if needed) */
+      .table-container {
+        margin: 50px auto;
+        background: #263238;
+        border-radius: 15px;
+        padding: 30px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+        max-width: 1200px;
+      }
+
+      h2.table-title {
+        text-align: center;
+        font-size: 2.5rem;
+        color: #ffffff;
+        margin-bottom: 30px;
+        text-transform: uppercase;
+        text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+      }
+
+      .table-wrapper {
+        max-height: 500px;
+        overflow-y: auto;
+        border-radius: 10px;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+
+      th,
+      td {
+        padding: 15px;
+        text-align: center;
+        font-size: 1rem;
+        vertical-align: middle;
+      }
+
+      th {
+        background-color: #3949ab; /* subtle professional blue */
+        color: #ffffff;
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+
+      td {
+        background-color: #1e1e2f;
+        color: #cfd8dc;
+      }
+
+      tr:nth-child(even) td {
+        background-color: #27293d;
+      }
+
+      tr:hover {
+        background-color: #3e3f58;
+        transform: scale(1.01);
+        transition: transform 0.2s;
+      }
+
+      /* Button Styling */
+      .btn-details {
+        background-color: #80cbc4;
+        color: #1a1a2e;
+        font-weight: bold;
+        border: none;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+        padding: 12px 25px;
+        font-size: 1.2rem;
+      }
+      .btn-details:hover {
+        background-color: #4db6ac;
+      }
+
+      /* Product image styling (if needed) */
+      .product-img {
+        width: 70px;
+        height: 70px;
+        object-fit: cover;
+        border-radius: 8px;
+      }
+
+      /* Glass Section Styles and Animations */
+      .glass-section {
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 15px;
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px); /* For Safari */
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        padding: 30px;
+        margin-bottom: 50px;
+        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+        opacity: 0;
+        transform: translateY(30px);
+        animation: fadeInUp 0.8s forwards;
+      }
+
+      /* Stagger Animation Delays */
+      #pvp-leaderboard.glass-section {
+        animation-delay: 0.2s;
+      }
+      #hitwicket-official.glass-section {
+        animation-delay: 0.4s;
+      }
+      #yc-top-players.glass-section {
+        animation-delay: 0.6s;
+      }
+
+      /* Fade In Up Animation */
+      @keyframes fadeInUp {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Hover Animation on Glass Sections */
+      .glass-section:hover {
+        transform: scale(1.02);
+        transition: transform 0.3s ease;
+      }
+
+      @media (max-width: 768px) {
+        th,
+        td {
+          padding: 10px;
+          font-size: 0.9rem;
+        }
+        h2.table-title {
+          font-size: 2rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="#">SHO HitWicket</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon" style="filter: invert(1);"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav ml-auto">
+            <a class="nav-link" href="../index.html">Home</a>
+            <a class="nav-link" href="alliances.html">Alliances</a>
+            <a class="nav-link" href="leaders-coleaders.html">Leaders & Co-leaders</a>
+            <a class="nav-link" href="achivements.html">Achievements</a>
+            <a class="nav-link" href="internal-tournaments.html">Internal Tournaments</a>
+            <a class="nav-link" href="hitwicket.html">HitWicket Game</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container" style="padding-top: 100px;">
+      <!-- HitWicket Official Website Section -->
+      <section id="hitwicket-official" class="mb-5 glass-section">
+        <div class="section-header">
+          <h2>HitWicket Official Website</h2>
+        </div>
+        <div class="section-content text-center">
+          <p>
+            Explore the world of HitWicket! Manage your team, compete with the best, and rise to glory.
+          </p>
+          <p>
+            <a
+              href="https://hitwicket.com/"
+              class="btn btn-lg btn-details"
+              target="_blank"
+            >
+              Visit HitWicket Official Site
+            </a>
+          </p>
+        </div>
+      </section>
+      <!-- PVP Leaderboard Section -->
+      <section id="pvp-leaderboard" class="mb-5 glass-section">
+        <div class="section-header">
+          <h2>Daily PVP Leaderboard</h2>
+        </div>
+        <div class="section-content text-center">
+          <p>
+            Check out the top players dominating the battlefield!
+          </p>
+          <p>
+            <a
+              href="https://hitwicket.com/worldcup/arenas/leaderboard"
+              class="btn btn-lg btn-details"
+              target="_blank"
+            >
+              View Full Leaderboard
+            </a>
+          </p>
+        </div>
+      </section>
+      <!-- YC Top 128 Players Section -->
+      <section id="yc-top-players" class="mb-5 glass-section">
+        <div class="section-header">
+          <h2>YC Top 128 Players</h2>
+        </div>
+        <div class="section-content text-center">
+          <p>
+            From among thousands of members, these are the top 128 players showcasing exceptional skill and strategy. Discover who leads the pack in the ultimate battle for glory!
+          </p>
+          <p>
+            <a
+              href="https://hitwicket.com/yc-top-players"
+              class="btn btn-lg btn-details"
+              target="_blank"
+            >
+              View Top 128 Players
+            </a>
+          </p>
+        </div>
+      </section>
+    </div>
+
+    <!-- Bootstrap and jQuery Scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+</html>
