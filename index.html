@@ -7,71 +7,18 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <title>SHO</title>
 
+  <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
     integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <!-- Custom Stylesheets -->
   <link rel="stylesheet" href="./Style.css" />
   <link rel="stylesheet" href="./mobile-style.css">
+
   <style>
-    /* Container for the logo */
-    .logo-container {
-      position: relative;
-      width: 100%;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-    }
-
-    /* Logo Image */
-    .logo-container img {
-      width: 100%;
-      max-width: 400px;
-      animation: logo-animation 3s infinite ease-in-out;
-    }
-
-    .card {
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-      /* Adds subtle shadow */
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      /* Smooth transition for hover effects */
-      border-radius: 10px;
-      /* Rounds the corners of the card */
-      margin: 15px;
-      /* Adds space around each card */
-    }
-
-    .card:hover {
-      transform: scale(1.05);
-      /* Slightly increases size on hover */
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-      /* Deepens the shadow on hover */
-    }
-
-    @keyframes fadeInUp {
-      0% {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-
-      100% {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .cards {
-      animation: fadeInUp 1s ease-out;
-      /* Applies fade-in animation to the container */
-    }
-
-    .card-body {
-      animation: fadeInUp 1.5s ease-out;
-      /* Adds animation to each card body */
-    }
-
+    /* -------------------- General Styles -------------------- */
     body {
       font-family: 'Montserrat', sans-serif;
     }
@@ -85,6 +32,8 @@
     p {
       font-family: 'Raleway', sans-serif;
       font-weight: 300;
+      font-size: 16px;
+      margin-bottom: 30px;
     }
 
     .navbar-brand {
@@ -97,39 +46,45 @@
       font-family: 'Montserrat', sans-serif;
       font-weight: 400;
       text-transform: uppercase;
+      font-size: 18px;
     }
-  </style>
-  <style>
-    /* Hero Section Fullscreen */
+
+    /* -------------------- Logo & Hero Section -------------------- */
     .vh-100 {
       height: 100vh;
-      overflow-y: auto;
-      /* Enables scrolling for smaller screens */
+      overflow-y: auto; /* Enables scrolling for smaller screens */
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: flex-start;
     }
 
-    /* Logo Container */
     .logo-container {
       position: relative;
-      max-width: 300px;
-      /* Limit logo width */
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      max-width: 300px; /* Limit logo width */
       margin: auto;
       animation: fadeIn 1.5s ease-in-out;
     }
 
-    /* Logo Image Styling */
+    .logo-container img {
+      width: 100%;
+      max-width: 400px;
+      animation: logo-animation 3s infinite ease-in-out;
+    }
+
     .logo-image {
       width: 100%;
       max-width: 200px;
       animation: logo-animation 3s infinite ease-in-out;
-      z-index: 1;
-      /* Keep logo above symbols */
+      z-index: 1; /* Keep logo above symbols */
     }
 
-    /* Symbol Styling */
     .logo-symbol {
       position: absolute;
       font-size: 50px;
@@ -137,7 +92,6 @@
       animation: symbol-animation 2s infinite ease-in-out;
     }
 
-    /* Example of adding symbols around the logo */
     .logo-symbol.left {
       top: 50%;
       left: 10%;
@@ -162,79 +116,150 @@
       transform: translateX(-50%);
     }
 
-    /* Animation for the logo */
     @keyframes logo-animation {
-
-      0%,
-      100% {
+      0%, 100% {
         transform: scale(1);
         opacity: 2;
       }
-
       50% {
         transform: scale(1.1);
         opacity: 0.5;
       }
     }
 
-    /* Animation for the symbols */
     @keyframes symbol-animation {
-
-      0%,
-      100% {
+      0%, 100% {
         transform: translateY(-20px) rotate(0deg);
         opacity: 0.5;
       }
-
       50% {
         transform: translateY(20px) rotate(360deg);
         opacity: 1;
       }
     }
 
-    /* Text Styling */
+    /* -------------------- Card Styles -------------------- */
+    .card {
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border-radius: 10px;
+      margin: 15px;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .cards {
+      animation: fadeInUp 1s ease-out;
+    }
+
+    .card-body {
+      animation: fadeInUp 1.5s ease-out;
+    }
+
+    /* -------------------- Big Image Section -------------------- */
+    .big-img {
+      width: 100%;
+      max-height: 500px; /* Base max height */
+      object-fit: cover;
+    }
+
+    @media only screen and (max-width: 375px) {
+      .big-img {
+        max-height: 300px; /* Reduced height on very small screens */
+        padding: 5px;
+      }
+    }
+
+    /* -------------------- Join Buttons -------------------- */
+    .join-buttons {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px; /* Adds space between buttons */
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+
+    @media (min-width: 768px) {
+      .join-buttons {
+        flex-direction: row; /* Side by side on larger screens */
+        justify-content: center;
+      }
+    }
+
+    /* -------------------- Text & Heading Styles -------------------- */
     h6 {
       font-size: 20px;
       margin-bottom: 10px;
       text-transform: uppercase;
     }
 
-    /* h1 Styling */
     h2 {
       font-family: 'Lobster', cursive;
-      /* Stylish and elegant font */
       font-size: 50px;
       margin-bottom: 20px;
       font-weight: 700;
       text-transform: uppercase;
-      color: linear-gradient(45deg, #24df4c, #170994);
+      /* Gradient text effect */
       background: -webkit-linear-gradient(45deg, #2a58d4, #f1213d);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       animation: text-zoom 2s ease-in-out infinite;
     }
 
-    p {
-      font-size: 16px;
-      margin-bottom: 30px;
+    @keyframes text-zoom {
+      0%, 100% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.05);
+      }
     }
 
-    /* Button Styling */
-    .primary-btn {
-      font-size: 18px;
-      font-weight: 600;
-      text-transform: uppercase;
-    }
-
-    /* Mobile-specific adjustments to ensure images in cards don't touch the edges */
+    /* -------------------- Mobile Adjustments -------------------- */
     @media (max-width: 768px) {
+      /* Ensure card images have some padding */
       .card-img-top img {
         padding: 10px;
       }
     }
+
+    /* Adjustments for iPhone SE (max-width: 375px) for Section 4 leader cards */
+    @media only screen and (max-width: 375px) {
+      .section-4 .card {
+        width: 18em !important; /* Force a narrower width */
+        margin: 10px auto;
+      }
+      .section-4 .card-title {
+        font-size: 1.5rem;
+      }
+      .section-4 .card-text {
+        font-size: 0.9rem;
+      }
+    }
+
+    /* Further adjustments for extra small screens (max-width: 320px) if needed */
+    @media only screen and (max-width: 320px) {
+      .section-4 .carousel-inner {
+        margin-left: -4vmin;
+      }
+    }
   </style>
   <!-- <link rel="stylesheet" href="chat.css"> -->
-
 </head>
 
 <body>
@@ -246,7 +271,6 @@
           SHO
         </a>
         <!-- Dark Mode Toggle -->
-
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
           aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <i class="fas fa-align-right text-light"></i>
@@ -301,23 +325,24 @@
             The SHO Alliance is a dynamic community designed to unite gamers from all walks of life, offering a platform
             for collaboration, competition, and the shared enthusiasm for gaming. By bringing together individuals with
             diverse skills and interests, the alliance fosters a sense of camaraderie and innovation within the gaming
-            world.
-            Through this collaborative framework, the SHO Alliance empowers its members to thrive, push boundaries, and
-            elevate the gaming experience for all involved.
+            world. Through this collaborative framework, the SHO Alliance empowers its members to thrive, push boundaries,
+            and elevate the gaming experience for all involved.
           </p>
-          <!-- Join Us Button -->
-          <a href="https://chat.whatsapp.com/LhcHMHO6jee5g0dKF2aQwi" target="_blank">
-            <button class="btn btn-light px-5 py-2 primary-btn">Join with Us</button>
-          </a>
-          <a href="https://www.youtube.com/@Strategic-Heroes-Oracles" target="_blank">
-            <button class="btn btn-light px-5 py-2 primary-btn">Check our Youtube Content</button>
-          </a>
+          <div class="join-buttons">
+            <a href="https://chat.whatsapp.com/LhcHMHO6jee5g0dKF2aQwi" target="_blank">
+              <button class="btn btn-light px-5 py-2 primary-btn">Join with Us</button>
+            </a>
+            <a href="https://www.youtube.com/@Strategic-Heroes-Oracles" target="_blank">
+              <button class="btn btn-light px-5 py-2 primary-btn">Check our Youtube Content</button>
+            </a>
+          </div>
         </div>
       </div>
     </div>
   </header>
 
   <main>
+    <!-- Section 1 -->
     <section class="section-1">
       <div class="container text-center">
         <div class="row">
@@ -330,17 +355,16 @@
             <div class="panel text-left">
               <h2>Mr. Sammed Jain</h2>
               <p class="pt-4">
-                One of our alliance members ||SHO||ALPHA recently won the prestigious YC Tournament, showcasing
-                exceptional skill and strategy. This victory against top global competitors highlights their dedication
-                and mastery in gaming. Awarded the MVP title, they led their team to success with innovative tactics.
-                This achievement has significantly boosted our alliance's reputation in the gaming community. We are
-                proud of their accomplishment and excited for future opportunities this victory brings!
+                One of our alliance members ||SHO||ALPHA recently won the prestigious YC Tournament, showcasing exceptional
+                skill and strategy. This victory against top global competitors highlights their dedication and mastery in
+                gaming. Awarded the MVP title, they led their team to success with innovative tactics. This achievement has
+                significantly boosted our alliance's reputation in the gaming community. We are proud of their accomplishment
+                and excited for future opportunities this victory brings!
               </p>
               <p>
-                His win serves as an inspiration to all alliance members, encouraging greater participation in
-                competitive gaming. It also opens doors for potential sponsorships and collaborations, further elevating
-                our alliance's standing. We eagerly anticipate more triumphs as we continue to support and grow our
-                talented community!
+                His win serves as an inspiration to all alliance members, encouraging greater participation in competitive
+                gaming. It also opens doors for potential sponsorships and collaborations, further elevating our alliance's
+                standing. We eagerly anticipate more triumphs as we continue to support and grow our talented community!
               </p>
             </div>
           </div>
@@ -348,15 +372,16 @@
       </div>
     </section>
 
+    <!-- Section 2 -->
     <section class="section-2 container-fluid p-0">
       <div class="cover">
         <div class="overlay"></div>
         <div class="content text-center">
           <h1>Some Features That Made Us Unique</h1>
           <p>
-            Our alliance stands out with specialized sub-alliances, strong leadership from visionaries like Devil Khan
-            and Akash, and a focus on fostering community, mentorship, and strategic innovation. We combine global
-            competitiveness with cultural pride, making us a unique and powerful force in the gaming world.
+            Our alliance stands out with specialized sub-alliances, strong leadership from visionaries like Devil Khan and
+            Akash, and a focus on fostering community, mentorship, and strategic innovation. We combine global competitiveness
+            with cultural pride, making us a unique and powerful force in the gaming world.
           </p>
         </div>
       </div>
@@ -382,12 +407,11 @@
                   <h5 class="card-title">Competitive Gameplay</h5>
                 </div>
                 <p class="card-text">
-                  Competitive gameplay in our alliance is built on the foundation of skill, strategy, and unwavering
-                  determination. We engage in high-stakes matches, constantly refining our techniques and adapting to
-                  challenges. Every player brings their A-game, contributing to the collective success of the team. Our
-                  competitive spirit fosters growth, pushing each individual to be their best while fostering a sense of
-                  camaraderie. Together, we aim to dominate the battlefield and cement our legacy as one of the top
-                  alliances..
+                  Competitive gameplay in our alliance is built on the foundation of skill, strategy, and unwavering determination.
+                  We engage in high-stakes matches, constantly refining our techniques and adapting to challenges. Every player
+                  brings their A-game, contributing to the collective success of the team. Our competitive spirit fosters growth,
+                  pushing each individual to be their best while fostering a sense of camaraderie. Together, we aim to dominate the
+                  battlefield and cement our legacy as one of the top alliances.
                 </p>
               </div>
             </div>
@@ -397,12 +421,11 @@
                   <h5 class="card-title">Team Collaboration</h5>
                 </div>
                 <p class="card-text">
-                  Team collaboration within our alliance is centered on trust, communication, and mutual support. Every
-                  member plays a vital role, working together to achieve shared goals and overcome challenges. Through
-                  constant teamwork, we refine our strategies, ensuring success both individually and collectively.
-                  Collaboration fosters a strong bond among players, enabling us to tackle complex situations with ease.
-                  With each member's unique contribution, we strive to create a unified force that is unstoppable on the
-                  battlefield.
+                  Team collaboration within our alliance is centered on trust, communication, and mutual support. Every member plays
+                  a vital role, working together to achieve shared goals and overcome challenges. Through constant teamwork, we
+                  refine our strategies, ensuring success both individually and collectively. Collaboration fosters a strong bond among
+                  players, enabling us to tackle complex situations with ease. With each member's unique contribution, we strive to
+                  create a unified force that is unstoppable on the battlefield.
                 </p>
               </div>
             </div>
@@ -412,12 +435,11 @@
                   <h5 class="card-title">Skill Training</h5>
                 </div>
                 <p class="card-text">
-                  Skill training in our alliance focuses on continuous improvement and mastery of every aspect of the
-                  game. We provide tailored training sessions, allowing each player to refine their strengths and work
-                  on their weaknesses. Through structured drills and real-time feedback, we ensure that every member
-                  sharpens their skills to stay ahead of the competition. Our training environment encourages growth,
-                  pushing players to challenge themselves and unlock their full potential. With consistent practice and
-                  dedication, we transform individual talent into a well-coordinated, elite team.
+                  Skill training in our alliance focuses on continuous improvement and mastery of every aspect of the game. We provide
+                  tailored training sessions, allowing each player to refine their strengths and work on their weaknesses. Through structured
+                  drills and real-time feedback, we ensure that every member sharpens their skills to stay ahead of the competition. Our training
+                  environment encourages growth, pushing players to challenge themselves and unlock their full potential. With consistent practice
+                  and dedication, we transform individual talent into a well-coordinated, elite team.
                 </p>
               </div>
             </div>
@@ -426,25 +448,31 @@
       </div>
     </section>
 
-    <!-- Section 4 -->
+    <!-- Section 4: Main Leaders -->
     <section class="section-4">
       <div class="container text-center">
         <h1 class="text-dark">Introducing Our Main Leaders</h1>
-        <p class="text-secondary">The pillars Of Strategic Hitwicket Oracles </p>
+        <p class="text-secondary">The pillars Of Strategic Hitwicket Oracles</p>
       </div>
-      <div class="team row ">
+      <div class="team row">
         <div class="col-md-6 col-12 text-center">
           <div class="card mr-2 d-inline-block shadow-lg">
             <div class="card-img-top">
-              <img src="assets/devil_1.jpg" class="img-fluid big-img" alt="Devil Khan">
+              <img src="assets/devil_1.jpg" class="img-fluid big-img" alt="Devil">
             </div>
             <div class="card-body">
               <h3 class="card-title">MR KHAN (DEVIL)</h3>
               <p class="card-text">
                 <strong>Devil: The Legend from Uttar Pradesh</strong><br><br>
-                Hailing from Uttar Pradesh, Devil is the fearless leader who has become a beacon of excellence in the gaming community. With roots in one of India’s most vibrant states, he brings a unique blend of cultural richness and strategic prowess to the alliance. His journey from a passionate gamer to a celebrated leader is nothing short of inspiring. Known for his sharp tactics and charismatic leadership, Devil has not only elevated our alliance but also put Uttar Pradesh on the map in the global gaming arena. His legacy continues to inspire gamers far and wide!<br><br>
-                But don’t be fooled by his composed demeanor—Devil’s true nature is a force to be reckoned with. He is a protector of those who stand with him, always ready to support his allies. However, if you cross him or threaten his own, prepare to witness the beast within. Mess with him, and you’ll see a side of him that unleashes raw power and domination. He balances wisdom with fury, showing that the road to greatness is never without challenges.
-              </p>              
+                Hailing from Uttar Pradesh, Devil is the fearless leader who has become a beacon of excellence in the gaming
+                community. With roots in one of India’s most vibrant states, he brings a unique blend of cultural richness and strategic
+                prowess to the alliance. His journey from a passionate gamer to a celebrated leader is nothing short of inspiring.
+                <br><br>
+                But don’t be fooled by his composed demeanor—Devil’s true nature is a force to be reckoned with. He is a protector of
+                those who stand with him, always ready to support his allies. However, if you cross him or threaten his own, prepare
+                to witness the beast within. Mess with him, and you’ll see a side of him that unleashes raw power and domination. He balances
+                wisdom with fury, showing that the road to greatness is never without challenges.
+              </p>
               <a href="#" class="text-secondary text-decoration-none">Go somewhere</a>
               <p class="text-black-50">Founder at SHO</p>
             </div>
@@ -459,7 +487,11 @@
               <h3 class="card-title">AKASH</h3>
               <p class="card-text">
                 <strong>Akash: The Visionary from Kota</strong><br><br>
-                Akash, co-founder of our alliance, hails from Varanasi—a city known for its excellence and determination. With a keen eye for innovation and a deep passion for gaming, Akash has been instrumental in shaping the alliance's success. His strategic foresight and dedication to fostering a strong gaming community have made him a respected figure in the industry. Drawing inspiration from Kota's rich heritage of discipline and achievement, Akash continues to drive the alliance forward, making waves in the competitive gaming world and inspiring gamers to reach their full potential!
+                Akash, co-founder of our alliance, hails from Varanasi—a city known for its excellence and determination. With a keen
+                eye for innovation and a deep passion for gaming, Akash has been instrumental in shaping the alliance's success. His strategic
+                foresight and dedication to fostering a strong gaming community have made him a respected figure in the industry. Drawing
+                inspiration from Kota's rich heritage of discipline and achievement, Akash continues to drive the alliance forward, making
+                waves in the competitive gaming world and inspiring gamers to reach their full potential!
               </p>
               <a href="#" class="text-secondary text-decoration-none">Go somewhere</a>
               <p class="text-black-50">Founder at SHO</p>
@@ -469,16 +501,19 @@
       </div>
     </section>
   </main>
+
   <footer>
     <div class="container-fluid p-0">
       <div class="row text-left">
         <div class="col-md-5 col-sm-5">
           <h4 class="text-light">About us</h4>
-          <p class="text-muted">The <strong>SHO Alliance</strong> is a dynamic sub-group within our gaming alliance, known for its
-            competitive edge and strategic gameplay. Specializing in high-intensity games, the SHO Alliance thrives on
-            teamwork, skill development, and tactical prowess. With a reputation for dominating tournaments, the SHO
-            Alliance continues to push the limits of what's possible in the gaming world.</p>
-          <p class="pt-4 text-muted">Copyright ©2024 All rights reserved | This template is made with by
+          <p class="text-muted">
+            The <strong>SHO Alliance</strong> is a dynamic sub-group within our gaming alliance, known for its competitive edge and strategic gameplay.
+            Specializing in high-intensity games, the SHO Alliance thrives on teamwork, skill development, and tactical prowess. With a reputation
+            for dominating tournaments, the SHO Alliance continues to push the limits of what's possible in the gaming world.
+          </p>
+          <p class="pt-4 text-muted">
+            Copyright ©2024 All rights reserved | This template is made with by
             <span>Sunil Kumar from SHO</span>
           </p>
         </div>
@@ -495,7 +530,6 @@
           <a href="https://www.youtube.com/@Strategic-Hitwickets-Oracles" target="_blank">
             <i class="fab fa-youtube"></i>
           </a>
-
           <!-- Email Link -->
           <a href="mailto:SHO.strategic.heroes.oracles@gmail.com" target="_blank">
             <i class="fas fa-envelope"></i> Email Us
@@ -505,6 +539,7 @@
     </div>
   </footer>
 
+  <!-- Bootstrap and jQuery Scripts -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
     integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
