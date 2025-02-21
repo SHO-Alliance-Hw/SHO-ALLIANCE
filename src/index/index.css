@@ -1,0 +1,645 @@
+@import url("https://fonts.googleapis.com/css?family=Acme|Lobster|Patua+One|Rubik|Sniglet");
+* {
+  box-sizing: border-box;
+}
+
+header,
+section {
+  overflow-x: hidden;
+}
+
+/* -------------------- CSS Variables -------------------- */
+:root {
+  --Sniglet-font: "Sniglet", cursive;
+  --Rubik: "Rubik", sans-serif;
+  --Patua: "Patua One", cursive;
+  --Lobster: "Lobster", cursive;
+  --light-black: #2e2c2caf;
+  --bggradient: linear-gradient(to bottom, #06071a, #000000);
+  --light-gray: rgba(255, 255, 255, 0.877);
+}
+
+/* -------------------- Global Icon & Link Styles -------------------- */
+.icon-image {
+  width: 32px;
+  height: 32px;
+  margin-right: 12px;
+  vertical-align: middle;
+}
+a:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+}
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+a:hover {
+  animation: bounce 0.5s infinite;
+}
+header a {
+  font-family: var(--Sniglet-font);
+  font-size: 0.9em;
+  color: whitesmoke;
+}
+header .nav-item:last-child {
+  padding-right: 10.5em;
+}
+header .nav-item {
+  padding: 0.9em;
+}
+header .navbar-brand {
+  padding-left: 8rem;
+}
+header .nav-link:hover {
+  color: rgb(112, 112, 112);
+}
+
+/* -------------------- Header Layout -------------------- */
+header .row .col-md-7 {
+  padding: 22vmin 1vmin;
+  padding-bottom: 35vmin;
+}
+header .row .col-md-5 {
+  padding: 4.2vmin 1vmin;
+}
+header .row .col-md-5 img {
+  width: 90%;
+}
+header {
+  background: #06071a;
+  background: var(--bggradient);
+}
+header .container .col-md-7 {
+  font-family: "Rubik", sans-serif;
+}
+header .container .col-md-7 h6 {
+  padding: 1vmin;
+  letter-spacing: 4px;
+}
+header .container .col-md-7 h1 {
+  font-size: 8.5vmin;
+  font-weight: bold;
+  padding: 0.1em 0em;
+}
+header .container .col-md-7 p {
+  padding: 1vmin 5vmin;
+}
+
+/* -------------------- Button Styling -------------------- */
+.primary-btn {
+  border-radius: 30px;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+/* Additional Join Buttons Container */
+.join-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px; /* Adds space between buttons */
+  margin-top: 20px;
+}
+
+@media (min-width: 768px) {
+  .join-buttons {
+    flex-direction: row; /* Side by side on larger screens */
+    justify-content: center;
+  }
+}
+
+/********** section 1 **************/
+.section-1 {
+  padding: 20vmin 0vmin;
+}
+.section-1 .row .col-md-6 .pray img {
+  opacity: 0.8;
+  width: 80%;
+  border-radius: 0.2em;
+}
+.section-1 .row .col-md-6:last-child {
+  position: relative;
+}
+.section-1 .row .col-md-6 .panel {
+  position: absolute;
+  top: 7vmin;
+  left: -18vmin;
+  background: white;
+  border-radius: 3px;
+  text-align: left;
+  padding: 13vmin 5vmin 20vmin 10vmin;
+  box-shadow: 0px 25px 42px rgba(0, 0, 0, 0.2);
+  font-family: var(--Rubik);
+  z-index: 1;
+}
+.section-1 .row .col-md-6 .panel h1 {
+  font-weight: bold;
+  padding: 0.4em 0;
+  font-size: 2em;
+}
+.section-1 .row .col-md-6 .panel p {
+  font-size: 0.9em;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+/*  Section 2  */
+.cover {
+  width: 100%;
+  height: 55vmin;
+  background: url("assets/pexels-photo-452738.jpeg");
+  background-position: -24rem -19rem;
+  background-size: 150%;
+  position: relative;
+}
+.cover .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+}
+.cover .content {
+  width: 100%;
+  height: 100%;
+  background: rgba(12, 12, 12, 0.7);
+  padding-top: 19vmin;
+}
+.cover .content > h1 {
+  font-family: var(--Patua);
+  font-size: 6vmin;
+  color: whitesmoke;
+}
+.cover .content > p {
+  font-family: var(--Rubik);
+  font-size: 2vmin;
+  color: #e5e5e5;
+}
+
+/* Numbers Section */
+.numbers .rect {
+  position: relative;
+  z-index: 1;
+  background: white;
+  width: 17rem;
+  height: 12rem;
+  padding-top: 3.5vmin;
+  margin: 1rem;
+  border-radius: 0.5em;
+  box-shadow: 1px 2px 50px 0px rgba(255, 0, 0, 0.349);
+}
+.numbers {
+  margin-top: -15vmin;
+}
+.numbers .rect h1 {
+  font-size: 5rem;
+  color: tomato;
+}
+.numbers .rect > p {
+  font-family: var(--Patua);
+}
+
+/* Purchase Section */
+.purchase > h1 {
+  padding-top: 15vmin;
+  padding-bottom: 0.1em;
+  font-family: var(--Lobster);
+}
+.purchase > p {
+  color: var(--light-black);
+  font-size: 3vmin;
+  padding-bottom: 10vmin;
+}
+.purchase .cards .card {
+  width: 22rem;
+  margin: 3vmin 3vmin;
+}
+.cards div {
+  padding: 0;
+  margin: 0;
+}
+.cards .title {
+  background: rgba(208, 241, 241, 0.199);
+  padding: 1.4em 2.5em;
+  font-size: 2vmin;
+}
+.card .card-text {
+  padding: 2.5rem 3rem;
+  color: var(--light-black);
+}
+.card-body .pricing {
+  background: rgba(208, 241, 241, 0.199);
+  border-top-right-radius: 170px;
+  border-top-left-radius: 170px;
+}
+.card-body .pricing > h1 {
+  font-size: 10vmin;
+  padding: 1em 0.5em;
+}
+
+/* Section 3 */
+.section-3 {
+  height: 70vmin;
+  margin-top: 15vmin;
+  background: var(--bggradient);
+}
+.section-3 .col-md-12 > h1 {
+  padding: 2em 0 0.5em 0;
+  color: whitesmoke;
+  font-size: 6vmin;
+}
+.section-3 .col-md-12 > p {
+  padding: 0 4em;
+  padding-bottom: 2em;
+  color: var(--light-gray);
+  font-size: 3vmin;
+}
+.section-3 .desktop {
+  background: white;
+  display: inline-block;
+  border-radius: 3em;
+  padding: 2vmin 4.5vmin;
+  margin: 1em;
+}
+.section-3 .desktop h3 {
+  font-size: 4vmin;
+}
+.section-3 .desktop p {
+  font-size: 2vmin;
+}
+
+/* Section 4: Team */
+.section-4 .container h1 {
+  font-size: 6vmin;
+  padding-top: 14vmin;
+}
+.section-4 .team {
+  padding: 10vmin 4vmin;
+}
+.section-4 .card {
+  width: 22em;
+  margin-top: 10vmin;
+}
+.section-4 .card .card-text {
+  padding: 0.5em;
+}
+.section-4 .card-body > a {
+  font-size: 1.5em;
+}
+.section-4 .carousel-item {
+  padding-left: 3rem;
+}
+
+/* -------------------- Big Image Section -------------------- */
+.big-img {
+  width: 100%;
+  max-height: 500px;
+  object-fit: cover;
+}
+@media only screen and (max-width: 375px) {
+  .big-img {
+    max-height: 300px;
+    padding: 0px;
+  }
+}
+
+/* -------------------- Footer -------------------- */
+footer {
+  background: rgba(0, 0, 0, 0.815);
+  overflow-x: hidden;
+  padding: 14vmin 18vmin;
+}
+footer p > span {
+  color: #ff512f;
+}
+footer input {
+  border: none !important;
+}
+footer input::placeholder {
+  color: white !important;
+}
+footer .input-group .input-group-text {
+  background: var(--bggradient);
+  border: none;
+}
+
+/* -------------------- Additional Styles & Animations -------------------- */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.cards {
+  animation: fadeInUp 1s ease-out;
+}
+.card-body {
+  animation: fadeInUp 1.5s ease-out;
+}
+
+/* -------------------- Mobile-specific Adjustments -------------------- */
+@media only screen and (max-width: 768px) {
+  header .navbar-brand {
+    padding-left: 1rem;
+  }
+  .section-1 .row .col-md-6 .panel {
+    position: initial;
+    width: initial;
+    height: initial;
+  }
+  .section-2 .cover {
+    background-position: -25vmin -10vmin;
+  }
+  .numbers .rect {
+    width: 10rem;
+    height: 8rem;
+  }
+  .numbers .rect h1 {
+    font-size: 2rem;
+  }
+  .section-3 {
+    height: inherit;
+    padding: 10vmin !important;
+  }
+  .section-3 .row h1 {
+    padding: 6vmin 4vmin;
+  }
+  .section-3 .platform .col-md-6 {
+    text-align: center !important;
+  }
+  .section-3 .desktop i {
+    font-size: 8vmin;
+  }
+  .section-4 .carousel-item {
+    padding-left: 0.6rem;
+  }
+  footer .row .col-md-2 {
+    margin-top: 8vmin;
+  }
+}
+
+/* For very small screens like iPhone SE */
+@media only screen and (max-width: 375px) {
+  .section-4 .card {
+    width: 18em !important;
+    margin: 10px auto;
+  }
+  .section-4 .card-title {
+    font-size: 1.5rem;
+  }
+  .section-4 .card-text {
+    font-size: 0.9rem;
+  }
+}
+
+/* Extra small screens */
+@media only screen and (max-width: 320px) {
+  .section-4 .carousel-inner {
+    margin-left: -4vmin;
+  }
+}
+/* -------------------- General Styles -------------------- */
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+h1,
+h6 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+}
+
+p {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  margin-bottom: 30px;
+}
+
+.navbar-brand {
+  font-family: 'Bebas Neue', cursive;
+  font-weight: 600;
+  font-size: 28px;
+}
+
+.primary-btn {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: 18px;
+}
+
+/* -------------------- Logo & Hero Section -------------------- */
+.vh-100 {
+  height: 100vh;
+  overflow-y: auto; /* Enables scrolling for smaller screens */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.logo-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  max-width: 300px; /* Limit logo width */
+  margin: auto;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+.logo-container img {
+  width: 100%;
+  max-width: 400px;
+  animation: logo-animation 3s infinite ease-in-out;
+}
+
+.logo-image {
+  width: 100%;
+  max-width: 200px;
+  animation: logo-animation 3s infinite ease-in-out;
+  z-index: 1; /* Keep logo above symbols */
+}
+
+.logo-symbol {
+  position: absolute;
+  font-size: 50px;
+  color: #f39c12;
+  animation: symbol-animation 2s infinite ease-in-out;
+}
+
+.logo-symbol.left {
+  top: 50%;
+  left: 10%;
+  transform: translateY(-50%);
+}
+
+.logo-symbol.right {
+  top: 50%;
+  right: 10%;
+  transform: translateY(-50%);
+}
+
+.logo-symbol.top {
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.logo-symbol.bottom {
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@keyframes logo-animation {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 2;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.5;
+  }
+}
+
+@keyframes symbol-animation {
+  0%, 100% {
+    transform: translateY(-20px) rotate(0deg);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translateY(20px) rotate(360deg);
+    opacity: 1;
+  }
+}
+
+/* -------------------- Card Styles -------------------- */
+.card {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 10px;
+  margin: 15px;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.cards {
+  animation: fadeInUp 1s ease-out;
+}
+
+.card-body {
+  animation: fadeInUp 1.5s ease-out;
+}
+
+/* -------------------- Big Image Section -------------------- */
+.big-img {
+  width: 100%;
+  max-height: 500px; /* Base max height */
+  object-fit: cover;
+}
+
+@media only screen and (max-width: 375px) {
+  .big-img {
+    max-height: 300px; /* Reduced height on very small screens */
+    padding: 5px;
+  }
+}
+
+/* -------------------- Join Buttons -------------------- */
+.join-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px; /* Adds space between buttons */
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+@media (min-width: 768px) {
+  .join-buttons {
+    flex-direction: row; /* Side by side on larger screens */
+    justify-content: center;
+  }
+}
+
+/* -------------------- Text & Heading Styles -------------------- */
+h6 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-family: 'Lobster', cursive;
+  font-size: 50px;
+  margin-bottom: 20px;
+  font-weight: 700;
+  text-transform: uppercase;
+  /* Gradient text effect */
+  background: -webkit-linear-gradient(45deg, #2a58d4, #f1213d);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: text-zoom 2s ease-in-out infinite;
+}
+
+@keyframes text-zoom {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+/* -------------------- Mobile Adjustments -------------------- */
+@media (max-width: 768px) {
+  /* Ensure card images have some padding */
+  .card-img-top img {
+    padding: 10px;
+  }
+}
+
+/* Adjustments for iPhone SE (max-width: 375px) for Section 4 leader cards */
+@media only screen and (max-width: 375px) {
+  .section-4 .card {
+    width: 18em !important; /* Force a narrower width */
+    margin: 10px auto;
+  }
+  .section-4 .card-title {
+    font-size: 1.5rem;
+  }
+  .section-4 .card-text {
+    font-size: 0.9rem;
+  }
+}
+
+/* Further adjustments for extra small screens (max-width: 320px) if needed */
+@media only screen and (max-width: 320px) {
+  .section-4 .carousel-inner {
+    margin-left: -4vmin;
+  }
+}
