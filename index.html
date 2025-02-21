@@ -51,13 +51,14 @@
 
     /* -------------------- Logo & Hero Section -------------------- */
     .vh-100 {
-      height: 100vh;
-      overflow-y: auto; /* Enables scrolling for smaller screens */
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-start;
-    }
+  min-height: 100vh; /* Allow content to determine height */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-bottom: 20px; /* Prevent bottom clipping */
+  overflow: hidden; /* Remove unnecessary scrolling */
+}
 
     .logo-container {
       position: relative;
@@ -258,6 +259,52 @@
         margin-left: -4vmin;
       }
     }
+    /* Hero Section - Adjusts dynamically */
+.hero-section {
+  min-height: 100vh; /* Adapts to screen size */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* Centers content */
+  padding: 20px; /* Adds space on small screens */
+  overflow: hidden; /* Prevents extra scrolling */
+}
+
+/* Fix Navbar */
+.navbar {
+  width: 100%;
+  padding: 10px 20px;
+  z-index: 10;
+}
+
+/* Ensure no extra padding/margin in container */
+.container-fluid {
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden; /* Avoids horizontal scrolling */
+}
+
+/* Adjust text & content for small screens */
+@media (max-width: 768px) {
+  .hero-section {
+    min-height: auto; /* Allows content to shrink */
+    height: auto;
+    justify-content: flex-start;
+  }
+
+  .logo-container {
+    max-width: 140px; /* Reduce logo size */
+  }
+
+  h2 {
+    font-size: 20px; /* Smaller heading */
+  }
+
+  .join-buttons {
+    flex-direction: column; /* Stack buttons */
+  }
+}
+
   </style>
   <!-- <link rel="stylesheet" href="chat.css"> -->
 </head>
