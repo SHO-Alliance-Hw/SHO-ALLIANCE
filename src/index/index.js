@@ -1,51 +1,44 @@
-let nCount = selector => {
-    $(selector).each(function () {
-      $(this)
-        .animate({
-          Counter: $(this).text()
-        }, {
-          // A string or number determining how long the animation will run.
-          duration: 4000,
-          // A string indicating which easing function to use for the transition.
-          easing: "swing",
-          /**
-           * A function to be called for each animated property of each animated element. 
-           * This function provides an opportunity to
-           *  modify the Tween object to change the value of the property before it is set.
-           */
-          step: function (value) {
-            $(this).text(Math.ceil(value));
-          }
-        });
-    });
-  };
-  
-  let a = 0;
-  $(window).scroll(function () {
-    // The .offset() method allows us to retrieve the current position of an element  relative to the document
-    let oTop = $(".numbers").offset().top - window.innerHeight;
-    if (a == 0 && $(window).scrollTop() >= oTop) {
-      a++;
-      nCount(".rect > h1");
-    }
+$(document).ready(function () {
+  let role = localStorage.getItem("role");
+  let isAdmin = role === "admin"; 
+
+  let paragraph = $("#editable-paragraph"); // Target the <p> tag
+  let originalText = paragraph.html(); // Store original content
+
+  if (isAdmin) {
+      console.log("Admin access granted");
+      paragraph.attr("contenteditable", "true").css("border", "1px dashed #fff");
+      $("#save-btn, #discard-btn").show(); // Show both buttons for admins
+  } else {
+      console.log("Visitor access only");
+      paragraph.attr("contenteditable", "false");
+      $("#save-btn, #discard-btn").hide(); // Hide buttons for visitors
+  }
+
+  // Load saved content if available
+  let savedText = localStorage.getItem("editedParagraph");
+  if (savedText) {
+      paragraph.html(savedText);
+      originalText = savedText; // Update original text
+  }
+
+  // Save edited content
+  $("#save-btn").click(function () {
+      let updatedText = paragraph.html();
+      localStorage.setItem("editedParagraph", updatedText);
+      originalText = updatedText; // Update original text
+      alert("Changes saved successfully!");
   });
-  
-  
-  
-  /**
-   *
-   *  sticky navigation
-   *
-   */
-  
-  let navbar = $(".navbar");
-  
-  $(window).scroll(function () {
-    // get the complete hight of window
-    let oTop = $(".section-2").offset().top - window.innerHeight;
-    if ($(window).scrollTop() > oTop) {
-      navbar.addClass("sticky");
-    } else {
-      navbar.removeClass("sticky");
-    }
+
+  // Discard changes and reset text
+  $("#discard-btn").click(function () {
+      paragraph.html(originalText);
+      alert("Changes discarded!");
   });
+
+  // Logout button
+  $("#logout-btn").click(function () {
+      localStorage.removeItem("role"); 
+      window.location.href = "login.html"; 
+  });
+});

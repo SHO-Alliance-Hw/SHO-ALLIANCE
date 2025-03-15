@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="login.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+    <div class="background"></div>
+
+    <div class="login-container">
+        <div class="login-card">
+            <h2>Welcome To SHO Alliance</h2>
+            <!-- Toggle Switch -->
+            <label class="switch-label">
+                <input type="checkbox" id="admin-toggle">
+                <span class="slider"></span>
+                Are you Admin?
+            </label>
+
+            <label for="username">Username</label>
+            <input type="text" id="username" placeholder="Enter your username" disabled>
+
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="Enter your password" disabled>
+
+            <button id="login-btn" disabled>Login as Admin</button>
+            <button id="visitor-btn" class="highlight">I am a Visitor</button>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h3>Visitor Mode</h3>
+            <p>You are logging in as a visitor. Limited access granted.</p>
+            <button id="modal-close">OK</button>
+        </div>
+    </div>
+
+    <script src="login.js"></script>
+</body>
+</html>
