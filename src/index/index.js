@@ -1,101 +1,90 @@
 $(document).ready(function () {
   let role = localStorage.getItem("role");
-  let isAdmin = role === "admin"; 
+  let isAdmin = role === "admin";
 
+  /** ================== EDITABLE PARAGRAPH ================== **/
   let paragraph = $("#editable-paragraph");
-  let originalText = paragraph.html(); // Store original content
+  let originalText = paragraph.html();
 
-  if (isAdmin) {
-      console.log("Admin access granted");
-      paragraph.attr("contenteditable", "true").css({
-          "border": "1px dashed transparent",  // Invisible border to avoid shifting content
-          "outline": "none"  // Remove default focus outline
-      });
-
-      $("#save-btn, #discard-btn").show(); // Show buttons for admin
-  } else {
-      console.log("Visitor access only");
-      paragraph.attr("contenteditable", "false");
-      $("#save-btn, #discard-btn").hide(); // Hide buttons for visitors
-  }
-
-  // Load saved content if available
   let savedText = localStorage.getItem("editedParagraph");
   if (savedText) {
       paragraph.html(savedText);
-      originalText = savedText; // Update original text
+      originalText = savedText;
   }
 
-  // Save edited content
+  if (isAdmin) {
+      paragraph.attr("contenteditable", "true").css({
+          "border": "1px dashed transparent",
+          "outline": "none"
+      });
+      $("#save-btn, #discard-btn").show();
+  } else {
+      paragraph.attr("contenteditable", "false");
+      $("#save-btn, #discard-btn").hide();
+  }
+
   $("#save-btn").click(function () {
       let updatedText = paragraph.html();
       localStorage.setItem("editedParagraph", updatedText);
-      originalText = updatedText; // Update original text
+      originalText = updatedText;
       alert("Changes saved successfully!");
   });
 
-  // Discard changes and reset text
   $("#discard-btn").click(function () {
       paragraph.html(originalText);
       alert("Changes discarded!");
   });
-});
-$(document).ready(function () {
-  let role = localStorage.getItem("role");
-  let isAdmin = role === "admin";
 
-  // Show upload button only for admins
+  /** ================== IMAGE UPLOAD ================== **/
   if (isAdmin) {
       $("#upload-btn").show();
+  } else {
+      $("#upload-btn").hide();
   }
 
-  // Handle upload button click
   $("#upload-btn").click(function () {
-      $("#upload-img").click(); // Open file input
+      $("#upload-img").click();
   });
 
-  // Handle file selection
   $("#upload-img").change(function (event) {
       let file = event.target.files[0];
-
       if (file) {
           let reader = new FileReader();
-
           reader.onload = function (e) {
-              $("#profile-img").attr("src", e.target.result); // Update image
-              localStorage.setItem("profileImage", e.target.result); // Save to local storage
+              $("#profile-img").attr("src", e.target.result);
+              localStorage.setItem("profileImage", e.target.result);
           };
-
-          reader.readAsDataURL(file); // Convert image to base64
+          reader.readAsDataURL(file);
       }
   });
 
-  // Load saved image from local storage (if available)
   let savedImage = localStorage.getItem("profileImage");
   if (savedImage) {
       $("#profile-img").attr("src", savedImage);
   }
-});
-$(document).ready(function () {
-  let role = localStorage.getItem("role");
-  let isAdmin = role === "admin"; 
 
+  /** ================== EDITABLE TITLE ================== **/
   let title = $("#editable-title");
   let originalTitle = title.text();
 
-  // Show buttons only for admins
-  if (isAdmin) {
-      $("#edit-title-btn").show();
+  let savedTitle = localStorage.getItem("editedTitle");
+  if (savedTitle) {
+      title.text(savedTitle);
+      originalTitle = savedTitle;
   }
 
-  // Enable editing on button click
+  if (isAdmin) {
+      $("#edit-title-btn").show();
+  } else {
+      $("#edit-title-btn").hide();
+  }
+
   $("#edit-title-btn").click(function () {
       title.attr("contenteditable", "true").css("border", "1px dashed #fff").focus();
       $("#save-title-btn, #discard-title-btn").show();
-      $(this).hide(); // Hide edit button
+      $(this).hide();
   });
 
-  // Save edited title
   $("#save-title-btn").click(function () {
       let updatedTitle = title.text();
       localStorage.setItem("editedTitle", updatedTitle);
@@ -106,7 +95,6 @@ $(document).ready(function () {
       alert("Title updated successfully!");
   });
 
-  // Discard changes and reset
   $("#discard-title-btn").click(function () {
       title.text(originalTitle);
       title.attr("contenteditable", "false").css("border", "none");
@@ -114,10 +102,9 @@ $(document).ready(function () {
       $("#save-title-btn, #discard-title-btn").hide();
   });
 
-  // Load saved title if available
-  let savedTitle = localStorage.getItem("editedTitle");
-  if (savedTitle) {
-      title.text(savedTitle);
-      originalTitle = savedTitle;
-  }
+  /** ================== LOGOUT FUNCTIONALITY ================== **/
+  $("#logout-btn").click(function () {
+      localStorage.removeItem("role");
+      window.location.href = "login.html";
+  });
 });
