@@ -21,7 +21,7 @@ app.use(express.json({ limit: "100mb" }));
 app.use(express.urlencoded({ limit: "100mb", extended: true }));
 
 // ✅ Serve static files
-app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(path.join(__dirname, 'src')));
 
 // ✅ Load latest modified data
 app.get("/api/load", (req, res) => {

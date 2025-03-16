@@ -9,7 +9,6 @@ $(document).ready(function () {
         if (username === "" || password === "") {
             alert("Please enter both username and password!");
         } else if (username === adminUsername && password === adminPassword) {
-            alert("Login Successful! You have editing access.");
             localStorage.setItem("role", "admin");
             window.location.href = "../index/index.html";
         } else {
@@ -38,29 +37,5 @@ $(document).ready(function () {
             $("#username, #password, #login-btn").prop("disabled", true);
             $("#visitor-btn").addClass("highlight");
         }
-    });
-});
-$(document).ready(function () {
-    const adminCredentials = { "devil": "sho", "admin2": "pass2", "admin3": "pass3" };
-
-    $("#login-btn").click(function () {
-        let username = $("#username").val().trim();
-        let password = $("#password").val().trim();
-
-        if (username === "" || password === "") {
-            alert("Please enter both username and password!");
-        } else if (adminCredentials[username] && adminCredentials[username] === password) {
-            alert("Login Successful! You have editing access.");
-            localStorage.setItem("role", "admin");
-            localStorage.setItem("adminName", username); // Store admin's name
-            window.location.href = "../index/index.html";
-        } else {
-            alert("Invalid login credentials!");
-        }
-    });
-
-    $("#visitor-btn").click(function () {
-        localStorage.setItem("role", "visitor");
-        window.location.href = "../index/index.html";
     });
 });
