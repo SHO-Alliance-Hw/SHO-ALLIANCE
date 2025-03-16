@@ -213,22 +213,26 @@
       <div class="team row">
         <div class="col-md-6 col-12 text-center">
           <div class="card mr-2 d-inline-block shadow-lg">
+            
+            <!-- Profile Image Upload -->
             <div class="card-img-top image-container">
               <img id="profile-img" src="assets/devil_1.jpg" class="img-fluid big-img" alt="Devil">
               
               <!-- Hidden file input -->
               <input type="file" id="upload-img" accept="image/*" style="display: none;">
               
-              <!-- Upload Button (Styled as Join Button) -->
+              <!-- Upload Button (Visible to Admins Only) -->
               <button id="upload-btn" class="join-btn mt-1" style="display: none;">Upload New Image</button>
-          </div>
-          
+            </div>
+        
             <div class="card-body">
+              <!-- Editable Title -->
               <h3 id="editable-title" class="card-title" contenteditable="false">MR KHAN (DEVIL)</h3>
               <button id="edit-title-btn" class="join-btn" style="display: none;">Edit Title</button>
               <button id="save-title-btn" class="join-btn" style="display: none;">Save</button>
               <button id="discard-title-btn" class="join-btn" style="display: none;">Discard</button>
               
+              <!-- Editable Paragraph -->
               <p id="editable-paragraph" class="card-text">
                 <strong>Devil: The Legend from Uttar Pradesh</strong><br><br>
                 Hailing from Uttar Pradesh, Devil is the fearless leader who has become a beacon of excellence in the gaming
@@ -240,9 +244,18 @@
                 to witness the beast within. Mess with him, and you’ll see a side of him that unleashes raw power and domination. He balances
                 wisdom with fury, showing that the road to greatness is never without challenges.
               </p>            
-              <a href="#" class="text-secondary text-decoration-none">Go somewhere</a>
+        
               <p class="text-black-50">Founder at SHO</p>
-            </div>            
+              <p id="last-editor" class="text-secondary"></p>
+              
+              <button id="save-btn" class="join-btn" style="display: none;">Save</button>
+              <button id="discard-btn" class="join-btn" style="display: none;">Discard</button>
+        
+              <h4>Edit History:</h4>
+              <div id="edit-log"></div>
+        
+              <button id="logout-btn" class="join-btn">Logout</button>
+            </div>
           </div>
         </div>
         <div class="col-md-6 col-12 text-center">
