@@ -2,13 +2,17 @@ $(document).ready(function () {
   let role = localStorage.getItem("role");
   let isAdmin = role === "admin"; 
 
-  let paragraph = $("#editable-paragraph"); // Target the <p> tag
+  let paragraph = $("#editable-paragraph");
   let originalText = paragraph.html(); // Store original content
 
   if (isAdmin) {
       console.log("Admin access granted");
-      paragraph.attr("contenteditable", "true").css("border", "1px dashed #fff");
-      $("#save-btn, #discard-btn").show(); // Show both buttons for admins
+      paragraph.attr("contenteditable", "true").css({
+          "border": "1px dashed transparent",  // Invisible border to avoid shifting content
+          "outline": "none"  // Remove default focus outline
+      });
+
+      $("#save-btn, #discard-btn").show(); // Show buttons for admin
   } else {
       console.log("Visitor access only");
       paragraph.attr("contenteditable", "false");
@@ -34,11 +38,5 @@ $(document).ready(function () {
   $("#discard-btn").click(function () {
       paragraph.html(originalText);
       alert("Changes discarded!");
-  });
-
-  // Logout button
-  $("#logout-btn").click(function () {
-      localStorage.removeItem("role"); 
-      window.location.href = "login.html"; 
   });
 });
