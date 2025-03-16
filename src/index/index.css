@@ -25,6 +25,21 @@ section {
   margin-right: 12px;
   vertical-align: middle;
 }
+.join-btn {
+  background-color: #28a745; /* Green color */
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.join-btn:hover {
+  background-color: #218838;
+}
+
 a:hover {
   transform: scale(1.1);
   transition: transform 0.3s ease;
