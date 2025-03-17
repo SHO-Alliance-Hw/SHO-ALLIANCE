@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tournament Links</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <!-- Custom Stylesheets -->
+    <style>
+        /* Reset styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            width: 100%;
+            overflow-x: hidden; /* Prevent horizontal scrolling */
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f7f9fc;
+            color: #333;
+        }
+
+        /* Header and Navbar Background Color */
+        header, .navbar {
+            background: #06071a;
+        }
+
+        /* -------------------- Global Icon & Link Styles -------------------- */
+        .icon-image {
+            width: 32px;
+            height: 32px;
+            margin-right: 12px;
+            vertical-align: middle;
+        }
+        a:hover {
+            transform: scale(1.1);
+            transition: transform 0.3s ease;
+        }
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        a:hover {
+            animation: bounce 0.5s infinite;
+        }
+        header a {
+            font-family: var(--Sniglet-font);
+            font-size: 0.9em;
+            color: whitesmoke;
+        }
+        header .nav-item:last-child {
+            padding-right: 10.5em;
+        }
+        header .nav-item {
+            padding: 0.9em;
+        }
+        header .navbar-brand {
+            padding-left: 8rem;
+        }
+        header .nav-link:hover {
+            color: rgb(112, 112, 112);
+        }
+
+        /* Hero Section */
+        .hero {
+            color: white;
+            padding: 100px 0 80px 0; /* Adjusted padding to make space for fixed navbar */
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+        }
+
+        /* Cards Section */
+        .card {
+            border: none;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+            margin-bottom: 20px;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .card-body {
+            background-color: #fff;
+            padding: 25px;
+            text-align: center;
+        }
+
+        .card-body h5 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #003366;
+            margin-bottom: 20px;
+        }
+
+        .card-body p {
+            font-size: 1rem;
+            color: #555;
+            margin-bottom: 30px;
+        }
+
+        .btn-primary {
+            background-color: #003366;
+            border: none;
+            color: white;
+            padding: 12px 30px;
+            font-size: 1.1rem;
+            border-radius: 30px;
+            transition: background-color 0.3s;
+        }
+
+        .btn-primary:hover {
+            background-color: #002244;
+            transform: scale(1.05);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .card-body h5 {
+                font-size: 1.3rem;
+            }
+
+            .card-body p {
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Mobile navbar toggle */
+        .navbar-toggler-icon {
+            background-color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container-fluid p-0">
+            <nav class="navbar navbar-expand-lg">
+                <a class="nav-item" href="../login/login.html">
+                    <img src="./src/index/assets/sho-logo.jpg" alt="SHO Logo" class="icon-image">
+                    SHO
+                </a>
+                <!-- Dark Mode Toggle -->
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fas fa-align-right text-light"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <div class="mr-auto"></div>
+                    <ul class="navbar-nav">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="index.html">HOME <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="alliances.html">ALLIANCES</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="leaders-coleaders.html">Leaders & Co-Leaders</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="achievements.html" class="nav-link">Achievements</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="main-tournaments.html">TOURNAMENTS</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="hitwicket.html">HITWICKET GAME</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" style="background-color: #06071a;">
+        <div class="container">
+            <h1>Welcome to SHO Tournaments</h1>
+            <p>Select a tournament to explore more</p>
+        </div>
+    </section>
+
+    <!-- Tournament Cards -->
+    <div class="container text-center mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">SHO Internal Tournament</h5>
+                        <p class="card-text">View details about SHO Tournamenet</p>
+                        <a href="internal-tournaments.html" class="btn btn-primary">Go to Internal Tournement</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">SHO Global Reliance Tournament</h5>
+                        <p class="card-text">View details about Reliance Tournament</p>
+                        <a href="#tournament2" class="btn btn-primary">Go to Reliance Tournament</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">SHO Internal Tournament</h5>
+                        <p class="card-text">View details about SHO Tournament</p>
+                        <a href="#tournament3" class="btn btn-primary">Go to SHO Tournament</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>
