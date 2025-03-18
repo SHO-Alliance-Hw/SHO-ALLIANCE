@@ -215,6 +215,61 @@
     max-height: 400px; /* Adjust the height as needed */
     object-fit: cover; /* Ensures images fill the container */
 }
+/* Video Card Styling */
+.video-card {
+    background-color: #111;
+    border-radius: 15px;
+    padding: 20px;
+    width: 300px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    margin: 20px auto;
+    text-align: center;
+    color: white;
+}
+
+/* Title Styling */
+.video-card h3 {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Description Styling */
+.video-card p {
+    font-size: 1em;
+    margin-bottom: 20px;
+}
+
+/* YouTube Icon Link Styling */
+.youtube-link {
+    display: inline-block;
+    text-decoration: none;
+    color: #ff0000; /* YouTube Red */
+    padding: 10px 20px;
+    border-radius: 30px;
+    background-color: white;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    font-size: 1.2em;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* YouTube Icon Styling */
+.youtube-link .youtube-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.youtube-link:hover {
+    background-color: #ff0000;
+    color: white;
+}
+
+/* Add YouTube icon from Font Awesome */
+.youtube-link i {
+    margin-right: 8px;
+}
 
         /* Responsive Design */
         @media (max-width: 768px) {
@@ -316,7 +371,7 @@
                     <li><i class="fas fa-check-circle"></i> 4 teams advance to phase 2</li>
                 </ul>
             </div>
-        </div>
+        </div>        
     </div>
 <!-- Footer -->
 <footer>
@@ -348,7 +403,6 @@
                 <div class="carousel-item">
                     <img src="./src/reliance-tournament/assets/group-f.jpg" class="d-block w-100" alt="Points Table 6">
                 </div>
-            </div>
             <!-- Carousel Controls -->
             <a class="carousel-control-prev" href="#pointsTableCarousel" role="button" data-slide="prev" >
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -359,13 +413,23 @@
                 <span class="sr-only">Next</span>
             </a>
             <div id="pointsTableCarousel" class="carousel slide" data-ride="carousel" data-interval="3000">
-
+            </div>
+            </div>
+        </div>
+        <div class="video-card">
+            <div class="video-content">
+                <h3>Watch Our Tournament Videos</h3>
+                <p>Click on the YouTube icon below to watch exclusive tournament highlights!</p>
+            </div>
+            <a href="https://www.youtube.com/watch?v=qpko_JFiH2c" target="_blank" class="youtube-link">
+                <div class="youtube-icon">
+                    <i class="fab fa-youtube"></i> Watch on YouTube
+                </div>
+            </a>
         </div>
         <p>&copy; 2025 SHO Reliable Tournament. All Rights Reserved.</p>
     </div>
 </footer>
-
-
     <!-- Bootstrap JS & Dependencies -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
