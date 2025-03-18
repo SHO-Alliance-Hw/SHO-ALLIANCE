@@ -39,7 +39,8 @@ h3 {
 
 /* Section Headers */
 .section-header {
-  background: #283593; /* professional blue */
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.18);
   padding: 20px;
   border-radius: 10px;
   text-align: center;
@@ -50,7 +51,8 @@ h3 {
 
 /* Section Content */
 .section-content {
-  background: #263238; /* dark slate */
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.18);
   padding: 30px;
   border-radius: 10px;
   margin-bottom: 50px;
