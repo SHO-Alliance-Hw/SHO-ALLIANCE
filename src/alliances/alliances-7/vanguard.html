@@ -1,340 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <title>Vanguard Players List</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Sniglet&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
-  <style>
-    /* General Body Styling */
-    body {
-      background-color: #141414;
-      font-family: 'Sniglet', cursive;
-      color: #e5e5e5;
-      margin: 0;
-      padding: 0;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vanguard Alliance</title>
 
-    /* Navbar Styling */
-    .navbar-custom {
-      background: linear-gradient(45deg, #0d0d2b, #1a1a40);
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
-    }
-
-    .navbar-custom .navbar-brand {
-      font-family: 'Roboto Slab', serif;
-      font-size: 1.8rem;
-      color: #ffdd57;
-    }
-
-    .navbar-custom .nav-link {
-      color: #e5e5e5;
-      font-weight: 600;
-      padding: 10px 20px;
-      transition: color 0.3s ease;
-    }
-
-    .navbar-custom .nav-link:hover {
-      color: #ffdd57;
-    }
-
-    /* Header Container */
-    .header-container {
-      margin-top: 20px;
-      text-align: center;
-      color: #ffdd57;
-      font-family: 'Roboto Slab', serif;
-      font-size: 2.5rem;
-      animation: textGlow 1.5s infinite alternate;
-      text-shadow: 0 0 10px #ffdd57, 0 0 20px #ffdd57, 0 0 30px #ffdd57, 0 0 40px #ffdd57, 0 0 50px #ffdd57;
-    }
-
-    @keyframes textGlow {
-      from {
-        text-shadow: 0 0 10px #ffdd57, 0 0 20px #ffdd57, 0 0 30px #ffdd57, 0 0 40px #ffdd57;
-      }
-
-      to {
-        text-shadow: 0 0 20px #ffdd57, 0 0 30px #ffdd57, 0 0 40px #ffdd57, 0 0 50px #ffdd57;
-      }
-    }
-
-    /* Description Container */
-    .description-container {
-      margin-top: 20px;
-      text-align: center;
-      color: #ffffff;
-      font-family: 'Roboto Slab', serif;
-      animation: slideIn 1.5s ease-out;
-    }
-
-    .description-container p {
-      font-size: 1.2rem;
-      line-height: 1.8;
-      max-width: 800px;
-      margin: 0 auto 10px auto;
-      padding: 10px 20px;
-      background: linear-gradient(135deg, #5089ca, #610e45);
-      border-radius: 10px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
-      animation: fadeIn 2s ease-out;
-      color: white;
-    }
-
-    @keyframes slideIn {
-      from {
-        transform: translateY(-50px);
-        opacity: 0;
-      }
-
-      to {
-        transform: translateY(0);
-        opacity: 1;
-      }
-    }
-
-    @keyframes fadeIn {
-      0% {
-        opacity: 0;
-      }
-
-      100% {
-        opacity: 1;
-      }
-    }
-
-    /* Table Container */
-    .table-container {
-      margin-top: 50px;
-      background: linear-gradient(135deg, #6a11cb, #2575fc);
-      border-radius: 15px;
-      padding: 30px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
-      animation: fadeIn 2s ease-out;
-    }
-
-    h2 {
-      text-align: center;
-      font-size: 3rem;
-      color: white;
-      margin-bottom: 30px;
-      text-transform: uppercase;
-      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
-    }
-
-    .table-wrapper {
-      max-height: 400px;
-      overflow-y: scroll;
-      border-radius: 10px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      border-radius: 10px;
-      overflow: hidden;
-    }
-
-    th,
-    td {
-      padding: 15px;
-      text-align: center;
-      font-size: 1rem;
-    }
-
-    th {
-      background-color: #ff512f;
-      color: white;
-      font-weight: bold;
-      text-transform: uppercase;
-      font-family: 'Arial', sans-serif;
-      animation: headerAnimation 2s ease-in-out;
-    }
-
-    td {
-      background-color: #212121;
-      color: white;
-    }
-
-    tr:nth-child(even) td {
-      background-color: #333333;
-    }
-
-    tr:hover {
-      background-color: #444444;
-      transform: scale(1.05);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-    }
-
-    .level-high {
-      color: #e5e5e5;
-      background-color: #1e90ff;
-      font-weight: bold;
-      padding: 5px;
-      border-radius: 5px;
-    }
-
-    .level-medium {
-      color: white;
-      background-color: #ff6347;
-      font-weight: bold;
-      padding: 5px;
-      border-radius: 5px;
-    }
-
-    .level-low {
-      color: black;
-      background-color: #ffdf00;
-      font-weight: bold;
-      padding: 5px;
-      border-radius: 5px;
-    }
-
-    table {
-      counter-reset: rowNumber;
-    }
-
-    tbody tr {
-      counter-increment: rowNumber;
-    }
-
-    tbody tr td:first-child::before {
-      content: counter(rowNumber);
-      font-weight: bold;
-      color: #ff512f;
-      margin-right: 10px;
-    }
-
-    @keyframes headerAnimation {
-      0% {
-        transform: scale(0.9);
-        opacity: 0;
-      }
-
-      50% {
-        transform: scale(1.1);
-      }
-
-      100% {
-        transform: scale(1);
-        opacity: 1;
-      }
-    }
-
-    @media (max-width: 768px) {
-
-      th,
-      td {
-        padding: 10px;
-        font-size: 0.9rem;
-      }
-
-      h2 {
-        font-size: 2rem;
-      }
-    }
-  </style>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="stylesheet" href="../all.css">
 </head>
-
 <body>
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-custom">
-    <div class="container">
-      <a class="navbar-brand" href="#">SHO Vanguard</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon" style="filter: invert(1);"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="../index.html">Home <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="../src/alliances.html">Alliances</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="../src/leaders-coleaders.html">Leaders & Co-leaders</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="../src/achivements.html">Achievements</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="../src/internal-tournaments.html">Internal Tournaments</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="../src/hitwicket.html">Hitwicket Game</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav> 
 
-  <!-- Main Container -->
-  <div class="container">
-    <div class="header-container">
-      Welcome to SHO Vanguards
-    </div>
-    <div class="description-container">
-      <p>The Vanguard Alliance stands as a titan in the SHO universe,</p>
-      <p>with 30 of the most skilled and dedicated members.</p>
-      <p>Renowned for their strategic prowess and unrivaled teamwork,</p>
-      <p>they dominate the battlefield and inspire awe across the community.</p>
-    </div>
-    <div class="table-container">
-      <h2>Vanguard Players List</h2>
-      <div class="table-wrapper">
-        <table>
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>Player Name</th>
-              <th>Player Level</th>
-              <th>Player Rank</th>
-              <th>Team</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
+    <!-- Navigation Bar -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <a class="navbar-brand" href="#">SHO</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Alliances</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Leaders</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Achievements</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Tournaments</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Welcome to Vanguard Alliance</h1>
+            <p>Explore the list of elite players, leaders, and co-leaders of the Vanguard Alliance.</p>
+        </div>
+    </section>
+
+    <!-- Players Table Section (Responsive with Scroll) -->
+    <div class="container table-container">
+        <div class="table-responsive">
+            <table>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Player Name</th>
+                        <th>Player Level</th>
+                        <th>Player Rank</th>
+                        <th>Team</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
               <td></td>
               <td>Devil Khan(Leader)</td>
               <td class="level-high">96</td>
-              <td>TITAN</td>
-              <td>||SHO||DEVIL||KHAN</td>
-            </tr>
-            <tr>
+                        <td>TITAN</td>
+                        <td>||SHO||DEVIL||KHAN</td>
+                    </tr>
+                    <tr>
               <td></td>
               <td>Akash</td>
               <td class="level-high">100</td>
               <td>MASTERFUL</td>
               <td>||SHO||PREPETUL</td>
-            </tr>
-            <tr>
+                    </tr>
+                    <tr>
               <td></td>
               <td>Sammed Jain(YC WINNER)</td>
               <td class="level-high">100</td>
               <td>TITAN</td>
               <td>||SHO|| ALPHA</td>
-            </tr>
-            <tr>
+                    </tr>
+                    <tr>
               <td></td>
               <td>sunny</td>
               <td class="level-high">100</td>
               <td>TITAN</td>
               <td>||SHO||DESTRUCTION</td>
-            </tr>
-            <tr>
+                    </tr>
+                    <tr>
               <td></td>
               <td>ali</td>
               <td class="level-medium">100</td>
               <td>SUPREME</td>
               <td>||SHO||ALI</td>
-            </tr>
+                    </tr>
             <tr>
               <td></td>
               <td>Souja</td>
@@ -511,15 +278,16 @@
               <td>||SHO||HUNTER</td>
             </tr>
             <!-- Add more rows as needed for 30 players -->
-          </tbody>
-        </table>
+                </tbody>
+            </table>
       </div>
+        </div>
     </div>
-  </div>
 
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <!-- Bootstrap and jQuery Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
 </body>
-
 </html>
