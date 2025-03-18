@@ -1,114 +1,158 @@
-        /* Reset styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
 
-        html, body {
-            width: 100%;
-            height: 100%; /* Ensure the body is tall enough to allow scrolling */
-            overflow-x: hidden; /* Prevent horizontal scrolling */
-            font-family: 'Poppins', sans-serif;
-            background-color: #f7f9fc;
-            color: #333;
-        }
+/* Reset styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        /* Header and Navbar Background Color */
-        header, .navbar {
-            background: rgba(6, 7, 26, 0.8);
-        }
+html, body {
+    width: 100%;
+    height: 100%; /* Ensure the body is tall enough to allow scrolling */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    font-family: 'Poppins', sans-serif;
+    background-color: #f7f9fc;
+    color: #333;
+}
 
-        .navbar-brand {
-            color: #fff !important;
-            font-weight: bold;
-        }
+/* Header and Navbar Background Color */
+header, .navbar {
+    background: rgba(6, 7, 26, 0.8);
+    opacity: 0;
+    animation: fadeInNav 1s forwards; /* Navbar fade-in animation */
+}
 
-        /* Hero Section */
-        .hero {
-            color: white;
-            padding: 120px 0 50px 0; /* Adjusted padding */
-            text-align: center;
-            background: linear-gradient(135deg, #19081d, #0a2122);
-        }
+@keyframes fadeInNav {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
 
-        .hero h1 {
-            font-size: 3.5rem;
-            font-weight: 600;
-            margin-bottom: 20px;
-        }
+.navbar-brand {
+    color: #fff !important;
+    font-weight: bold;
+}
 
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 40px;
-        }
+/* Hero Section */
+.hero {
+    color: white;
+    padding: 120px 0 50px 0; /* Adjusted padding */
+    text-align: center;
+    background: linear-gradient(135deg, #19081d, #0a2122);
+    position: relative;
+    opacity: 0;
+    animation: fadeInHero 1.5s forwards 0.5s; /* Hero fade-in with delay */
+}
 
-        /* Table Styling */
-        .table-container {
-            background: rgba(255, 255, 255, 0.8); /* Transparent background for table */
-            padding: 20px;
+@keyframes fadeInHero {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    animation: slideUp 1s forwards; /* Hero heading slide-up animation */
+}
+
+@keyframes slideUp {
+    0% { transform: translateY(30px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    animation: fadeInText 1.2s forwards 1s; /* Fade-in text after hero */
+}
+
+@keyframes fadeInText {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* Table Styling */
+.table-container {
+    background: rgba(255, 255, 255, 0.8); /* Transparent background for table */
+    padding: 20px;
             border-radius: 15px;
             backdrop-filter: blur(10px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
             margin-top: 30px; /* Slight margin from hero section */
-            z-index: 1;
-            position: relative;
-        }
+    z-index: 1;
+    opacity: 0;
+    animation: fadeInTable 1s forwards 1.5s; /* Table fade-in animation */
+}
 
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 30px;
-        }
+@keyframes fadeInTable {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
 
-        th, td {
-            padding: 15px;
-            text-align: center;
-            font-size: 1rem;
-            border: 1px solid #ddd;
-        }
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+}
 
-        th {
-            background: linear-gradient(135deg, #19081d, #0a2122);
-            color: white;
-            font-weight: bold;
-        }
+th, td {
+    padding: 15px;
+    text-align: center;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    opacity: 0;
+    animation: fadeInRow 0.5s forwards; /* Row fade-in animation */
+}
 
-        td {
-            background: rgba(255, 255, 255, 0.7);
-        }
+@keyframes fadeInRow {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
 
-        td:hover {
-            background: rgba(255, 255, 255, 0.9);
-            cursor: pointer;
-        }
+th {
+    background: linear-gradient(135deg, #19081d, #0a2122);
+    color: white;
+    font-weight: bold;
+}
 
-        tr:hover td {
-            transform: scale(1.02);
-            transition: transform 0.3s ease-in-out;
-        }
+td {
+    background: rgba(255, 255, 255, 0.7);
+}
 
-        /* Responsive Table - Horizontal Scroll */
-        .table-responsive {
-            overflow-x: auto;
-            -webkit-overflow-scrolling: touch;
-        }
+td:hover {
+    background: rgba(255, 255, 255, 0.9);
+    cursor: pointer;
+    transform: scale(1.05); /* Hover scale effect */
+    transition: transform 0.3s ease-in-out;
+}
 
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.5rem;
-            }
+tr:hover td {
+    transform: scale(1.02);
+    transition: transform 0.3s ease-in-out;
+}
 
-            .hero p {
-                font-size: 1rem;
-            }
+/* Responsive Table - Horizontal Scroll */
+.table-responsive {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
 
-            .table-container {
-                padding: 10px;
-            }
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
 
-            table {
-                font-size: 0.9rem;
-            }
-        }
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .table-container {
+        top: 150px; /* Adjust for mobile view */
+        padding: 10px;
+    }
+
+    table {
+        font-size: 0.9rem;
+    }
+}
