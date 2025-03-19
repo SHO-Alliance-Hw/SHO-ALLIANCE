@@ -70,7 +70,33 @@ header, .navbar {
     0% { opacity: 0; }
     100% { opacity: 1; }
 }
-
+.button-group {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 400px;
+    margin-top: 20px;
+  }
+  
+  .nav-btn {
+    padding: 10px 15px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+    background: #007bff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+    flex: 1;
+    margin: 0 5px;
+  
+    &:hover {
+      background: #0056b3;
+    }
+  }
+  
+  
 /* Table Styling */
 .table-container {
     background: rgba(255, 255, 255, 0.8); /* Transparent background for table */
@@ -131,11 +157,7 @@ tr:hover td {
     transition: transform 0.3s ease-in-out;
 }
 
-/* Responsive Table - Horizontal Scroll */
-.table-responsive {
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-}
+
 
 /* Responsive Design */
 @media (max-width: 768px) {
