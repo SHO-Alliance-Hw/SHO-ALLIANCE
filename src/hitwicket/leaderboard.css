@@ -1,199 +1,98 @@
-/* Overall Theme */
-body {
-  background: #1a1a2e; /* deep navy/charcoal background */
-  font-family: 'Sniglet', cursive;
-  color: #cfd8dc; /* light grey */
-  margin: 0;
-  padding: 0;
-}
+        /* Cyberpunk Navbar */
+        .cyberpunk-navbar {
+          background: rgba(0, 0, 0, 0.9);
+          border-bottom: 2px solid #ff00ff;
+          padding: 10px 0;
+      }
 
-h1,
-h2,
-h3 {
-  font-family: 'Roboto Slab', serif;
-}
-.navbar-toggler-icon {
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='white' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E") !important;
-    width: 30px;
-    height: 30px;
-    color: white;
-}
-/* Navbar */
-.navbar-custom {
-  background: #16213e; /* darker navy */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
-}
-.navbar-custom .navbar-brand {
-  font-size: 1.8rem;
-  color: #80cbc4; /* teal accent */
-}
-.navbar-custom .nav-link {
-  color: #cfd8dc;
-  font-weight: 600;
-  padding: 10px 20px;
-  transition: color 0.3s ease;
-}
-.navbar-custom .nav-link:hover {
-  color: #80cbc4;
-}
+      .neon-text {
+          color: #00ffff;
+          font-weight: bold;
+          text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff;
+      }
 
-/* Section Headers */
-.section-header {
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.18);
+      .cyberpunk-section {
+          padding: 50px 5%;
+          text-align: center;
+          background: rgba(0, 0, 0, 0.8);
+          color: #fff;
+          margin: 20px auto;
+          border-radius: 10px;
+          box-shadow: 0 0 15px #ff00ff, 0 0 30px #00ffff;
+          max-width: 800px;
+      }
+
+      .cyberpunk-title {
+          font-size: 2rem;
+          font-family: 'Orbitron', sans-serif;
+          color: #ff00ff;
+          text-shadow: 0 0 5px #ff00ff, 0 0 15px #ff00ff;
+      }
+
+      .cyberpunk-button {
+          display: inline-block;
+          padding: 12px 20px;
+          font-size: 18px;
+          font-weight: bold;
+          color: #fff;
+          background: linear-gradient(45deg, #ff00ff, #00ffff);
+          border: none;
+          border-radius: 30px;
+          text-decoration: none;
+          box-shadow: 0 0 10px #ff00ff, 0 0 20px #00ffff;
+          transition: all 0.3s ease-in-out;
+      }
+
+      .cyberpunk-button:hover {
+          box-shadow: 0 0 15px #ff00ff, 0 0 30px #00ffff;
+          transform: scale(1.05);
+      }
+
+      /* "Go to HitWicket Guide" Button */
+      .btn-guide {
+          display: block;
+          width: 90%;
+          max-width: 250px;
+          margin: 40px auto;
+          padding: 12px 20px;
+          font-size: 18px;
+          font-weight: bold;
+          text-align: center;
+          color: #fff;
+          background: linear-gradient(45deg, #ff00ff, #00ffff);
+          border: none;
+          border-radius: 30px;
+          text-decoration: none;
+          box-shadow: 0 0 10px #ff00ff, 0 0 20px #00ffff;
+          transition: all 0.3s ease-in-out;
+      }
+
+      .btn-guide:hover {
+          box-shadow: 0 0 15px #ff00ff, 0 0 30px #00ffff;
+          transform: scale(1.1);
+      }
+/* Footer */
+.footer {
   padding: 20px;
-  border-radius: 10px;
-  text-align: center;
-  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
-  margin-bottom: 30px;
-  color: #ffffff;
+  background: #111;
+  color: white;
 }
+      /* Responsive Adjustments */
+      @media (max-width: 768px) {
+          .cyberpunk-title {
+              font-size: 1.8rem;
+          }
+          .cyberpunk-section {
+              padding: 40px 10%;
+          }
+      }
 
-/* Section Content */
-.section-content {
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  padding: 30px;
-  border-radius: 10px;
-  margin-bottom: 50px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
-}
-
-/* Smooth scrolling */
-html {
-  scroll-behavior: smooth;
-}
-
-/* Table Styling (if needed) */
-.table-container {
-  margin: 50px auto;
-  background: #263238;
-  border-radius: 15px;
-  padding: 30px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
-  max-width: 1200px;
-}
-
-h2.table-title {
-  text-align: center;
-  font-size: 2.5rem;
-  color: #ffffff;
-  margin-bottom: 30px;
-  text-transform: uppercase;
-  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
-}
-
-.table-wrapper {
-  max-height: 500px;
-  overflow-y: auto;
-  border-radius: 10px;
-}
-
-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-th,
-td {
-  padding: 15px;
-  text-align: center;
-  font-size: 1rem;
-  vertical-align: middle;
-}
-
-th {
-  background-color: #3949ab; /* subtle professional blue */
-  color: #ffffff;
-  font-weight: bold;
-  text-transform: uppercase;
-}
-
-td {
-  background-color: #1e1e2f;
-  color: #cfd8dc;
-}
-
-tr:nth-child(even) td {
-  background-color: #27293d;
-}
-
-tr:hover {
-  background-color: #3e3f58;
-  transform: scale(1.01);
-  transition: transform 0.2s;
-}
-
-/* Button Styling */
-.btn-details {
-  background-color: #80cbc4;
-  color: #1a1a2e;
-  font-weight: bold;
-  border: none;
-  border-radius: 5px;
-  transition: background-color 0.3s;
-  padding: 12px 25px;
-  font-size: 1.2rem;
-}
-.btn-details:hover {
-  background-color: #4db6ac;
-}
-
-/* Product image styling (if needed) */
-.product-img {
-  width: 70px;
-  height: 70px;
-  object-fit: cover;
-  border-radius: 8px;
-}
-
-/* Glass Section Styles and Animations */
-.glass-section {
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 15px;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px); /* For Safari */
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  padding: 30px;
-  margin-bottom: 50px;
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  opacity: 0;
-  transform: translateY(30px);
-  animation: fadeInUp 0.8s forwards;
-}
-
-/* Stagger Animation Delays */
-#pvp-leaderboard.glass-section {
-  animation-delay: 0.2s;
-}
-#hitwicket-official.glass-section {
-  animation-delay: 0.4s;
-}
-#yc-top-players.glass-section {
-  animation-delay: 0.6s;
-}
-
-/* Fade In Up Animation */
-@keyframes fadeInUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Hover Animation on Glass Sections */
-.glass-section:hover {
-  transform: scale(1.02);
-  transition: transform 0.3s ease;
-}
-
-@media (max-width: 768px) {
-  th,
-  td {
-    padding: 10px;
-    font-size: 0.9rem;
-  }
-  h2.table-title {
-    font-size: 2rem;
-  }
-}
+      @media (max-width: 576px) {
+          .cyberpunk-title {
+              font-size: 1.5rem;
+          }
+          .cyberpunk-button, .btn-guide {
+              font-size: 16px;
+              padding: 10px 15px;
+          }
+      }

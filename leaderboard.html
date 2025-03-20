@@ -1,118 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SHO HitWicket Guide</title>
-    <!-- Bootstrap CSS -->
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-    />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyberpunk HitWicket Guide</title>
+
     <!-- Google Fonts -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&family=Sniglet&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="./src/hitwicket/leaderboard.css">
-  </head>
-  <body>
+</head>
+<body>
+
     <!-- Navbar -->
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
+    <nav class="navbar navbar-expand-lg cyberpunk-navbar fixed-top">
         <div class="container">
-          <a class="navbar-brand" href="#">SHO HitWicket</a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-toggle="collapse"
-            data-target="#navbarNavAltMarkup"
-            aria-controls="navbarNavAltMarkup"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon" style="filter: invert(1);"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav ml-auto">
-              <a class="nav-link" href="index.html">Home</a>
-              <a class="nav-link" href="alliances.html">Alliances</a>
-              <a class="nav-link" href="leaders-coleaders.html">Leaders & Co-leaders</a>
-              <a class="nav-link" href="achievements.html">Achievements</a>
-              <a class="nav-link" href="main-tournaments.html">Tournaments</a>
-              <a class="nav-link" href="hitwicket.html">Hitwicket</a>
+            <a class="navbar-brand neon-text" href="#">SHO HitWicket</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon" style="filter: invert(1);"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <div class="navbar-nav ml-auto">
+                    <!-- <a class="nav-link neon-text" href="#">Home</a>
+                    <a class="nav-link neon-text" href="#">Alliances</a>
+                    <a class="nav-link neon-text" href="#">Leaders</a>
+                    <a class="nav-link neon-text" href="#">Tournaments</a>
+                    <a class="nav-link neon-text" href="#">Leaderboard</a> -->
+                </div>
             </div>
-          </div>
         </div>
-      </nav>
+    </nav>
 
-    <!-- Main Content -->
-    <div class="container" style="padding-top: 100px;">
-      <!-- HitWicket Official Website Section -->
-      <section id="hitwicket-official" class="mb-5 glass-section">
-        <div class="section-header">
-          <h2>HitWicket Official Website</h2>
-        </div>
-        <div class="section-content text-center">
-          <p>
-            Explore the world of HitWicket! Manage your team, compete with the best, and rise to glory.
-          </p>
-          <p>
-            <a
-              href="https://hitwicket.com/"
-              class="btn btn-lg btn-details"
-              target="_blank"
-            >
-              Visit HitWicket Official Site
-            </a>
-          </p>
-        </div>
-      </section>
-      <!-- PVP Leaderboard Section -->
-      <section id="pvp-leaderboard" class="mb-5 glass-section">
-        <div class="section-header">
-          <h2>Daily PVP Leaderboard</h2>
-        </div>
-        <div class="section-content text-center">
-          <p>
-            Check out the top players dominating the battlefield!
-          </p>
-          <p>
-            <a
-              href="https://hitwicket.com/worldcup/arenas/leaderboard"
-              class="btn btn-lg btn-details"
-              target="_blank"
-            >
-              View Full Leaderboard
-            </a>
-          </p>
-        </div>
-      </section>
-      <!-- YC Top 128 Players Section -->
-      <section id="yc-top-players" class="mb-5 glass-section">
-        <div class="section-header">
-          <h2>YC Top 128 Players</h2>
-        </div>
-        <div class="section-content text-center">
-          <p>
-            From among thousands of members, these are the top 128 players showcasing exceptional skill and strategy. Discover who leads the pack in the ultimate battle for glory!
-          </p>
-          <p>
-            <a
-              href="https://hitwicket.com/yc-top-players"
-              class="btn btn-lg btn-details"
-              target="_blank"
-            >
-              View Top 128 Players
-            </a>
-          </p>
-        </div>
-      </section>
+    <!-- Main Section -->
+    <section class="cyberpunk-section">
+        <h2 class="cyberpunk-title">HitWicket Official Website</h2>
+        <p>Explore the world of HitWicket! Manage your team, compete with the best, and rise to glory.</p>
+        <a href="https://hitwicket.com/" class="cyberpunk-button">Visit HitWicket Site</a>
+    </section>
+
+    <!-- PVP Leaderboard Section -->
+    <section class="cyberpunk-section">
+        <h2 class="cyberpunk-title">Daily PVP Leaderboard</h2>
+        <p>Check out the top players dominating the battlefield!</p>
+        <a href="https://hitwicket.com/worldcup/arenas/leaderboard" class="cyberpunk-button" target="_blank">
+            View Full Leaderboard
+        </a>
+    </section>
+
+    <!-- YC Top 128 Players Section -->
+    <section class="cyberpunk-section">
+        <h2 class="cyberpunk-title">YC Top 128 Players</h2>
+        <p>From among thousands of members, these are the top 128 players showcasing exceptional skill and strategy.</p>
+        <a href="https://hitwicket.com/yc-top-players" class="cyberpunk-button" target="_blank">
+            View Top 128 Players
+        </a>
+    </section>
+
+    <!-- "Go to HitWicket Guide" Button -->
+    <div class="text-center">
+        <a href="hitwicket.html" class="btn-guide">Go to HitWicket Guide</a>
     </div>
-
+    <!-- Footer -->
+    <footer class="footer text-center">
+      <p>&copy; 2025 HitWicket Guide | Powered by SHO Alliance</p>
+  </footer>
     <!-- Bootstrap and jQuery Scripts -->
+    <script src="./src/hitwicket/hitwicket.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  </body>
+</body>
 </html>

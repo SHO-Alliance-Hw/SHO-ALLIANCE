@@ -109,3 +109,26 @@ body {
   color: #80cbc4;
   text-shadow: 0 0 8px #80cbc4;
 }
+        /* "Go to HitWicket Guide" Button */
+        .btn-guide {
+          display: block;
+          width: 90%;
+          max-width: 250px;
+          margin: 40px auto;
+          padding: 12px 20px;
+          font-size: 18px;
+          font-weight: bold;
+          text-align: center;
+          color: #fff;
+          background: linear-gradient(135deg, #111, #222);
+          border: none;
+          border-radius: 30px;
+          text-decoration: none;
+          box-shadow: 0 0 10px #ff00ff, 0 0 20px #00ffff;
+          transition: all 0.3s ease-in-out;
+      }
+
+      .btn-guide:hover {
+          box-shadow: 0 0 15px #ff00ff, 0 0 30px #00ffff;
+          transform: scale(1.1);
+      }
