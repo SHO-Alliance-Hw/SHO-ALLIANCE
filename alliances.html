@@ -1,110 +1,185 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Our Alliances</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vanguard Alliances</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./src/alliances/alliances.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
-
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark">
-        <div class="container-fluid">
-          <!-- Left side with Sho's name and icon -->
-          <a class="navbar-brand d-flex align-items-center" href="#">
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container-fluid">
+        <!-- Left side: Logo -->
+        <a class="navbar-brand d-flex align-items-center" href="#">
             <img src="./src/index/assets/sho-logo.jpg" alt="Sho Icon" class="icon-image me-2">
             <span class="sho-name">SHO</span>
-          </a>
-      
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        </a>
+
+        <!-- Navbar Toggler (Fix Applied) -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
-          </button>
-      
-          <div class="collapse navbar-collapse" id="navbarNav">
+        </button>
+
+        <!-- Navbar Links -->
+        <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
-              <li class="nav-item">
-                <a class="nav-link" href="index.html">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link current" href="alliances.html">Alliances</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="leaders-coleaders.html">Leaders & Co-Leaders</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="achievements.html">Achievements</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="main-tournaments.html">Tournaments</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="hitwicket.html">Hitwicket Game</a>
-              </li>
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link active" href="alliances.html">Alliances</a></li>
+                <li class="nav-item"><a class="nav-link" href="leaders-coleaders.html">Leaders & Co-Leaders</a></li>
+                <li class="nav-item"><a class="nav-link" href="achievements.html">Achievements</a></li>
+                <li class="nav-item"><a class="nav-link" href="main-tournaments.html">Tournaments</a></li>
+                <li class="nav-item"><a class="nav-link" href="hitwicket.html">Hitwicket Game</a></li>
             </ul>
+        </div>
+    </div>
+</nav>
+
+  <!-- Hero Section -->
+  <header class="hero">
+    <div class="container text-center">
+      <h1 class="hero-title">Welcome to the SHO Alliances</h1>
+      <p class="hero-subtitle">A community of elite gamers dominating the battlefield.</p>
+      <a href="#alliances" class="btn btn-primary explore-btn">Explore Alliances</a>
+    </div>
+  </header>
+
+  <!-- Alliances Section -->
+  <section id="alliances" class="alliances-section">
+    <div class="container">
+      <h2 class="section-title text-center">Explore Our Alliances</h2>
+      <div class="row g-4">
+        <!-- Alliance Cards -->
+        <div class="col-md-4">
+          <div class="card alliance-card">
+            <div class="card-inner">
+              <div class="card-front">
+                <img src="./src/alliances/assets/vanguards.webp" class="card-img" alt="Vanguard">
+              </div>
+              <div class="card-back">
+                <h3>Vanguard</h3>
+                <p>The fearless warriors of the battlefield.</p>
+                <a href="./src/alliances/alliances-7/vanguard.html" class="btn btn-light">Explore</a>
+              </div>
+            </div>
           </div>
         </div>
-      </nav>
-      
 
-  <div class="container text-center">
-    <h2>Explore Our Alliance In Hit Wicket</h2>
-    <div class="alliance-container">
-      <a href="./src/alliances/alliances-7/vanguard.html" class="btn-alliance">
-        <img src="./src/alliances/assets/vanguards.webp" alt="Vanguard Alliance">
-        <!-- <span class="alliance-name">Vanguard</span> -->
-      </a>
-      <a href="./src/alliances/alliances-7/outriders.html" class="btn-alliance">
-        <img src="./src/alliances/assets/outriders.webp" alt="Outriders Alliance">
-        <!-- <span class="alliance-name">Outriders</span> -->
-      </a>
-      <a href="./src/alliances/alliances-7/enforces.html" class="btn-alliance">
-        <img src="./src/alliances/assets/enforcers.webp" alt="Enforces Alliance">
-        <!-- <span class="alliance-name">Enforces</span> -->
-      </a>
-      <a href="./src/alliances/alliances-7/paladins.html" class="btn-alliance">
-        <img src="./src/alliances/assets/paladins.webp" alt="Paladin Alliance">
-        <!-- <span class="alliance-name">Paladin</span> -->
-      </a>
-      <a href="./src/alliances/alliances-7/sentinels.html" class="btn-alliance">
-        <img src="./src/alliances/assets/sentinels.webp" alt="Sentinels Alliance">
-        <!-- <span class="alliance-name">Sentinels</span> -->
-      </a>
-      <a href="./src/alliances/alliances-7/crasuders.html" class="btn-alliance">
-        <img src="./src/alliances/assets/crusaders.webp" alt="Crusaders Alliance">
-        <!-- <span class="alliance-name">Crusaders</span> -->
-      </a>
-      <a href="./src/alliances/alliances-7/reveants.html" class="btn-alliance">
-        <img src="./src/alliances/assets/reveants.webp" alt="Crusaders Alliance">
-        <!-- <span class="alliance-name">Crusaders</span> -->
-      </a>
-      <a href="./src/alliances/alliances-7/invincibles.html" class="btn-alliance">
-        <img src="./src/alliances/assets/invincibles.webp" alt="Crusaders Alliance">
-        <!-- <span class="alliance-name">Crusaders</span> -->
-      </a>
+        <div class="col-md-4">
+          <div class="card alliance-card">
+            <div class="card-inner">
+              <div class="card-front">
+                <img src="./src/alliances/assets/outriders.webp" class="card-img" alt="Outriders">
+              </div>
+              <div class="card-back">
+                <h3>Outriders</h3>
+                <p>Masters of speed and strategy.</p>
+                <a href="./src/alliances/alliances-7/outriders.html" class="btn btn-light">Explore</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card alliance-card">
+            <div class="card-inner">
+              <div class="card-front">
+                <img src="./src/alliances/assets/sentinels.webp" class="card-img" alt="Sentinels">
+              </div>
+              <div class="card-back">
+                <h3>Sentinels</h3>
+                <p>The guardians of the Alliance.</p>
+                <a href="./src/alliances/alliances-7/sentinels.html" class="btn btn-light">Explore</a>
+              </div>
+            </div>
+          </div>
+        </div>
+          <!-- Paladins -->
+          <div class="col-md-4">
+            <div class="card alliance-card">
+              <div class="card-inner">
+                <div class="card-front">
+                  <img src="./src/alliances/assets/paladins.webp" class="card-img" alt="Paladins">
+                </div>
+                <div class="card-back">
+                  <h3>Paladins</h3>
+                  <p>The noble warriors of justice and strength.</p>
+                  <a href="./src/alliances/alliances-7/paladins.html" class="btn btn-light">Explore</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+          <!-- Revenants -->
+          <div class="col-md-4">
+            <div class="card alliance-card">
+              <div class="card-inner">
+                <div class="card-front">
+                  <img src="./src/alliances/assets/reveants.webp  " class="card-img" alt="Revenants">
+                </div>
+                <div class="card-back">
+                  <h3>Revenants</h3>
+                  <p>The undying spirits of battle, always returning stronger.</p>
+                  <a href="./src/alliances/alliances-7/revenants.html" class="btn btn-light">Explore</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+          <!-- Crusaders -->
+          <div class="col-md-4">
+            <div class="card alliance-card">
+              <div class="card-inner">
+                <div class="card-front">
+                  <img src="./src/alliances/assets/crusaders.webp" class="card-img" alt="Crusaders">
+                </div>
+                <div class="card-back">
+                  <h3>Crusaders</h3>
+                  <p>Champions of honor and relentless warriors.</p>
+                  <a href="./src/alliances/alliances-7/crusaders.html" class="btn btn-light">Explore</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+          <!-- Invincibles -->
+          <div class="col-md-4">
+            <div class="card alliance-card">
+              <div class="card-inner">
+                <div class="card-front">
+                  <img src="./src/alliances/assets/invincibles.webp" class="card-img" alt="Invincibles">
+                </div>
+                <div class="card-back">
+                  <h3>Invincibles</h3>
+                  <p>Unbreakable, unstoppable, and legendary.</p>
+                  <a href="./src/alliances/alliances-7/invincibles.html" class="btn btn-light">Explore</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+          <!-- Enforcers -->
+          <div class="col-md-4">
+            <div class="card alliance-card">
+              <div class="card-inner">
+                <div class="card-front">
+                  <img src="./src/alliances/assets/enforcers.webp" class="card-img" alt="Enforcers">
+                </div>
+                <div class="card-back">
+                  <h3>Enforcers</h3>
+                  <p>The law and order of the battlefield.</p>
+                  <a href="./src/alliances/alliances-7/enforcers.html" class="btn btn-light">Explore</a>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
     </div>
-
-    <h2>Explore Our Alliance In Other Top Games</h2>
-    <div class="alliance-container">
-      <a href="./alliances-7/freefire.html" class="btn-alliance">
-        <img src="./assets/freefire.jpg" alt="Freefire Alliance">
-        <!-- <span class="alliance-name">Freefire</span> -->
-      </a>
-      <a href="./alliances-7/bgmi.html" class="btn-alliance">
-        <img src="./assets/bgmi.jpg" alt="BGMI Alliance">
-        <!-- <span class="alliance-name">BGMI</span> -->
-      </a>
-      <a href="./alliances-7/football.html" class="btn-alliance">
-        <img src="./assets/football.jpg" alt="Football Alliance">
-        <!-- <span class="alliance-name">Football</span> -->
-      </a>
-    </div>
-  </div>
-
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+  </section>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-
 </html>
