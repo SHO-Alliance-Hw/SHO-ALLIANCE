@@ -10,6 +10,17 @@
           font-weight: bold;
           text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff;
       }
+/* Fix for first section merging with navbar */
+.cyberpunk-section:first-of-type {
+  margin-top: 80px; /* Adjust this if needed */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .cyberpunk-section:first-of-type {
+      margin-top: 100px; /* More margin for smaller screens */
+  }
+}
 
       .cyberpunk-section {
           padding: 50px 5%;
