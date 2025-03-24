@@ -97,6 +97,39 @@ th, td {
     overflow: hidden;
 }
 
+th {
+    background: linear-gradient(90deg, #0044cc, #0088ff); /* Stylish blue gradient */
+    color: #ffffff; /* White text for contrast */
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 2px solid #00c3ff; /* Neon-like border */
+}
+
+td {
+    color: #ffffff; /* White text for readability */
+    background: rgba(0, 30, 90, 0.7); /* Dark blue semi-transparent */
+}
+
+td:first-child { 
+    font-weight: bold;
+    color: #FFD700; /* Gold color for Team Names */
+    text-transform: uppercase;
+}
+
+/* Hover effect for better UI */
+tr:hover td {
+    background: rgba(0, 50, 150, 0.9);
+}
+
+/* Responsive font size */
+@media (max-width: 768px) {
+    th, td {
+        font-size: 12px;
+        padding: 6px;
+    }
+}
+
 /* Mobile View Fix */
 @media (max-width: 768px) {
     .tournament-table {
@@ -186,7 +219,7 @@ th, td {
                 <tr><th>Team</th><th>Matches</th><th>Wins</th><th>Lost</th><th>Points</th><th>NRR</th></tr>
                 <tr><td>Blasting Sixers CS</td><td>0</td><td>2</td><td>0</td><td>4</td><td>0.12</td></tr>
                 <tr><td>HC Haryana Hunters</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-                <tr><td>SHO Adirao X1</td><td>0</td><td>6</td><td>0</td><td>0</td><td>12</td>1.12</tr>
+                <tr><td>SHO Adirao X1</td><td>0</td><td>6</td><td>0</td><td>12</td><td>1.12</td></tr>
                 <tr><td>SHO Devu</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
                 <tr><td>SHO Gujarat Titans</td><td>0</td><td>2</td><td>0</td><td>4</td><td>0.56</td></tr>
                 <tr><td>SHO Sonak AK</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
