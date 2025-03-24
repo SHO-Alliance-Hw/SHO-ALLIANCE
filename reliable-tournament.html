@@ -12,6 +12,12 @@
     <link rel="stylesheet" href="./src/tournaments/reliable-tournament.css">
 <!-- Styles -->
 <style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Ensures proper spacing */
+}
+
 .table-carousel {
     display: flex;
     flex-direction: column;
@@ -19,8 +25,10 @@
     justify-content: center;
     margin: 40px auto;
     position: relative;
-    width: 90%;
-    max-width: 800px;
+    width: 100vw; /* Full viewport width */
+    max-width: 100vw; /* Prevents right-side cutoff */
+    overflow: hidden;
+    padding: 0 5px; /* Adds a small buffer to prevent border cutting */
 }
 
 .tables-container {
@@ -28,6 +36,7 @@
     text-align: center;
 }
 
+/* Ensure the table does not overflow */
 .tournament-table {
     display: none;
     background: rgba(0, 50, 150, 0.8);
@@ -35,8 +44,8 @@
     border-radius: 10px;
     box-shadow: 0px 4px 15px rgba(0, 76, 255, 0.5);
     width: 100%;
-    overflow-x: auto;
-    border: 2px solid rgba(173, 216, 230, 0.5); /* Glass effect border */
+    max-width: 100vw;
+    border: 2px solid rgba(173, 216, 230, 0.5);
     backdrop-filter: blur(10px);
 }
 
@@ -72,33 +81,37 @@
 /* Table Styling */
 table {
     width: 100%;
+    max-width: 100vw; /* Force it to fit */
+    table-layout: fixed;
     border-collapse: collapse;
     border: 2px solid rgba(173, 216, 230, 0.5);
 }
 
+/* Proper text fitting */
 th, td {
     padding: 8px;
     border: 1px solid rgba(173, 216, 230, 0.5);
     text-align: center;
     font-size: 14px;
+    word-wrap: break-word;
+    overflow: hidden;
 }
 
-th {
-    background: rgba(0, 76, 255, 0.9);
-}
-
-/* Mobile Styles */
+/* Mobile View Fix */
 @media (max-width: 768px) {
-    .carousel-btn {
-        padding: 8px 12px;
-        font-size: 14px;
+    .tournament-table {
+        padding: 10px;
     }
-    th, td {
+
+    table {
+        width: 100%;
+        max-width: 100vw; /* Force it to fit */
         font-size: 12px;
-        padding: 6px;
     }
-    .carousel-controls {
-        max-width: 250px;
+
+    th, td {
+        font-size: 10px;
+        padding: 5px;
     }
 }
 
@@ -171,78 +184,79 @@ th {
             <h3>Group A</h3>
             <table>
                 <tr><th>Team</th><th>Matches</th><th>Wins</th><th>Lost</th><th>Points</th><th>NRR</th></tr>
-                <tr><td>Blasting Sixers CS</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                <tr><td>Blasting Sixers CS</td><td>0</td><td>2</td><td>0</td><td>4</td><td>0.12</td></tr>
                 <tr><td>HC Haryana Hunters</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-                <tr><td>SHO Adirao X1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                <tr><td>SHO Adirao X1</td><td>0</td><td>6</td><td>0</td><td>0</td><td>12</td>1.12</tr>
                 <tr><td>SHO Devu</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-                <tr><td>SHO Gujarat Titans</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                <tr><td>SHO Gujarat Titans</td><td>0</td><td>2</td><td>0</td><td>4</td><td>0.56</td></tr>
                 <tr><td>SHO Sonak AK</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-                <tr><td>UAS Indian Heroes</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                <tr><td>UAS Indian Heroes</td><td>0</td><td>4</td><td>0</td><td>8</td><td>2.23</td></tr>
             </table>
         </div>
         <div class="tournament-table" id="table-b">
             <h3>Group B</h3>
             <table>
                 <tr><th>Team</th><th>Matches</th><th>Wins</th><th>Lost</th><th>Points</th><th>NRR</th></tr>
-                <tr><td>Blasting Sixers CS</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-                <tr><td>HC Haryana Hunters</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-                <tr><td>SHO Adirao X1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-                <tr><td>SHO Devu</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-                <tr><td>SHO Gujarat Titans</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-                <tr><td>SHO Sonak AK</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-                <tr><td>UAS Indian Heroes</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                <tr><td>BB King</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                <tr><td>Crispy Corn</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                <tr><td>SHO Avi Blasters</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                <tr><td>SHO Chillar Party</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                <tr><td>SHO Innnocent</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                <tr><td>SHO MR 11S</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                <tr><td>VK Trobule Makerz</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
             </table>
         </div>
         <div class="tournament-table" id="table-c">
             <h3>Group C</h3>
             <table>
                 <tr><th>Team</th><th>Matches</th><th>Wins</th><th>Lost</th><th>Points</th><th>NRR</th></tr>
-                <tr><td>Blasting Sixers CS</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-                <tr><td>HC Haryana Hunters</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-                <tr><td>SHO Adirao X1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-                <tr><td>SHO Devu</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-                <tr><td>SHO Gujarat Titans</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-                <tr><td>SHO Sonak AK</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-                <tr><td>UAS Indian Heroes</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                <tr><td>AST Mumbai Mavericks</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                <tr><td>Falcon Fame</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                <tr><td>HW Hitwicket Rockstars</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                <tr><td>MDZ Varint</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                <tr><td>SHO NTR</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                <tr><td>SHO Supremegohan</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                <tr><td>SHO Team 0825</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
             </table>
         </div>
         <div class="tournament-table" id="table-d">
             <h3>Group D</h3>
             <table>
                 <tr><th>Team</th><th>Matches</th><th>Wins</th><th>Lost</th><th>Points</th><th>NRR</th></tr>
-                <tr><td>Blasting Sixers CS</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-                <tr><td>HC Haryana Hunters</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-                <tr><td>SHO Adirao X1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-                <tr><td>SHO Devu</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-                <tr><td>SHO Gujarat Titans</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-                <tr><td>SHO Sonak AK</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-                <tr><td>UAS Indian Heroes</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                <tr><td>ACN Stunninf Rangers</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                <tr><td>AST Morning Star</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                <tr><td>MDZ Koolinks</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                <tr><td>SHO Overload</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                <tr><td>SHO Upcoming</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                <tr><td>BZ Teja</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                <tr><td>ZNDS X1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
             </table>
         </div>
         <div class="tournament-table" id="table-e">
             <h3>Group E</h3>
             <table>
                 <tr><th>Team</th><th>Matches</th><th>Wins</th><th>Lost</th><th>Points</th><th>NRR</th></tr>
-                <tr><td>Blasting Sixers CS</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-                <tr><td>HC Haryana Hunters</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-                <tr><td>SHO Adirao X1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-                <tr><td>SHO Devu</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-                <tr><td>SHO Gujarat Titans</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-                <tr><td>SHO Sonak AK</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-                <tr><td>UAS Indian Heroes</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                <tr><td>CS Grover 11</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                <tr><td>HC Rasoolpur X1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                <tr><td>Rocky</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                <tr><td>SHO Falcon Aces</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                <tr><td>SHO GUS</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                <tr><td>SHO Hasnai</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                <tr><td>SHO Upcoming</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                <tr><td>SHO Vancouver Whitecaps</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
             </table>
         </div>
         <div class="tournament-table" id="table-f">
             <h3>Group F</h3>
             <table>
                 <tr><th>Team</th><th>Matches</th><th>Wins</th><th>Lost</th><th>Points</th><th>NRR</th></tr>
-                <tr><td>Blasting Sixers CS</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-                <tr><td>HC Haryana Hunters</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-                <tr><td>SHO Adirao X1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-                <tr><td>SHO Devu</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-                <tr><td>SHO Gujarat Titans</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-                <tr><td>SHO Sonak AK</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-                <tr><td>UAS Indian Heroes</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                <tr><td>SHO A Morning Star</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                <tr><td>SHO Eagle Empire</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                <tr><td>SHO Pakistan SSG</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                <tr><td>SHO Stranger</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                <tr><td>SHO Yash King</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                <tr><td>ST Henzel</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                <tr><td>UK 03</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
             </table>
         </div>
     </div>
@@ -295,6 +309,36 @@ th {
 
         showTable(currentTable);
     });
+    function sortAllTables() {
+    let tables = document.querySelectorAll(".tournament-table");
+
+    tables.forEach(table => {
+        let tbody = table.querySelector("tbody");
+        if (!tbody) return;
+
+        let rows = Array.from(tbody.querySelectorAll("tr"));
+
+        rows.sort((rowA, rowB) => {
+            let winsA = parseInt(rowA.children[1].textContent); // Adjust index based on your table structure
+            let winsB = parseInt(rowB.children[1].textContent);
+            let pointsA = parseInt(rowA.children[2].textContent);
+            let pointsB = parseInt(rowB.children[2].textContent);
+            let nrrA = parseFloat(rowA.children[3].textContent);
+            let nrrB = parseFloat(rowB.children[3].textContent);
+
+            if (winsA !== winsB) return winsB - winsA; // Sort by wins first
+            if (pointsA !== pointsB) return pointsB - pointsA; // Then by points
+            return nrrB - nrrA; // Finally by NRR
+        });
+
+        tbody.innerHTML = ""; // Clear existing rows
+        rows.forEach(row => tbody.appendChild(row)); // Append sorted rows
+    });
+}
+
+// Call this function after tables are loaded or updated
+sortAllTables();
+
 </script>
 </body>
 </html>
