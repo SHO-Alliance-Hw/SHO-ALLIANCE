@@ -10,6 +10,99 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="./src/tournaments/reliable-tournament.css">
+<!-- Styles -->
+<style>
+.table-carousel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 40px auto;
+    position: relative;
+    width: 90%;
+    max-width: 800px;
+}
+
+.tables-container {
+    width: 100%;
+    text-align: center;
+}
+
+.tournament-table {
+    display: none;
+    background: rgba(0, 50, 150, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(0, 76, 255, 0.5);
+    width: 100%;
+    overflow-x: auto;
+    border: 2px solid rgba(173, 216, 230, 0.5); /* Glass effect border */
+    backdrop-filter: blur(10px);
+}
+
+.tournament-table.active {
+    display: block;
+}
+
+/* Move buttons below */
+.carousel-controls {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 300px;
+    margin-top: 15px;
+}
+
+.carousel-btn {
+    display: inline-block;
+    background-color: rgba(0, 76, 255, 0.9);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.carousel-btn:hover {
+    background: cyan;
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 2px solid rgba(173, 216, 230, 0.5);
+}
+
+th, td {
+    padding: 8px;
+    border: 1px solid rgba(173, 216, 230, 0.5);
+    text-align: center;
+    font-size: 14px;
+}
+
+th {
+    background: rgba(0, 76, 255, 0.9);
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .carousel-btn {
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+    th, td {
+        font-size: 12px;
+        padding: 6px;
+    }
+    .carousel-controls {
+        max-width: 250px;
+    }
+}
+
+</style>
 </head>
 <body>
 
@@ -71,7 +164,94 @@
         </div>
     </div>
 </div>
-
+<!-- Tournament Tables Carousel -->
+<div class="table-carousel">
+    <div class="tables-container">
+        <div class="tournament-table active" id="table-a">
+            <h3>Group A</h3>
+            <table>
+                <tr><th>Team</th><th>Matches</th><th>Wins</th><th>Lost</th><th>Points</th><th>NRR</th></tr>
+                <tr><td>Blasting Sixers CS</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                <tr><td>HC Haryana Hunters</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                <tr><td>SHO Adirao X1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                <tr><td>SHO Devu</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                <tr><td>SHO Gujarat Titans</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                <tr><td>SHO Sonak AK</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                <tr><td>UAS Indian Heroes</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+            </table>
+        </div>
+        <div class="tournament-table" id="table-b">
+            <h3>Group B</h3>
+            <table>
+                <tr><th>Team</th><th>Matches</th><th>Wins</th><th>Lost</th><th>Points</th><th>NRR</th></tr>
+                <tr><td>Blasting Sixers CS</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                <tr><td>HC Haryana Hunters</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                <tr><td>SHO Adirao X1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                <tr><td>SHO Devu</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                <tr><td>SHO Gujarat Titans</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                <tr><td>SHO Sonak AK</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                <tr><td>UAS Indian Heroes</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+            </table>
+        </div>
+        <div class="tournament-table" id="table-c">
+            <h3>Group C</h3>
+            <table>
+                <tr><th>Team</th><th>Matches</th><th>Wins</th><th>Lost</th><th>Points</th><th>NRR</th></tr>
+                <tr><td>Blasting Sixers CS</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                <tr><td>HC Haryana Hunters</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                <tr><td>SHO Adirao X1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                <tr><td>SHO Devu</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                <tr><td>SHO Gujarat Titans</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                <tr><td>SHO Sonak AK</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                <tr><td>UAS Indian Heroes</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+            </table>
+        </div>
+        <div class="tournament-table" id="table-d">
+            <h3>Group D</h3>
+            <table>
+                <tr><th>Team</th><th>Matches</th><th>Wins</th><th>Lost</th><th>Points</th><th>NRR</th></tr>
+                <tr><td>Blasting Sixers CS</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                <tr><td>HC Haryana Hunters</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                <tr><td>SHO Adirao X1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                <tr><td>SHO Devu</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                <tr><td>SHO Gujarat Titans</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                <tr><td>SHO Sonak AK</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                <tr><td>UAS Indian Heroes</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+            </table>
+        </div>
+        <div class="tournament-table" id="table-e">
+            <h3>Group E</h3>
+            <table>
+                <tr><th>Team</th><th>Matches</th><th>Wins</th><th>Lost</th><th>Points</th><th>NRR</th></tr>
+                <tr><td>Blasting Sixers CS</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                <tr><td>HC Haryana Hunters</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                <tr><td>SHO Adirao X1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                <tr><td>SHO Devu</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                <tr><td>SHO Gujarat Titans</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                <tr><td>SHO Sonak AK</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                <tr><td>UAS Indian Heroes</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+            </table>
+        </div>
+        <div class="tournament-table" id="table-f">
+            <h3>Group F</h3>
+            <table>
+                <tr><th>Team</th><th>Matches</th><th>Wins</th><th>Lost</th><th>Points</th><th>NRR</th></tr>
+                <tr><td>Blasting Sixers CS</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                <tr><td>HC Haryana Hunters</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                <tr><td>SHO Adirao X1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                <tr><td>SHO Devu</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                <tr><td>SHO Gujarat Titans</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                <tr><td>SHO Sonak AK</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                <tr><td>UAS Indian Heroes</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+            </table>
+        </div>
+    </div>
+    <!-- Navigation Buttons Below the Table -->
+    <div class="carousel-controls">
+        <button class="carousel-btn prev">&#10094; Previous</button>
+        <button class="carousel-btn next">Next &#10095;</button>
+    </div>
+</div>
 <!-- Footer -->
 <footer>
     <div class="footer-content">
@@ -89,6 +269,32 @@
 <!-- Custom JS -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 <script src="./src/reliance-tournament/reliance-tournament.js"></script>
+<!-- JavaScript for Carousel -->
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        let currentTable = 0;
+        const tables = document.querySelectorAll(".tournament-table");
+        const prevBtn = document.querySelector(".prev");
+        const nextBtn = document.querySelector(".next");
 
+        function showTable(index) {
+            tables.forEach((table, i) => {
+                table.classList.toggle("active", i === index);
+            });
+        }
+
+        prevBtn.addEventListener("click", function() {
+            currentTable = (currentTable - 1 + tables.length) % tables.length;
+            showTable(currentTable);
+        });
+
+        nextBtn.addEventListener("click", function() {
+            currentTable = (currentTable + 1) % tables.length;
+            showTable(currentTable);
+        });
+
+        showTable(currentTable);
+    });
+</script>
 </body>
 </html>
