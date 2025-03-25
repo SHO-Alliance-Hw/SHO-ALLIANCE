@@ -11,7 +11,7 @@ html, body {
     height: 100%; /* Ensure the body is tall enough to allow scrolling */
     overflow-x: hidden; /* Prevent horizontal scrolling */
     font-family: 'Poppins', sans-serif;
-    background-color: #f7f9fc;
+    background-color: #616161;
     color: #333;
 }
 
@@ -95,86 +95,88 @@ header, .navbar {
       background: #0056b3;
     }
   }
-  
-  
-/* Table Styling */
+/* Neon Cyberpunk Table Styling */
 .table-container {
-    background: rgba(255, 255, 255, 0.8); /* Transparent background for table */
+    background: rgba(20, 20, 20, 0.9);
     padding: 20px;
-            border-radius: 15px;
-            backdrop-filter: blur(10px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-            margin-top: 30px; /* Slight margin from hero section */
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 20px #ff00ff, 0 0 30px #00ffff;
+    margin-top: 30px;
     z-index: 1;
     opacity: 0;
-    animation: fadeInTable 1s forwards 1.5s; /* Table fade-in animation */
+    animation: fadeInTable 1s forwards 1.5s;
 }
 
+/* Fade-in Animation */
 @keyframes fadeInTable {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
+    0% { opacity: 0; transform: scale(0.8); }
+    100% { opacity: 1; transform: scale(1); }
 }
 
-table {
+/* Table Styling */
+.neon-table {
     width: 100%;
     border-collapse: collapse;
     margin-bottom: 30px;
+    border-radius: 10px;
+    overflow: hidden;
 }
 
-th, td {
+/* Table Header */
+.neon-table thead {
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Table Cells */
+.neon-table th, .neon-table td {
     padding: 15px;
     text-align: center;
     font-size: 1rem;
-    border: 1px solid #ddd;
-    opacity: 0;
-    animation: fadeInRow 0.5s forwards; /* Row fade-in animation */
-}
-
-@keyframes fadeInRow {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
-}
-
-th {
-    background: linear-gradient(135deg, #19081d, #0a2122);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: 0.3s;
     color: white;
-    font-weight: bold;
 }
 
-td {
-    background: rgba(255, 255, 255, 0.7);
+/* Table Row Animation */
+.neon-table tbody tr {
+    background: rgba(0, 0, 0, 0.8);
+    transition: all 0.3s ease-in-out;
+    opacity: 0;
+    transform: translateY(20px);
 }
 
-td:hover {
-    background: rgba(255, 255, 255, 0.9);
-    cursor: pointer;
-    transform: scale(1.05); /* Hover scale effect */
-    transition: transform 0.3s ease-in-out;
+/* Glowing Hover Effect */
+.neon-table tbody tr:hover {
+    background: rgba(255, 0, 255, 0.3);
+    box-shadow: 0 0 15px #ff00ff, 0 0 25px #00ffff;
+    transform: scale(1.05);
 }
-
-tr:hover td {
-    transform: scale(1.02);
-    transition: transform 0.3s ease-in-out;
-}
-
-
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .hero h1 {
-        font-size: 2.5rem;
-    }
-
-    .hero p {
-        font-size: 1rem;
-    }
-
     .table-container {
-        top: 150px; /* Adjust for mobile view */
         padding: 10px;
     }
 
-    table {
+    .neon-table th, .neon-table td {
         font-size: 0.9rem;
     }
+    .cyberpunk-footer { font-size: 0.9rem; }
 }
+
+/* Cyberpunk Footer Styling */
+.cyberpunk-footer {
+    text-align: center;
+    padding: 15px;
+    font-size: 1rem;
+    color: white;
+    background: linear-gradient(135deg, #19081d, #0a2122);
+    box-shadow: 0 0 15px #ff00ff, 0 0 20px #00ffff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top:5px;
+  }

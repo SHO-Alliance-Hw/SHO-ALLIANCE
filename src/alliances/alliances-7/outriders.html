@@ -34,6 +34,15 @@ th {
     color: white;
     font-weight: bold;
 }
+/* Glowing Hover Effect */
+.neon-table tbody tr:hover {
+    background: #4d000d;
+    box-shadow: 0 0 15px #ff00ff, 0 0 25px #00ffff;
+    transform: scale(1.05);
+}
+.cyberpunk-footer{
+  background: linear-gradient(135deg, #1a641a, #4d000d);
+}
 </style>
 </head>
 <body>
@@ -79,183 +88,69 @@ th {
             </div>
         </div>
     </section>
-    <!-- Players Table Section (Responsive with Scroll) -->
-    <div class="container table-container">
-        <div class="table-responsive">
-            <table>
-                <thead>
-                    <tr>
-                        <th>#</th>
-                        <th>Player Name</th>
-                        <th>Team Name</th>
-                    </tr>
-                </thead>
-            <tbody>
-            <tr>
-              <td>1</td>
-              <td>Devil Khan(Leader)</td>
-              <td>||SHO||DEVIL||KHAN</td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>Akash</td>
-              <td>||SHO||PREPETUL</td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>Sammed Jain(YC WINNER)</td>
-              <td>||SHO|| ALPHA</td>
-            </tr>
-            <tr>
-              <td>4</td>
-              <td>sunny</td>
-              <td>||SHO||DESTRUCTION</td>
-            </tr>
-            <tr>
-              <td>5</td>
-              <td>ali</td>
-              <td>||SHO||ALI</td>
-            </tr>
-            <tr>
-              <td>6</td>
-              <td>Souja</td>
-              <td>||SHO||SOUJA X1</td>
-            </tr>
-            <tr>
-              <td>7</td>
-              <td>aussies</td>
-              <td>||SHO||AUSSIES FM</td>
-            </tr>
-            <tr>
-              <td>8</td>
-              <td>krishna</td>
-              <td>||SHO||KR$NA</td>
-            </tr>
-            <tr>
-              <td>9</td>
-              <td>rajesh</td>
-              <td>||SHO||RAJESH RIDERS</td>
-            </tr>
-            <tr>
-              <td>10</td>
-              <td>single mom</td>
-              <td>SINLE MOMS</td>
-            </tr>
-            <tr>
-              <td>11</td>
-              <td>zeeshan</td>
-              <td>||SHO||PTI</td>
-            </tr>
-            <tr>
-              <td>12</td>
-              <td>HYD</td>
-              <td>||SHO||HYD</td>
-            </tr>
-            <tr>
-              <td>13</td>
-              <td>AVI</td>
-              <td>||SHO||AVI BLASTERS</td>
-            </tr>
-            <tr>
-              <td>14</td>
-              <td>BLODDY</td>
-              <td>||SHO||BLOO$Y BE@ST</td>
-            </tr>
-            <tr>
-              <td>15</td>
-              <td>LANCHI</td>
-              <td>||SHO||LANCASHIRE UTD</td>
-            </tr>
-            <tr>
-              <td>16</td>
-              <td>CHERNOBYL</td>
-              <td>||SHO||CHERNOBYL</td>
-            </tr>
-            <tr>
-              <td>17</td>
-              <td>VIJAY KUMAR</td>
-              <td>||SHO||VIJAY</td>
-            </tr>
-            <tr>
-              <td>18</td>
-              <td>BARCE</td>
-              <td>||SHO||BARCELONA</td>
-            </tr>
-            <tr>
-              <td>19</td>
-              <td>PK</td>
-              <td>||SHO||PK HAWSKS</td>
-            </tr>
-            <tr>
-              <td>20</td>
-              <td>Maverick</td>
-              <td>||SHO||MavericK's</td>
-            </tr>
-            <tr>
-              <td>21</td>
-              <td>Desi</td>
-              <td>||SHO||Desi Xi</td>
-            </tr>
-            <tr>
-              <td>22</td>
-              <td>Saleem</td>
-              <td>||SHO||Salem Kings</td>
-            </tr>
-            <tr>
-              <td>23</td>
-              <td>scrodinger</td>
-              <td>||SHO||'SCHRoDINGER'</td>
-            </tr>
-            <tr>
-              <td>24</td>
-              <td>Team 7696</td>
-              <td>||SHO||Team 7696</td>
-            </tr>
-            <tr>
-              <td>25</td>
-              <td>ANDREWS</td>
-              <td>||SHO||ANDREWS</td>
-            </tr>
-            <tr>
-              <td>26</td>
-              <td>BEAST</td>
-              <td>||SHO||BEAST</td>
-            </tr>
-            <tr>
-              <td>27</td>
-              <td>GUJARAT</td>
-              <td>||SHO||GUJARAT TITANS</td>
-            </tr>
-            <tr>
-              <td>28</td>
-              <td>GUARDIAN</td>
-              <td>||SHO||GUARDIAN ANGEL</td>
-            </tr>
-            <tr>
-              <td>29</td>
-              <td>INNOCENT</td>
-              <td>||SHO||INNOCENT</td>
-            </tr>
-            <tr>
-              <td>30</td>
-              <td>Sunil Kumar</td>
-              <td>||SHO||SIGMA</td>
-            </tr>
-            <!-- Add more rows as needed for 30 players -->
-            </tbody>
-            </table>
-      </div>
-    </div>
-    <!-- Bootstrap and jQuery Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!-- Players Table Section (Responsive with Scroll) -->
+<div class="table-container">
+  <table class="neon-table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Player Name</th>
+        <th>Team Name</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>1</td><td>Devil Khan(Leader)</td><td>||SHO||DEVIL||KHAN</td></tr>
+      <tr><td>2</td><td>Akash</td><td>||SHO||PREPETUL</td></tr>
+      <tr><td>3</td><td>Sammed Jain(YC WINNER)</td><td>||SHO|| ALPHA</td></tr>
+      <tr><td>4</td><td>Sunny</td><td>||SHO||DESTRUCTION</td></tr>
+      <tr><td>5</td><td>Ali</td><td>||SHO||ALI</td></tr>
+      <tr><td>6</td><td>Souja</td><td>||SHO||SOUJA X1</td></tr>
+      <tr><td>7</td><td>Aussies</td><td>||SHO||AUSSIES FM</td></tr>
+      <tr><td>8</td><td>Krishna</td><td>||SHO||KR$NA</td></tr>
+      <tr><td>9</td><td>Rajesh</td><td>||SHO||RAJESH RIDERS</td></tr>
+      <tr><td>10</td><td>Single Mom</td><td>SINGLE MOMS</td></tr>
+      <tr><td>11</td><td>Zeeshan</td><td>||SHO||PTI</td></tr>
+      <tr><td>12</td><td>HYD</td><td>||SHO||HYD</td></tr>
+      <tr><td>13</td><td>AVI</td><td>||SHO||AVI BLASTERS</td></tr>
+      <tr><td>14</td><td>BLODDY</td><td>||SHO||BLOO$Y BE@ST</td></tr>
+      <tr><td>15</td><td>LANCHI</td><td>||SHO||LANCASHIRE UTD</td></tr>
+      <tr><td>16</td><td>CHERNOBYL</td><td>||SHO||CHERNOBYL</td></tr>
+      <tr><td>17</td><td>VIJAY KUMAR</td><td>||SHO||VIJAY</td></tr>
+      <tr><td>18</td><td>BARCE</td><td>||SHO||BARCELONA</td></tr>
+      <tr><td>19</td><td>PK</td><td>||SHO||PK HAWKS</td></tr>
+      <tr><td>20</td><td>Maverick</td><td>||SHO||MavericK's</td></tr>
+      <tr><td>21</td><td>Desi</td><td>||SHO||Desi XI</td></tr>
+      <tr><td>22</td><td>Saleem</td><td>||SHO||Salem Kings</td></tr>
+      <tr><td>23</td><td>Schrodinger</td><td>||SHO||'SCHRODINGER'</td></tr>
+      <tr><td>24</td><td>Team 7696</td><td>||SHO||Team 7696</td></tr>
+      <tr><td>25</td><td>ANDREWS</td><td>||SHO||ANDREWS</td></tr>
+      <tr><td>26</td><td>BEAST</td><td>||SHO||BEAST</td></tr>
+      <tr><td>27</td><td>GUJARAT</td><td>||SHO||GUJARAT TITANS</td></tr>
+      <tr><td>28</td><td>GUARDIAN</td><td>||SHO||GUARDIAN ANGEL</td></tr>
+      <tr><td>29</td><td>INNOCENT</td><td>||SHO||INNOCENT</td></tr>
+      <tr><td>30</td><td>Sunil Kumar</td><td>||SHO||SIGMA</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- Cyberpunk Footer -->
+<footer class="cyberpunk-footer">
+  © 2025 SHO Alliance. All Rights Reserved.
+</footer>
+
+<!-- Bootstrap and jQuery Scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
       integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
-    </script>
+</script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
       integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
     </script>
   <!-- Bootstrap Bundle (includes Popper.js, necessary for dropdowns) -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- GSAP CDN (Add this in your head or before the closing body tag) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="../all.js"></script>
 </body>
 </html>
