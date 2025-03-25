@@ -1,109 +1,142 @@
-        /* Cyberpunk Navbar */
-        .cyberpunk-navbar {
-          background: rgba(0, 0, 0, 0.9);
-          border-bottom: 2px solid #ff00ff;
-          padding: 10px 0;
-      }
 
-      .neon-text {
-          color: #00ffff;
-          font-weight: bold;
-          text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff;
-      }
-/* Fix for first section merging with navbar */
-.cyberpunk-section:first-of-type {
-  margin-top: 80px; /* Adjust this if needed */
+/* General Styling */
+body {
+    font-family: 'Orbitron', sans-serif;
+    background-color: #0a0a0a;
+    color: white;
+    margin: 0;
+    overflow-x: hidden;
+    text-align: center;
+}
+/* Navbar Styling */
+.cyberpunk-navbar {
+display: flex;
+justify-content: space-between;
+align-items: center;
+background: rgba(10, 10, 10, 0.9);
+padding: 15px 30px;
+box-shadow: 0 0 15px #ff00ff;
+border-bottom: 2px solid #ff00ff;
+position: fixed;
+width: 100%;
+top: 0;
+z-index: 1000;
 }
 
-/* Responsive Adjustments */
+/* SHO HitWicket Left Side */
+.navbar-brand {
+color: #fbfdfd;
+font-size: 1.8rem;
+text-shadow: 0 0 10px #00ffff;
+margin-left: 10px;
+}
+
+/* Navbar Links - Always Visible */
+.nav-menu {
+display: flex;
+gap: 20px;
+}
+
+.nav-link {
+color: #fff;
+text-transform: uppercase;
+font-size: 14px;
+transition: 0.3s;
+}
+
+.nav-link:hover {
+color: #ff00ff;
+text-shadow: 0 0 10px #ff00ff;
+}
+
+/* Navbar Toggle (☰) - Always Right Side */
+.navbar-toggler {
+background: none;
+border: none;
+font-size: 24px;
+color: white;
+cursor: pointer;
+margin-right: 10px;
+display: none; /* By default, hide on web */
+}
+
+/* Mobile View */
 @media (max-width: 768px) {
-  .cyberpunk-section:first-of-type {
-      margin-top: 100px; /* More margin for smaller screens */
-  }
+.nav-menu {
+display: none;
+flex-direction: column;
+position: absolute;
+top: 60px;
+right: 20px;
+background: rgba(0, 0, 0, 0.9);
+padding: 15px;
+border-radius: 10px;
+box-shadow: 0 0 10px #ff00ff;
 }
 
-      .cyberpunk-section {
-          padding: 50px 5%;
-          text-align: center;
-          background: rgba(0, 0, 0, 0.8);
-          color: #fff;
-          margin: 20px auto;
-          border-radius: 10px;
-          box-shadow: 0 0 15px #ff00ff, 0 0 30px #00ffff;
-          max-width: 800px;
-      }
+.nav-menu.active {
+display: flex;
+}
 
-      .cyberpunk-title {
-          font-size: 2rem;
-          font-family: 'Orbitron', sans-serif;
-          color: #ff00ff;
-          text-shadow: 0 0 5px #ff00ff, 0 0 15px #ff00ff;
-      }
+.navbar-toggler {
+display: block; /* Show bars (☰) only on mobile */
+}
+}
 
-      .cyberpunk-button {
-          display: inline-block;
-          padding: 12px 20px;
-          font-size: 18px;
-          font-weight: bold;
-          color: #fff;
-          background: linear-gradient(45deg, #ff00ff, #00ffff);
-          border: none;
-          border-radius: 30px;
-          text-decoration: none;
-          box-shadow: 0 0 10px #ff00ff, 0 0 20px #00ffff;
-          transition: all 0.3s ease-in-out;
-      }
+/* Cyberpunk Cards */
+.cyberpunk-section {
+    background: rgba(20, 20, 20, 0.9);
+    color: #fff;
+    margin: 120px auto 40px;
+    padding: 50px 5%;
+    border-radius: 10px;
+    box-shadow: 0 0 20px #ff00ff, 0 0 30px #00ffff;
+    max-width: 800px;
+}
 
-      .cyberpunk-button:hover {
-          box-shadow: 0 0 15px #ff00ff, 0 0 30px #00ffff;
-          transform: scale(1.05);
-      }
+/* Spacing Between Cards */
+.cyberpunk-card {
+    margin-bottom: 30px;
+}
 
-      /* "Go to HitWicket Guide" Button */
-      .btn-guide {
-          display: block;
-          width: 90%;
-          max-width: 250px;
-          margin: 40px auto;
-          padding: 12px 20px;
-          font-size: 18px;
-          font-weight: bold;
-          text-align: center;
-          color: #fff;
-          background: linear-gradient(45deg, #ff00ff, #00ffff);
-          border: none;
-          border-radius: 30px;
-          text-decoration: none;
-          box-shadow: 0 0 10px #ff00ff, 0 0 20px #00ffff;
-          transition: all 0.3s ease-in-out;
-      }
+/* Cyberpunk Buttons */
+.cyberpunk-button, .btn-guide {
+    display: inline-block;
+    padding: 12px 25px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    background: linear-gradient(45deg, #ff00ff, #00ffff);
+    border: none;
+    border-radius: 30px;
+    text-decoration: none;
+    box-shadow: 0 0 15px #ff00ff, 0 0 20px #00ffff;
+    transition: 0.3s ease-in-out;
+    margin-top: 20px;
+}
 
-      .btn-guide:hover {
-          box-shadow: 0 0 15px #ff00ff, 0 0 30px #00ffff;
-          transform: scale(1.1);
-      }
+.cyberpunk-button:hover, .btn-guide:hover {
+    box-shadow: 0 0 25px #ff00ff, 0 0 30px #00ffff;
+    transform: scale(1.1);
+}
+
 /* Footer */
 .footer {
-  padding: 20px;
-  background: #111;
-  color: white;
+    padding: 20px;
+    background: #111;
+    color: white;
+    text-align: center;
+    margin-top: 20px;
 }
-      /* Responsive Adjustments */
-      @media (max-width: 768px) {
-          .cyberpunk-title {
-              font-size: 1.8rem;
-          }
-          .cyberpunk-section {
-              padding: 40px 10%;
-          }
-      }
 
-      @media (max-width: 576px) {
-          .cyberpunk-title {
-              font-size: 1.5rem;
-          }
-          .cyberpunk-button, .btn-guide {
-              font-size: 16px;
-              padding: 10px 15px;
-          }
-      }
+/* Mobile Responsive Fix */
+@media (max-width: 600px) {
+    .cyberpunk-section {
+        padding: 40px 10%;
+    }
+
+    .cyberpunk-button, .btn-guide {
+        width: 100%;
+        max-width: 250px;
+    }
+}

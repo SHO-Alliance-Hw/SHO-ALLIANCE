@@ -7,7 +7,7 @@
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
-    
+
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     
@@ -17,35 +17,27 @@
 <body>
 
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg cyberpunk-navbar fixed-top">
-        <div class="container">
-            <a class="navbar-brand neon-text" href="#">SHO HitWicket</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon" style="filter: invert(1);"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <div class="navbar-nav ml-auto">
-                    <!-- <a class="nav-link neon-text" href="#">Home</a>
-                    <a class="nav-link neon-text" href="#">Alliances</a>
-                    <a class="nav-link neon-text" href="#">Leaders</a>
-                    <a class="nav-link neon-text" href="#">Tournaments</a>
-                    <a class="nav-link neon-text" href="#">Leaderboard</a> -->
-                </div>
-            </div>
+    <nav class="cyberpunk-navbar">
+        <a class="navbar-brand" href="#">SHO HitWicket</a>
+        <button class="navbar-toggler" id="navToggle">☰</button>
+        <div class="nav-menu" id="navbarNav">
+            <a class="nav-link" href="#">Alliances</a>
+            <a class="nav-link" href="#">Leaders</a>
+            <a class="nav-link" href="#">Tournaments</a>
+            <a class="nav-link" href="#">Leaderboard</a>
         </div>
     </nav>
 
     <!-- Main Section -->
-    <section class="cyberpunk-section">
-        <h2 class="cyberpunk-title">HitWicket Official Website</h2>
+    <section class="cyberpunk-section cyberpunk-card">
+        <h2>HitWicket Official Website</h2>
         <p>Explore the world of HitWicket! Manage your team, compete with the best, and rise to glory.</p>
         <a href="https://hitwicket.com/" class="cyberpunk-button">Visit HitWicket Site</a>
     </section>
 
     <!-- PVP Leaderboard Section -->
-    <section class="cyberpunk-section">
-        <h2 class="cyberpunk-title">Daily PVP Leaderboard</h2>
+    <section class="cyberpunk-section cyberpunk-card">
+        <h2>Daily PVP Leaderboard</h2>
         <p>Check out the top players dominating the battlefield!</p>
         <a href="https://hitwicket.com/worldcup/arenas/leaderboard" class="cyberpunk-button" target="_blank">
             View Full Leaderboard
@@ -53,8 +45,8 @@
     </section>
 
     <!-- YC Top 128 Players Section -->
-    <section class="cyberpunk-section">
-        <h2 class="cyberpunk-title">YC Top 128 Players</h2>
+    <section class="cyberpunk-section cyberpunk-card">
+        <h2>YC Top 128 Players</h2>
         <p>From among thousands of members, these are the top 128 players showcasing exceptional skill and strategy.</p>
         <a href="https://hitwicket.com/yc-top-players" class="cyberpunk-button" target="_blank">
             View Top 128 Players
@@ -66,13 +58,13 @@
         <a href="hitwicket.html" class="btn-guide">Go to HitWicket Guide</a>
     </div>
     <!-- Footer -->
-    <footer class="footer text-center">
-      <p>&copy; 2025 HitWicket Guide | Powered by SHO Alliance</p>
-  </footer>
-    <!-- Bootstrap and jQuery Scripts -->
+    <footer class="footer">
+        <p>&copy; 2025 HitWicket Guide | Powered by SHO Alliance</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="./src/hitwicket/hitwicket.js"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 </body>
 </html>
