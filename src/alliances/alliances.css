@@ -318,3 +318,22 @@ body {
     height: 300;
   }
 }
+@media (max-width: 768px) {
+  .alliance-card {
+    min-height: 300px; /* Ensure a reasonable height */
+  }
+
+  .card-inner {
+    height: auto; /* Allow it to adapt */
+    min-height: 300px; /* Prevent excessive shrinking */
+  }
+
+  .card-front img {
+    height: 100%; /* Make sure the image fills the card */
+    object-fit: cover;
+  }
+
+  .card-back {
+    height: 100%;
+  }
+}
