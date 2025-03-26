@@ -308,7 +308,7 @@ body {
 }
 
 /* Responsive Fixes */
-@media (max-width: 768px) {
+@media (max-width: 768px) { 
   .hero-title {
     font-size: 2rem;
     animation: fadeInUp 1s ease-in-out;
