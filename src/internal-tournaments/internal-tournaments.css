@@ -71,3 +71,6 @@ margin-right: 30px;
 color: white;
 }
 }
+footer p > span {
+    color: #ff512f;
+  }
